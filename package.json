@@ -1,0 +1,13 @@
+{
+	"name": "commera-app",
+	"version": "1.0.0",
+	"scripts": {
+		"build": "tailwindcss -i src/input.css -o dist/site.css --minify"
+	},
+	"type": "commonjs",
+	"devDependencies": {
+		"@tailwindcss/cli": "^4.3.3",
+		"tailwindcss": "^4.3.3"
+	},
+	"private": true
+}

@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@source "../*.html";
+@source "../hero/*.html";
+
+@theme {
+	--font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+	--font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+	--color-cream: #f7efe6;
+	--color-cream-deep: #efdcc8;
+	--color-brand: #f57519;
+	--color-brand-deep: #d9600c;
+	--color-ink: #141210;
+	--color-ink-soft: #57514b;
+	--color-line: #e4d6c6;
+}
+
+@layer base {
+	html {
+		-webkit-font-smoothing: antialiased;
+	}
+}
+
+[x-cloak] {
+	display: none !important;
+}

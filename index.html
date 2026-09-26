@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Commera — eCommerce for ERPNext</title>
+	<meta name="description" content="Commera is an open-source storefront and merchant dashboard for ERPNext, with payments and shipping built in." />
+	<meta property="og:title" content="Commera — eCommerce for ERPNext" />
+	<meta property="og:description" content="An open-source storefront and merchant dashboard for ERPNext." />
+	<meta property="og:image" content="assets/commera-film-poster.jpg" />
+	<link rel="icon" href="assets/commera.svg" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" />
+	<link rel="stylesheet" href="dist/site.css" />
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
+</head>
+<body class="bg-cream font-sans text-ink">
+	<div class="bg-gradient-to-b from-cream via-cream to-cream-deep">
+		<header class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
+			<a href="#" class="flex items-center gap-2.5 text-lg font-bold tracking-tight">
+				<img src="assets/commera.svg" alt="" class="size-8" />
+				Commera
+			</a>
+			<nav class="flex items-center gap-6 text-sm font-medium text-ink-soft">
+				<a href="#features" class="hidden hover:text-ink sm:inline">Features</a>
+				<a href="#integrations" class="hidden hover:text-ink sm:inline">Integrations</a>
+				<a href="https://github.com/bwhtech/commera" class="inline-flex items-center gap-1.5 hover:text-ink">
+					<svg viewBox="0 0 16 16" class="size-4" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+					GitHub
+				</a>
+			</nav>
+		</header>
+
+		<section class="mx-auto max-w-6xl px-4 pt-6 pb-12 text-center sm:px-6 sm:pt-8 sm:pb-20">
+			<p class="mb-4 text-xs font-semibold tracking-wide text-brand-deep uppercase sm:mb-5 sm:text-sm">Open-source ecommerce for ERPNext</p>
+			<h1 class="mx-auto max-w-4xl text-4xl leading-[1.05] font-extrabold tracking-tight sm:text-6xl sm:leading-[1.02] lg:text-7xl">
+				World’s best eCommerce<br /><span class="text-brand">Integration for ERPNext</span>
+			</h1>
+			<p class="mx-auto mt-4 max-w-2xl text-base text-ink-soft sm:mt-6 sm:text-xl">
+				A storefront and merchant dashboard built on ERPNext.
+			</p>
+			<div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+				<a href="https://uat.commera.app" class="w-full rounded-md bg-ink px-6 py-3.5 font-semibold text-white hover:bg-black sm:w-auto">Try the live demo</a>
+				<a href="https://github.com/bwhtech/commera" class="w-full rounded-md border border-line bg-white px-6 py-3.5 font-semibold hover:border-ink sm:w-auto">Install from GitHub</a>
+			</div>
+
+			<div
+				class="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border border-line bg-white shadow-[0_30px_80px_-30px_rgba(80,40,10,0.35)]"
+				x-data="{ withSound: false }"
+			>
+				<video x-ref="film" class="block aspect-video w-full" src="assets/commera-film.mp4" poster="assets/commera-film-poster.jpg" autoplay muted loop playsinline :controls="withSound" aria-label="Commera product film"></video>
+				<button
+					x-show="!withSound"
+					@click="withSound = true; $refs.film.loop = false; $refs.film.muted = false; $refs.film.currentTime = 0; $refs.film.play()"
+					class="group absolute inset-0 flex items-end justify-start p-2.5 sm:p-6"
+					aria-label="Play the film from the start with sound"
+				>
+					<span class="flex items-center gap-1.5 rounded-md bg-ink/80 px-2 py-1 text-xs font-semibold sm:gap-2 sm:px-3 sm:py-2 sm:text-sm text-white backdrop-blur group-hover:bg-ink">
+						<svg viewBox="0 0 24 24" class="size-3.5 sm:size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
+						Click for sound
+					</span>
+				</button>
+			</div>
+
+			<ul class="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-x-5 gap-y-2 text-xs font-medium text-ink-soft sm:mt-12 sm:gap-x-8 sm:gap-y-3 sm:text-sm">
+				<li>Self-hosted on Frappe Bench</li>
+				<li>Razorpay · Stripe · Telr · Tabby · COD</li>
+				<li>Shiprocket · AfterShip</li>
+				<li>Bilingual, RTL-ready storefront</li>
+			</ul>
+		</section>
+	</div>
+
+	<section id="features" class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-10 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-2">
+		<div class="overflow-hidden rounded-2xl border border-line shadow-[0_30px_80px_-30px_rgba(80,40,10,0.35)]">
+			<img src="assets/storefront.webp" alt="A Commera storefront with a summer fashion theme" width="1400" height="706" loading="lazy" class="w-full" />
+		</div>
+		<div>
+			<p class="text-sm font-semibold tracking-wide text-brand-deep uppercase">Storefront</p>
+			<h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Fast pages your shoppers can find.</h2>
+			<p class="mt-5 text-lg text-ink-soft">Server-rendered with Jinja, Tailwind and Alpine. There's no app bundle between a shopper and a product page.</p>
+			<ul class="mt-6 space-y-3 text-ink-soft">
+				<li><span class="font-semibold text-ink">Themes without forking.</span> A theme can restyle any page, checkout included.</li>
+				<li><span class="font-semibold text-ink">Bilingual and RTL-ready.</span> English and Arabic from the URL, with right-to-left layout throughout.</li>
+				<li><span class="font-semibold text-ink">Built for search.</span> Sitemap, per-page metadata, <code class="font-mono text-sm">llms.txt</code> and generated Open Graph images.</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-10 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-2">
+		<div class="lg:order-2">
+			<div class="overflow-hidden rounded-2xl border border-line shadow-[0_30px_80px_-30px_rgba(80,40,10,0.35)]">
+				<img src="assets/dashboard.webp" alt="The Commera merchant dashboard overview" width="1400" height="874" loading="lazy" class="w-full" />
+			</div>
+		</div>
+		<div>
+			<p class="text-sm font-semibold tracking-wide text-brand-deep uppercase">Merchant dashboard</p>
+			<h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Run the shop without opening Desk.</h2>
+			<p class="mt-5 text-lg text-ink-soft">A Vue 3 and Frappe UI app at <code class="font-mono text-base">/commera</code>. It speaks products, collections and orders, not warehouses and naming series.</p>
+			<ul class="mt-6 space-y-3 text-ink-soft">
+				<li><span class="font-semibold text-ink">Orders.</span> Unfulfilled, unpaid, open and closed, with payment and fulfilment state on each.</li>
+				<li><span class="font-semibold text-ink">Products.</span> Variants, pricing, stock, bulk publishing and bulk image upload.</li>
+				<li><span class="font-semibold text-ink">Customers and reviews.</span> Lifetime spend per customer, and reviews you publish yourself.</li>
+				<li><span class="font-semibold text-ink">Analytics.</span> Revenue, inventory and a first-party storefront funnel.</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="integrations" class="mt-10 bg-ink py-14 text-white sm:mt-16 sm:py-24" x-data="{ tab: 'payments' }">
+		<div class="mx-auto max-w-6xl px-4 sm:px-6">
+			<div class="max-w-2xl">
+				<p class="text-sm font-semibold tracking-wide text-brand uppercase">Integrations</p>
+				<h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Payments, shipping and analytics, built in.</h2>
+				<p class="mt-5 text-lg text-white/65">Switch each provider on from the dashboard. Every one keeps its own keys.</p>
+			</div>
+
+			<div class="mt-10 flex gap-2 overflow-x-auto" role="tablist">
+				<button role="tab" :aria-selected="tab === 'payments'" @click="tab = 'payments'" :class="tab === 'payments' ? 'bg-white text-ink' : 'bg-white/10 text-white hover:bg-white/15'" class="shrink-0 rounded-md px-4 py-2 text-sm font-semibold">Payments</button>
+				<button role="tab" :aria-selected="tab === 'shipping'" @click="tab = 'shipping'" :class="tab === 'shipping' ? 'bg-white text-ink' : 'bg-white/10 text-white hover:bg-white/15'" class="shrink-0 rounded-md px-4 py-2 text-sm font-semibold">Shipping</button>
+				<button role="tab" :aria-selected="tab === 'analytics'" @click="tab = 'analytics'" :class="tab === 'analytics' ? 'bg-white text-ink' : 'bg-white/10 text-white hover:bg-white/15'" class="shrink-0 rounded-md px-4 py-2 text-sm font-semibold">Analytics</button>
+			</div>
+
+			<div class="mt-8 grid items-start gap-10 lg:grid-cols-[5fr_7fr]">
+				<dl x-show="tab === 'payments'" class="space-y-5">
+					<div><dt class="font-bold">Razorpay</dt><dd class="text-white/60">Cards, UPI, netbanking and wallets. India.</dd></div>
+					<div><dt class="font-bold">Stripe</dt><dd class="text-white/60">Cards and wallets, worldwide.</dd></div>
+					<div><dt class="font-bold">Telr</dt><dd class="text-white/60">Cards and local methods across the GCC.</dd></div>
+					<div><dt class="font-bold">Tabby</dt><dd class="text-white/60">Buy now, pay later in four instalments. MENA.</dd></div>
+					<div><dt class="font-bold">Cash on delivery</dt><dd class="text-white/60">Its own fee, a threshold that waives it, and the account it books to.</dd></div>
+				</dl>
+				<dl x-show="tab === 'shipping'" x-cloak class="space-y-5">
+					<div><dt class="font-bold">Shiprocket</dt><dd class="text-white/60">Courier aggregator for domestic India, with pincode serviceability.</dd></div>
+					<div><dt class="font-bold">AfterShip</dt><dd class="text-white/60">Global labels and tracking across hundreds of carriers.</dd></div>
+					<div><dt class="font-bold">Delivery options</dt><dd class="text-white/60">Each carrier quotes live rates at checkout. You choose what shoppers pick from.</dd></div>
+				</dl>
+				<dl x-show="tab === 'analytics'" x-cloak class="space-y-5">
+					<div><dt class="font-bold">Storefront tracking</dt><dd class="text-white/60">First-party. Powers the Storefront report, and nothing leaves your site.</dd></div>
+					<div><dt class="font-bold">Google Analytics 4</dt><dd class="text-white/60">Standard ecommerce events, read back into the dashboard.</dd></div>
+					<div><dt class="font-bold">Meta</dt><dd class="text-white/60">Pixel events, with counts read back next to your revenue.</dd></div>
+				</dl>
+
+				<div class="overflow-hidden rounded-2xl ring-1 ring-white/10">
+					<img x-show="tab === 'payments'" src="assets/payments.webp" alt="Payment provider settings in the Commera dashboard" width="1400" height="1127" loading="lazy" class="w-full" />
+					<img x-show="tab === 'shipping'" x-cloak src="assets/shipping.webp" alt="Shipping carrier settings in the Commera dashboard" width="1400" height="1131" loading="lazy" class="w-full" />
+					<img x-show="tab === 'analytics'" x-cloak src="assets/analytics.webp" alt="Analytics connection settings in the Commera dashboard" width="1400" height="1118" loading="lazy" class="w-full" />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-24">
+		<h2 class="text-2xl font-extrabold tracking-tight sm:text-3xl">Questions</h2>
+		<div class="mt-8 divide-y divide-line border-y border-line">
+			<details class="group py-5">
+				<summary class="flex cursor-pointer list-none items-center justify-between font-semibold">Do I need ERPNext?<span class="text-ink-soft group-open:rotate-45">+</span></summary>
+				<p class="mt-3 text-ink-soft">Yes. Commera is a Frappe app that runs on top of ERPNext, which stays the system of record for stock, pricing, tax and accounts.</p>
+			</details>
+			<details class="group py-5">
+				<summary class="flex cursor-pointer list-none items-center justify-between font-semibold">Is it free?<span class="text-ink-soft group-open:rotate-45">+</span></summary>
+				<p class="mt-3 text-ink-soft">The code is open on GitHub and you host it yourself, like any other Frappe app. Payment and shipping providers charge their own fees.</p>
+			</details>
+			<details class="group py-5">
+				<summary class="flex cursor-pointer list-none items-center justify-between font-semibold">Can I use my own design?<span class="text-ink-soft group-open:rotate-45">+</span></summary>
+				<p class="mt-3 text-ink-soft">Yes. Themes are data plus a template folder, and a theme can override any page the app ships, so you restyle without forking.</p>
+			</details>
+			<details class="group py-5">
+				<summary class="flex cursor-pointer list-none items-center justify-between font-semibold">Which countries does it support?<span class="text-ink-soft group-open:rotate-45">+</span></summary>
+				<p class="mt-3 text-ink-soft">Payments cover India (Razorpay), the GCC and MENA (Telr, Tabby) and worldwide cards (Stripe). Shipping covers India (Shiprocket) and global carriers (AfterShip).</p>
+			</details>
+		</div>
+	</section>
+
+	<footer class="border-t border-line">
+		<div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-ink-soft sm:flex-row sm:items-center sm:justify-between sm:px-6">
+			<div class="flex items-center gap-2.5">
+				<img src="assets/commera.svg" alt="" class="size-6" />
+				<span>Commera, by <a href="https://buildwithhussain.com" class="font-semibold text-ink hover:underline">BWH Studios</a></span>
+			</div>
+			<div class="flex gap-6">
+				<a href="https://github.com/bwhtech/commera" class="hover:text-ink">GitHub</a>
+				<a href="https://uat.commera.app" class="hover:text-ink">Live demo</a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

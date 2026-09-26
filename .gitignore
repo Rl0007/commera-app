@@ -1,0 +1,6 @@
+node_modules/
+shots/
+hero/
+*.mjs
+assets/commera-loop*
+.DS_Store
