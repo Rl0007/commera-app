@@ -24,6 +24,7 @@
 			<nav class="flex items-center gap-6 text-sm font-medium text-ink-soft">
 				<a href="#features" class="hidden hover:text-ink sm:inline">Features</a>
 				<a href="#integrations" class="hidden hover:text-ink sm:inline">Integrations</a>
+				<a href="#onboarding" class="hidden hover:text-ink sm:inline">Book a call</a>
 				<a href="https://github.com/bwhtech/commera" class="inline-flex items-center gap-1.5 hover:text-ink">
 					<svg viewBox="0 0 16 16" class="size-4" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
 					GitHub
@@ -144,6 +145,43 @@
 					<img x-show="tab === 'shipping'" x-cloak src="assets/shipping.webp" alt="Shipping carrier settings in the Commera dashboard" width="1400" height="1101" loading="lazy" class="w-full" />
 					<img x-show="tab === 'analytics'" x-cloak src="assets/analytics.webp" alt="Analytics connection settings in the Commera dashboard" width="1400" height="1101" loading="lazy" class="w-full" />
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="onboarding" class="mx-auto max-w-6xl px-4 pt-14 sm:px-6 sm:pt-24" x-data="{ outcome: new URLSearchParams(location.search).get('onboarding') }">
+		<div class="grid gap-10 rounded-2xl border border-line bg-white p-6 sm:p-10 lg:grid-cols-2">
+			<div>
+				<p class="text-sm font-semibold tracking-wide text-brand-deep uppercase">Onboarding</p>
+				<h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Schedule an onboarding call.</h2>
+				<p class="mt-4 text-lg text-ink-soft">Leave your email and we'll set up a call to get your store running on Commera.</p>
+			</div>
+
+			<div>
+				<div x-show="outcome === 'thanks'" x-cloak class="rounded-md border border-line bg-cream p-5" role="status">
+					<p class="font-bold">Thanks, we've got your request.</p>
+					<p class="mt-1 text-ink-soft">We'll email you to find a time for the call.</p>
+				</div>
+
+				<form x-show="outcome !== 'thanks'" action="https://projects.bwh.tech/api/method/commera_onboarding_request" method="post" class="space-y-4">
+					<p x-show="outcome === 'invalid'" x-cloak class="rounded-md bg-cream px-4 py-3 text-sm font-semibold" role="alert">That email doesn't look right. Please check it and try again.</p>
+					<label class="block">
+						<span class="text-sm font-semibold">Work email</span>
+						<input type="email" name="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-ink" />
+					</label>
+					<div class="grid gap-4 sm:grid-cols-2">
+						<label class="block">
+							<span class="text-sm font-semibold">Name</span>
+							<input type="text" name="full_name" autocomplete="name" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-ink" />
+						</label>
+						<label class="block">
+							<span class="text-sm font-semibold">Company</span>
+							<input type="text" name="company" autocomplete="organization" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-ink" />
+						</label>
+					</div>
+					<label class="hidden" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+					<button type="submit" class="w-full rounded-md border border-ink bg-ink px-5 py-2.5 font-semibold text-white hover:bg-black sm:w-auto">Book my call</button>
+				</form>
 			</div>
 		</div>
 	</section>
