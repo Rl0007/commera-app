@@ -654,7 +654,8 @@
 			const pins = gsap.utils.toArray('.journey-pin');
 			const stems = gsap.utils.toArray('.journey-stem');
 
-			gsap.set(section, { overflow: 'hidden' });
+			gsap.set(section, { overflow: 'hidden', height: '100lvh' });
+			gsap.set(world, { bottom: 'auto', height: '100svh' });
 			gsap.set(road, { drawSVG: '0%' });
 			gsap.set(pins, { scale: 0, transformOrigin: '50% 50%' });
 			gsap.set(stems, { scaleY: 0, transformOrigin: (index, stem) => (stem.dataset.grows === 'up' ? '50% 100%' : '50% 0%') });
@@ -682,7 +683,7 @@
 			const cards = gsap.utils.toArray('.feature-card');
 			let current = 0;
 
-			gsap.set(section, { height: '100svh' });
+			gsap.set(section, { height: '100lvh' });
 			gsap.set(deck, { display: 'block', position: 'relative', overflow: 'visible', padding: 0, height: () => window.innerHeight - heading.offsetHeight });
 			gsap.set(cards, { position: 'absolute', top: '50%', left: '50%', xPercent: -50, yPercent: -50 });
 			gsap.set(cards.slice(1), { x: '110vw', rotationY: -45, rotation: 10, transformPerspective: 1400 });
