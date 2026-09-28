@@ -4,3 +4,4 @@ hero/
 *.mjs
 assets/commera-loop*
 .DS_Store
+raw/

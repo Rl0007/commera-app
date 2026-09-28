@@ -15,215 +15,807 @@
 	<link rel="canonical" href="https://commera.app/" />
 	<link rel="icon" href="assets/commera.svg" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" />
+	<link rel="preconnect" href="https://api.fontshare.com" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" />
+	<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,600&display=swap" />
 	<link rel="stylesheet" href="dist/site.css" />
 	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
 </head>
-<body class="bg-cream font-sans text-ink">
-	<div class="bg-gradient-to-b from-cream via-cream to-cream-deep">
-		<header class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
-			<a href="#" class="flex items-center gap-2.5 text-lg font-bold tracking-tight">
-				<img src="assets/commera.svg" alt="" class="size-8" />
-				Commera
-			</a>
-			<nav class="flex items-center gap-6 text-sm font-medium text-ink-soft">
-				<a href="#features" class="hidden hover:text-ink sm:inline">Features</a>
-				<a href="#integrations" class="hidden hover:text-ink sm:inline">Integrations</a>
-				<a href="#onboarding" class="hidden hover:text-ink sm:inline">Book a call</a>
-				<a href="https://github.com/bwhtech/commera" class="inline-flex items-center gap-1.5 hover:text-ink">
-					<svg viewBox="0 0 16 16" class="size-4" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-					GitHub
-				</a>
-			</nav>
-		</header>
+<body class="bg-white font-sans text-ink">
+	<svg class="hidden" aria-hidden="true">
+		<symbol id="a-cart" viewBox="0 0 100 100" fill="currentColor"><path d="M4 10h19l4 14h69L84 66H33L20 18H4Z" /><circle cx="40" cy="82" r="9" /><circle cx="76" cy="82" r="9" /></symbol>
+		<symbol id="a-bag" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd"><path d="M20 32h60l6 62H14Z" /><path d="M35 32v-5a15 15 0 0 1 30 0v5h-9v-5a6 6 0 0 0-12 0v5Z" /></symbol>
+		<symbol id="a-tag" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd"><path d="M6 50 50 6h44v44L50 94ZM74 18a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z" /></symbol>
+		<symbol id="a-parcel" viewBox="0 0 100 100" fill="currentColor"><path d="M50 6 90 26 50 46 10 26Z" /><path d="M8 33l38 19v42L8 75Z" /><path d="M92 33 54 52v42l38-19Z" /></symbol>
+		<symbol id="a-receipt" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd"><path d="M18 6h64v88l-8-6-8 6-8-6-8 6-8-6-8 6-8-6-8 6ZM30 24v9h40v-9Zm0 18v9h40v-9Zm0 18v9h24v-9Z" /></symbol>
+		<symbol id="a-coin" viewBox="0 0 100 100" fill="currentColor"><ellipse cx="50" cy="24" rx="40" ry="15" /><path d="M10 34v12c0 8.3 17.9 15 40 15s40-6.7 40-15V34c0 8.3-17.9 15-40 15S10 42.3 10 34Z" /><path d="M10 58v12c0 8.3 17.9 15 40 15s40-6.7 40-15V58c0 8.3-17.9 15-40 15S10 66.3 10 58Z" /></symbol>
+		<symbol id="a-awning" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd"><path d="M6 8h88v30a11 11 0 0 1-22 0 11 11 0 0 1-22 0 11 11 0 0 1-22 0 11 11 0 0 1-22 0Z" /><path d="M14 58h72v36H14Zm28 12v24h16V70Z" /></symbol>
+		<symbol id="b-cart" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14h14l12 48h50l10-34H26" /><circle cx="40" cy="82" r="7" /><circle cx="76" cy="82" r="7" /></symbol>
+		<symbol id="b-bag" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 34h60l5 58H15Z" /><path d="M36 34v-6a14 14 0 0 1 28 0v6" /></symbol>
+		<symbol id="b-tag" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 50 50 10h40v40L50 90Z" /><circle cx="71" cy="29" r="5" /></symbol>
+		<symbol id="b-parcel" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M50 8 88 28v44L50 92 12 72V28Z" /><path d="m12 28 38 20 38-20M50 48v44" /></symbol>
+		<symbol id="b-receipt" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8h60v84l-10-7-10 7-10-7-10 7-10-7-10 7Z" /><path d="M34 30h32M34 48h32M34 66h18" /></symbol>
+		<symbol id="b-coin" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="24" rx="38" ry="14" /><path d="M12 24v50c0 7.7 17 14 38 14s38-6.3 38-14V24M12 49c0 7.7 17 14 38 14s38-6.3 38-14" /></symbol>
+		<symbol id="b-awning" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h84v22a10.5 10.5 0 0 1-21 0 10.5 10.5 0 0 1-21 0 10.5 10.5 0 0 1-21 0 10.5 10.5 0 0 1-21 0Z" /><path d="M16 54v36h68V54M42 90V70h16v20" /></symbol>
+		<symbol id="b-truck" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22h52v46H6ZM58 40h20l16 18v10H58Z" /><circle cx="24" cy="78" r="8" /><circle cx="76" cy="78" r="8" /></symbol>
+		<symbol id="b-home" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 46 50 12l40 34M20 38v52h60V38" /><path d="M42 90V66h16v24" /></symbol>
+	</svg>
 
-		<section class="mx-auto max-w-6xl px-4 pt-6 pb-12 text-center sm:px-6 sm:pt-8 sm:pb-20">
-			<p class="mb-4 text-xs font-semibold tracking-wide text-brand-deep uppercase sm:mb-5 sm:text-sm">Open source · Self-hosted</p>
-			<h1 class="mx-auto max-w-4xl text-[2rem] leading-[1.08] font-extrabold tracking-tight text-balance sm:text-6xl sm:leading-[1.02] lg:text-7xl">
+	<header class="sticky top-0 z-30 border-b border-line bg-white/90 backdrop-blur">
+		<div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-8">
+			<a href="#" class="flex items-center gap-2.5">
+				<img src="assets/commera.svg" alt="" class="size-8 sm:size-9" />
+				<span class="font-display text-2xl sm:text-[1.85rem]">Commera</span>
+			</a>
+			<nav class="hidden items-center gap-9 text-[0.95rem] font-medium text-ink-soft md:flex">
+				<a href="#storefront" class="hover:text-ink">Storefront</a>
+				<a href="#dashboard" class="hover:text-ink">Dashboard</a>
+				<a href="#integrations" class="hover:text-ink">Integrations</a>
+				<a href="#questions" class="hover:text-ink">FAQ</a>
+			</nav>
+			<a href="https://github.com/bwhtech/commera" class="inline-flex items-center gap-2 rounded-md border border-brand/40 px-3.5 py-2 text-sm font-semibold text-brand-deep hover:border-brand hover:bg-brand-soft/50 sm:px-4 sm:text-base">
+				<svg viewBox="0 0 16 16" class="size-4" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+				GitHub
+			</a>
+		</div>
+	</header>
+
+	<section class="relative overflow-hidden">
+		<div class="mx-auto max-w-7xl px-4 pt-14 text-center sm:px-8 sm:pt-20">
+			<h1 class="font-display mx-auto max-w-4xl text-[2.75rem] text-balance sm:text-6xl lg:text-[4.6rem]">
 				World’s best eCommerce <br class="hidden sm:block" /><span class="text-brand">platform for ERPNext</span>
 			</h1>
-			<p class="mx-auto mt-4 max-w-2xl text-base text-ink-soft sm:mt-6 sm:text-xl">
+			<p class="mx-auto mt-6 max-w-xl text-lg text-ink/80 sm:text-xl">
 				A storefront and merchant dashboard built on ERPNext.
 			</p>
-			<div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-				<a href="https://uat.commera.app" class="w-full rounded-md border border-ink bg-ink px-5 py-2.5 font-semibold text-white hover:bg-black sm:w-auto">Try the live demo</a>
-				<a href="https://docs.bwh.tech/commera" class="w-full rounded-md border border-line bg-white px-5 py-2.5 font-semibold hover:border-ink sm:w-auto">Read the docs</a>
+			<div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+				<a href="https://uat.commera.app" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand px-6 py-3 text-lg font-semibold text-white hover:bg-brand-deep sm:w-auto">
+					<svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true"><path d="M3 5.5v13l9-6.5zM12 5.5v13l9-6.5z" /></svg>
+					Try the live demo
+				</a>
+				<a href="https://docs.bwh.tech/commera" class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-brand/40 bg-white px-6 py-3 text-lg font-semibold text-brand-deep hover:border-brand sm:w-auto">
+					<svg viewBox="0 0 100 100" class="size-5" aria-hidden="true"><use href="#b-receipt" /></svg>
+					Read the docs
+				</a>
 			</div>
+		</div>
 
+		<div class="relative mt-12 px-4 sm:px-8 lg:mt-6 lg:h-[460px] lg:px-0 lg:max-xl:h-[345px] xl:max-[1440px]:h-[410px]" aria-hidden="true" data-cluster>
+			<div class="relative mx-auto max-w-md lg:absolute lg:top-0 lg:left-1/2 lg:h-[460px] lg:w-[1440px] lg:max-w-none lg:-translate-x-1/2 lg:origin-top lg:max-xl:scale-75 xl:max-[1440px]:scale-[0.89]">
+				<div class="absolute top-6 left-1/2 h-72 w-[80%] -translate-x-1/2 rounded-full bg-mint/40 blur-3xl lg:top-[170px] lg:h-[300px] lg:w-[620px]"></div>
+				<div class="absolute top-[110px] left-0 hidden h-[260px] w-[380px] rounded-full bg-brand-soft/50 blur-3xl lg:block"></div>
+				<div class="absolute top-[70px] right-0 hidden h-[260px] w-[380px] rounded-full bg-lavender/60 blur-3xl lg:block"></div>
+
+				<svg class="absolute inset-0 hidden size-full text-ink/25 lg:block" viewBox="0 0 1440 460" fill="none">
+					<path d="M0 132C70 52 140 8 222 8s168 50 222 116 62 118 56 118" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 7" />
+					<path d="M940 236c40-70 110-196 262-204s218 76 238 116" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 7" />
+				</svg>
+
+				<div class="absolute top-[22px] left-[222px] hidden w-64 rounded-2xl border border-brand/60 bg-white p-4 text-left shadow-sm lg:block">
+					<div class="flex gap-3">
+						<span class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-brand-soft text-brand">
+							<svg viewBox="0 0 100 100" class="size-4"><use href="#b-receipt" /></svg>
+						</span>
+						<div>
+							<p class="text-[0.8rem] font-semibold">Booked in ERPNext</p>
+							<p class="mt-0.5 text-[0.7rem] leading-snug text-ink-soft">Sales Order, invoice and payment entry, the moment the shopper pays.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="absolute top-[132px] left-[48px] hidden w-[17.5rem] gap-1.5 rounded-2xl bg-brand p-1.5 shadow-lg lg:flex">
+					<div class="flex-1 rounded-xl bg-white p-4 text-left">
+						<div class="flex items-center justify-between">
+							<p class="text-[0.72rem] text-ink-soft">New order</p>
+							<span class="rounded-md bg-emerald-50 px-1.5 py-0.5 text-[0.65rem] font-semibold text-emerald-700">Paid</span>
+						</div>
+						<p class="font-display mt-1 text-2xl">#SO-01042</p>
+						<div class="mt-3 flex items-center gap-2.5 border-t border-line pt-3">
+							<img src="assets/product-checkered-shirt.webp" alt="" width="160" height="160" class="size-10 rounded-md object-cover" />
+							<div class="min-w-0 flex-1">
+								<p class="truncate text-[0.78rem] font-semibold">Checkered slim shirt</p>
+								<p class="text-[0.68rem] text-ink-soft">Navy · M · 1</p>
+							</div>
+							<p class="text-[0.85rem] font-semibold">₹2,599</p>
+						</div>
+						<p class="mt-3 text-[0.68rem] text-ink-soft">via Razorpay · UPI</p>
+					</div>
+				</div>
+
+				<div class="relative flex gap-2 rounded-3xl bg-teal p-2 shadow-xl lg:absolute lg:top-[146px] lg:left-[500px] lg:w-[440px]">
+					<div class="relative aspect-[350/412] w-1/2 overflow-hidden rounded-2xl bg-lavender">
+						<img src="assets/feature-storefront-home-phone.webp" alt="" class="absolute top-[-127.4%] left-[-14.29%] w-[171.4%] max-w-none" />
+					</div>
+					<div class="flex w-1/2 flex-col rounded-2xl bg-white p-4 text-left sm:p-5">
+						<svg viewBox="0 0 100 100" class="size-7 text-ink"><use href="#b-coin" /></svg>
+						<p class="mt-3 text-[0.75rem] text-ink-soft">Revenue today</p>
+						<p class="font-display text-3xl">₹48,210</p>
+						<p class="mt-1 text-[0.7rem] font-semibold text-emerald-700">+18% on yesterday</p>
+						<svg viewBox="0 0 120 40" class="mt-auto w-full" fill="none">
+							<path d="M0 32c12-2 18-12 30-12s16 10 28 8 16-20 30-22 20 6 32 2" class="stroke-teal" stroke-width="2.5" stroke-linecap="round" />
+							<path d="M0 36c14 0 20-6 34-6s18 4 30 2 20-10 32-10 16 4 24 2" class="stroke-sun" stroke-width="1.5" stroke-linecap="round" />
+						</svg>
+					</div>
+				</div>
+
+				<div class="relative mt-5 flex flex-wrap items-center justify-between gap-3 lg:contents">
+					<p class="flex items-center gap-2 text-left text-[0.75rem] lg:absolute lg:top-[330px] lg:left-[346px]">
+						<span class="size-2 shrink-0 rounded-full bg-ink"></span>
+						<span><span class="font-semibold">12 orders today</span><br /><span class="text-ink-soft">4 waiting to ship</span></span>
+					</p>
+					<p class="flex items-center gap-2 rounded-md border border-line bg-white px-3 py-1.5 text-[0.75rem] font-semibold shadow-sm lg:absolute lg:top-[62px] lg:left-[1050px]">
+						<span class="size-2 rounded-full bg-ink"></span>
+						3 low-stock variants
+					</p>
+				</div>
+
+				<div class="absolute top-[104px] right-[80px] hidden w-60 rounded-2xl bg-violet p-1.5 shadow-lg lg:block">
+					<div class="rounded-xl bg-white p-4 text-left">
+						<div class="flex items-center justify-between">
+							<p class="text-[0.72rem] text-ink-soft">Shipment</p>
+							<svg viewBox="0 0 100 100" class="size-5 text-violet"><use href="#b-truck" /></svg>
+						</div>
+						<p class="font-display text-xl leading-tight">Out for delivery</p>
+						<div class="mt-3 flex items-center gap-1.5">
+							<span class="h-1.5 flex-1 rounded-full bg-violet"></span>
+							<span class="h-1.5 flex-1 rounded-full bg-violet"></span>
+							<span class="h-1.5 flex-1 rounded-full bg-violet"></span>
+							<span class="h-1.5 flex-1 rounded-full bg-lavender"></span>
+						</div>
+						<p class="mt-2.5 text-[0.68rem] text-ink-soft">Shiprocket · live tracking</p>
+					</div>
+				</div>
+
+				<div class="absolute top-[282px] left-[990px] hidden w-64 rounded-2xl border border-brand/60 bg-white p-4 text-left shadow-sm lg:block">
+					<div class="flex gap-3">
+						<span class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-lavender text-[0.7rem] font-bold text-violet">NM</span>
+						<div>
+							<p class="text-[0.8rem] font-semibold">Review to publish</p>
+							<p class="mt-0.5 text-[0.7rem] leading-snug text-ink-soft">★★★★★ “Fits perfectly, fast delivery to Dubai.”</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mx-auto max-w-7xl px-4 pt-12 pb-16 sm:px-8 lg:pt-4 lg:pb-24">
 			<div
-				class="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border border-line bg-white shadow-[0_30px_80px_-30px_rgba(80,40,10,0.35)]"
+				class="relative overflow-hidden rounded-[var(--radius-panel)] bg-ink"
 				x-data="{ withSound: false }"
 			>
 				<video x-ref="film" class="block aspect-video w-full" src="assets/commera-film.mp4" poster="assets/commera-film-poster.jpg" autoplay muted loop playsinline :controls="withSound" aria-label="Commera product film"></video>
 				<button
 					x-show="!withSound"
 					@click="withSound = true; $refs.film.loop = false; $refs.film.muted = false; $refs.film.currentTime = 0; $refs.film.play()"
-					class="group absolute inset-0 flex items-end justify-start p-2.5 sm:p-6"
+					class="group absolute inset-0 flex items-center justify-center p-3 sm:items-end sm:justify-start sm:p-7"
 					aria-label="Play the film from the start with sound"
 				>
-					<span class="flex items-center gap-1.5 rounded-md bg-ink/80 px-2 py-1 text-xs font-semibold sm:gap-2 sm:px-3 sm:py-2 sm:text-sm text-white backdrop-blur group-hover:bg-ink">
+					<span class="grid size-16 place-items-center rounded-full bg-white/90 text-brand shadow-lg backdrop-blur sm:hidden group-active:scale-95">
+						<svg viewBox="0 0 24 24" class="ms-1 size-7" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>
+					</span>
+					<span class="hidden items-center gap-1.5 rounded-md bg-white/90 px-2.5 py-1.5 text-xs font-semibold text-ink backdrop-blur sm:flex sm:gap-2 sm:px-3.5 sm:py-2 sm:text-sm group-hover:bg-white">
 						<svg viewBox="0 0 24 24" class="size-3.5 sm:size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
 						Click for sound
 					</span>
 				</button>
 			</div>
-
-			<ul class="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-x-5 gap-y-2 text-xs font-medium text-ink-soft sm:mt-12 sm:gap-x-8 sm:gap-y-3 sm:text-sm">
-				<li>Self-hosted on Frappe Bench</li>
-				<li>Razorpay · Stripe · Telr · Tabby · COD</li>
-				<li>Shiprocket · AfterShip</li>
-				<li>Bilingual, RTL-ready storefront</li>
-			</ul>
-		</section>
-	</div>
-
-	<section id="features" class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-10 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-2">
-		<div class="overflow-hidden rounded-2xl border border-line shadow-[0_30px_80px_-30px_rgba(80,40,10,0.35)]">
-			<img src="assets/storefront.webp" alt="A Commera storefront with a summer fashion theme" width="1400" height="706" loading="lazy" class="w-full" />
-		</div>
-		<div>
-			<p class="text-sm font-semibold tracking-wide text-brand-deep uppercase">Storefront</p>
-			<h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Fast pages your shoppers can find.</h2>
-			<p class="mt-5 text-lg text-ink-soft">Server-rendered with Jinja, Tailwind and Alpine. There's no app bundle between a shopper and a product page.</p>
-			<ul class="mt-6 space-y-3 text-ink-soft">
-				<li><span class="font-semibold text-ink">Themes without forking.</span> A theme can restyle any page, checkout included.</li>
-				<li><span class="font-semibold text-ink">Bilingual and RTL-ready.</span> English and Arabic from the URL, with right-to-left layout throughout.</li>
-				<li><span class="font-semibold text-ink">Built for search.</span> Sitemap, per-page metadata, <code class="font-mono text-sm">llms.txt</code> and generated Open Graph images.</li>
-			</ul>
 		</div>
 	</section>
 
-	<section class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-10 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-2">
-		<div class="lg:order-2">
-			<div class="overflow-hidden rounded-2xl border border-line shadow-[0_30px_80px_-30px_rgba(80,40,10,0.35)]">
-				<img src="assets/dashboard.webp" alt="The Commera merchant dashboard overview" width="1400" height="874" loading="lazy" class="w-full" />
+	<section id="storefront" class="scroll-mt-20 bg-mist py-16 sm:py-24">
+		<div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-8 lg:grid-cols-[5fr_7fr]">
+			<div>
+				<h2 class="font-display text-4xl sm:text-5xl">Fast pages your shoppers can find</h2>
+				<p class="mt-5 text-lg text-ink/75">Server-rendered with Jinja, Tailwind and Alpine. There's no app bundle between a shopper and a product page.</p>
+				<a href="https://uat.commera.app" class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 font-semibold text-white hover:bg-brand-deep sm:w-auto">
+					<svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true"><path d="M3 5.5v13l9-6.5zM12 5.5v13l9-6.5z" /></svg>
+					Visit the demo store
+				</a>
 			</div>
-		</div>
-		<div>
-			<p class="text-sm font-semibold tracking-wide text-brand-deep uppercase">Merchant dashboard</p>
-			<h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Run the shop without opening Desk.</h2>
-			<p class="mt-5 text-lg text-ink-soft">A Vue 3 and Frappe UI app at <code class="font-mono text-base">/commera</code>. It speaks products, collections and orders, not warehouses and naming series.</p>
-			<ul class="mt-6 space-y-3 text-ink-soft">
-				<li><span class="font-semibold text-ink">Orders.</span> Unfulfilled, unpaid, open and closed, with payment and fulfilment state on each.</li>
-				<li><span class="font-semibold text-ink">Products.</span> Variants, pricing, stock, bulk publishing and bulk image upload.</li>
-				<li><span class="font-semibold text-ink">Customers and reviews.</span> Lifetime spend per customer, and reviews you publish yourself.</li>
-				<li><span class="font-semibold text-ink">Analytics.</span> Revenue, inventory and a first-party storefront funnel.</li>
-			</ul>
+
+			<div class="grid gap-2 rounded-3xl bg-brand p-2 sm:grid-cols-[7fr_5fr]">
+				<div class="overflow-hidden rounded-2xl bg-white">
+					<img src="assets/storefront-card.webp" alt="A Commera storefront with a summer fashion theme" width="1400" height="1108" loading="lazy" class="size-full object-cover object-top" />
+				</div>
+				<div class="grid gap-2">
+					<div class="rounded-2xl bg-white p-4">
+						<svg viewBox="0 0 100 100" class="size-6 text-ink" aria-hidden="true"><use href="#b-awning" /></svg>
+						<p class="mt-2 text-xs text-ink-soft">Themes without forking</p>
+						<p class="font-display mt-1 text-lg leading-snug">A theme can restyle any page, checkout included.</p>
+					</div>
+					<div class="grid grid-cols-2 gap-2">
+						<div class="rounded-2xl bg-white p-4">
+							<svg viewBox="0 0 100 100" class="size-5 text-ink" aria-hidden="true"><use href="#b-bag" /></svg>
+							<p class="mt-2 text-xs text-ink-soft">Bilingual and RTL-ready</p>
+							<div class="mt-3 flex flex-wrap gap-1">
+								<span class="rounded-md border border-line px-1.5 py-0.5 text-[0.7rem] font-medium">English</span>
+								<span class="rounded-md border border-line px-1.5 py-0.5 text-[0.7rem] font-medium">العربية</span>
+							</div>
+						</div>
+						<div class="rounded-2xl bg-white p-4">
+							<svg viewBox="0 0 100 100" class="size-5 text-ink" aria-hidden="true"><use href="#b-tag" /></svg>
+							<p class="mt-2 text-xs text-ink-soft">Built for search</p>
+							<div class="mt-3 flex flex-wrap gap-1">
+								<span class="rounded-md border border-line px-1.5 py-0.5 text-[0.7rem] font-medium">Sitemap</span>
+								<span class="rounded-md border border-line px-1.5 py-0.5 font-mono text-[0.65rem]">llms.txt</span>
+								<span class="rounded-md border border-line px-1.5 py-0.5 text-[0.7rem] font-medium">OG images</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	<section id="integrations" class="mt-10 bg-ink py-14 text-white sm:mt-16 sm:py-24" x-data="{ tab: 'payments' }">
-		<div class="mx-auto max-w-6xl px-4 sm:px-6">
-			<div class="max-w-2xl">
-				<p class="text-sm font-semibold tracking-wide text-brand uppercase">Integrations</p>
-				<h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Payments, shipping and analytics, built in.</h2>
-				<p class="mt-5 text-lg text-white/65">Switch each provider on from the dashboard. Every one keeps its own keys.</p>
+	<section id="dashboard" class="relative scroll-mt-20 overflow-hidden bg-butter py-16 sm:py-24">
+		<svg viewBox="0 0 100 100" class="absolute top-24 -left-16 hidden size-48 -rotate-12 text-sun/60 lg:block" aria-hidden="true"><use href="#a-parcel" /></svg>
+		<svg viewBox="0 0 100 100" class="absolute -right-14 bottom-20 hidden size-44 rotate-12 text-sun/60 lg:block" aria-hidden="true"><use href="#a-coin" /></svg>
+		<div class="relative mx-auto max-w-7xl px-4 sm:px-8">
+			<h2 class="font-display max-w-3xl text-4xl text-balance sm:mx-auto sm:text-center sm:text-5xl">Run the shop without opening Desk</h2>
+
+			<div class="mt-12 grid items-center gap-10 rounded-[var(--radius-panel)] bg-white p-6 sm:p-10 lg:grid-cols-[4fr_7fr]">
+				<div>
+					<h3 class="font-display text-3xl">Merchant dashboard</h3>
+					<p class="mt-4 text-lg text-ink/70">A Vue 3 and Frappe UI app at <code class="font-mono text-base text-ink">/commera</code>. It speaks products, collections and orders, not warehouses and naming series.</p>
+					<div class="mt-6 flex flex-wrap gap-2">
+						<span class="rounded-md bg-brand-soft px-3.5 py-2 font-medium text-brand-deep">Products</span>
+						<span class="rounded-md bg-brand-soft px-3.5 py-2 font-medium text-brand-deep">Collections</span>
+						<span class="rounded-md bg-brand-soft px-3.5 py-2 font-medium text-brand-deep">Orders</span>
+					</div>
+				</div>
+				<div class="rounded-2xl bg-[#171717] p-2 sm:p-3">
+					<img src="assets/dashboard.webp" alt="The Commera merchant dashboard overview" width="1400" height="874" loading="lazy" class="w-full rounded-lg" />
+				</div>
 			</div>
 
-			<div class="mt-10 flex gap-2 overflow-x-auto" role="tablist">
-				<button role="tab" :aria-selected="tab === 'payments'" @click="tab = 'payments'" :class="tab === 'payments' ? 'bg-white text-ink' : 'bg-white/10 text-white hover:bg-white/15'" class="shrink-0 rounded-md px-4 py-2 text-sm font-semibold">Payments</button>
-				<button role="tab" :aria-selected="tab === 'shipping'" @click="tab = 'shipping'" :class="tab === 'shipping' ? 'bg-white text-ink' : 'bg-white/10 text-white hover:bg-white/15'" class="shrink-0 rounded-md px-4 py-2 text-sm font-semibold">Shipping</button>
-				<button role="tab" :aria-selected="tab === 'analytics'" @click="tab = 'analytics'" :class="tab === 'analytics' ? 'bg-white text-ink' : 'bg-white/10 text-white hover:bg-white/15'" class="shrink-0 rounded-md px-4 py-2 text-sm font-semibold">Analytics</button>
+			<div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+				<article class="flex flex-col rounded-[var(--radius-panel)] bg-white p-6">
+					<h3 class="font-display text-2xl">Orders</h3>
+					<p class="mt-2 text-ink/65">Unfulfilled, unpaid, open and closed, with payment and fulfilment state on each.</p>
+					<div class="mt-auto flex flex-wrap gap-2 pt-6 sm:block sm:space-y-2" aria-hidden="true">
+						<p class="flex w-fit items-center gap-2 rounded-md bg-brand-soft px-2.5 py-1.5 text-sm font-semibold text-brand-deep"><span class="size-2 rounded-full bg-brand"></span>Unfulfilled</p>
+						<p class="flex w-fit items-center gap-2 rounded-md bg-lavender px-2.5 py-1.5 text-sm font-semibold text-violet"><span class="size-2 rounded-full border-2 border-dashed border-violet"></span>Unpaid</p>
+						<p class="flex w-fit items-center gap-2 rounded-md bg-mint px-2.5 py-1.5 text-sm font-semibold text-emerald-700"><span class="size-2 rounded-full bg-teal"></span>Closed</p>
+					</div>
+				</article>
+				<article class="flex flex-col rounded-[var(--radius-panel)] bg-white p-6">
+					<h3 class="font-display text-2xl">Products</h3>
+					<p class="mt-2 text-ink/65">Variants, pricing, stock, bulk publishing and bulk image upload.</p>
+					<div class="mt-auto pt-6" aria-hidden="true">
+						<div class="flex gap-1.5">
+							<span class="rounded-md border border-ink px-2.5 py-1 text-sm font-semibold">S</span>
+							<span class="rounded-md border border-line px-2.5 py-1 text-sm">M</span>
+							<span class="rounded-md border border-line px-2.5 py-1 text-sm">L</span>
+							<span class="rounded-md border border-line px-2.5 py-1 text-sm text-ink/40 line-through">XL</span>
+						</div>
+						<div class="mt-3 h-2 overflow-hidden rounded-full bg-butter"><div class="h-full w-2/3 rounded-full bg-sun"></div></div>
+						<p class="mt-1.5 text-xs text-ink-soft">42 in stock</p>
+					</div>
+				</article>
+				<article class="flex flex-col rounded-[var(--radius-panel)] bg-white p-6">
+					<h3 class="font-display text-2xl">Customers and reviews</h3>
+					<p class="mt-2 text-ink/65">Lifetime spend per customer, and reviews you publish yourself.</p>
+					<div class="mt-auto pt-6" aria-hidden="true">
+						<div class="relative w-full rounded-2xl rounded-bl-none bg-mist sm:w-fit px-3.5 py-2.5 text-sm">
+							<p class="text-sun">★★★★★</p>
+							<p class="mt-0.5">Lovely fabric, will order again.</p>
+						</div>
+						<div class="mt-2 flex -space-x-2">
+							<span class="grid size-8 place-items-center rounded-full border-2 border-white bg-brand text-[0.65rem] font-bold text-white">AK</span>
+							<span class="grid size-8 place-items-center rounded-full border-2 border-white bg-teal text-[0.65rem] font-bold text-white">RS</span>
+							<span class="grid size-8 place-items-center rounded-full border-2 border-white bg-violet text-[0.65rem] font-bold text-white">NM</span>
+						</div>
+					</div>
+				</article>
+				<article class="flex flex-col overflow-hidden rounded-[var(--radius-panel)] bg-white p-6">
+					<h3 class="font-display text-2xl">Analytics</h3>
+					<p class="mt-2 text-ink/65">Revenue, inventory and a first-party storefront funnel.</p>
+					<div class="-mx-6 mt-auto pt-10" aria-hidden="true"><div class="relative">
+						<svg viewBox="0 0 260 70" class="block w-full" fill="none">
+							<path d="M0 50c30 0 40-20 70-22s40 20 70 18 40-40 70-40 30 20 50 16" stroke="var(--color-teal)" stroke-width="2.5" />
+							<path d="M0 62c30 0 50-10 80-10s40 8 70 6 50-14 110-12" stroke="var(--color-sun)" stroke-width="2" />
+							<circle cx="70" cy="28" r="4" fill="var(--color-teal)" />
+						</svg>
+						<p class="absolute top-[40%] left-[27%] -mt-3 -translate-x-1/2 -translate-y-full rounded-md bg-brand px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-white">₹1.2L revenue</p>
+					</div></div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section id="journey" class="relative h-svh overflow-x-auto overflow-y-hidden bg-butter-soft">
+		<div class="pointer-events-none absolute inset-0 bg-[radial-gradient(var(--color-ink)_1.2px,transparent_1.2px)] bg-[length:28px_28px] opacity-15"></div>
+		<div class="pointer-events-none sticky left-0 z-10 w-fit max-w-lg px-4 pt-24 sm:px-8 sm:pt-28">
+			<h2 class="font-display text-4xl sm:text-5xl">From checkout to the doorstep</h2>
+			<p class="mt-3 text-lg text-ink/70">One order, tracked the whole way, with the paperwork done in ERPNext.</p>
+		</div>
+		<div id="journey-world" class="absolute inset-y-0 left-0 flex w-max items-end pr-[6vw] pb-[6svh] pl-[4vw]">
+			<svg id="journey-map" viewBox="0 0 2500 600" class="h-[62svh] w-auto overflow-visible" aria-labelledby="journey-summary" role="img">
+				<title id="journey-summary">Order placed, paid, booked in ERPNext, packed, shipped and delivered</title>
+				<path d="M200 330C380 120 480 120 640 300S980 520 1180 330 1520 110 1720 300 2080 500 2300 320" fill="none" stroke="var(--color-ink)" stroke-opacity="0.2" stroke-width="6" stroke-dasharray="4 14" stroke-linecap="round" />
+				<path id="journey-road" d="M200 330C380 120 480 120 640 300S980 520 1180 330 1520 110 1720 300 2080 500 2300 320" fill="none" stroke="var(--color-brand)" stroke-width="10" stroke-linecap="round" />
+				<g id="journey-pins"></g>
+				<g id="journey-van" transform="translate(2300 320)">
+					<circle r="40" fill="white" stroke="var(--color-ink)" stroke-width="4" />
+					<use href="#b-truck" x="-24" y="-24" width="48" height="48" class="text-ink" />
+				</g>
+			</svg>
+		</div>
+	</section>
+
+	<section id="integrations" class="scroll-mt-20 bg-butter-soft py-16 sm:py-24" x-data="integrationTabs">
+		<div class="mx-auto max-w-7xl px-4 sm:px-8">
+			<h2 class="font-display max-w-3xl text-4xl text-balance sm:mx-auto sm:text-center sm:text-5xl">Payments, shipping and analytics, built in</h2>
+			<p class="mt-4 max-w-xl text-lg text-ink/70 sm:mx-auto sm:text-center">Switch each provider on from the dashboard. Every one keeps its own keys.</p>
+
+			<div class="relative mt-10 flex w-full gap-1 overflow-x-auto rounded-xl bg-white/70 p-1.5 sm:mx-auto sm:w-fit sm:max-w-full" role="tablist">
+				<span x-ref="indicator" class="absolute top-1.5 bottom-1.5 left-0 w-0 rounded-md bg-sun [view-transition-name:integrations-indicator]" aria-hidden="true"></span>
+				<button role="tab" x-ref="payments" :aria-selected="tab === 'payments'" @click="select('payments')" :class="tab === 'payments' ? 'text-ink' : 'text-ink-soft hover:text-ink'" class="relative flex-1 shrink-0 [view-transition-name:integrations-tab-payments] rounded-md px-5 py-2.5 text-base font-medium sm:flex-none sm:px-8">Payments</button>
+				<button role="tab" x-ref="shipping" :aria-selected="tab === 'shipping'" @click="select('shipping')" :class="tab === 'shipping' ? 'text-ink' : 'text-ink-soft hover:text-ink'" class="relative flex-1 shrink-0 [view-transition-name:integrations-tab-shipping] rounded-md px-5 py-2.5 text-base font-medium sm:flex-none sm:px-8">Shipping</button>
+				<button role="tab" x-ref="analytics" :aria-selected="tab === 'analytics'" @click="select('analytics')" :class="tab === 'analytics' ? 'text-ink' : 'text-ink-soft hover:text-ink'" class="relative flex-1 shrink-0 [view-transition-name:integrations-tab-analytics] rounded-md px-5 py-2.5 text-base font-medium sm:flex-none sm:px-8">Analytics</button>
 			</div>
 
-			<div class="mt-8 grid items-start gap-10 lg:grid-cols-[5fr_7fr]">
+			<div class="mt-12 grid items-center gap-10 lg:grid-cols-[5fr_7fr]">
+				<div x-ref="list" class="[view-transition-name:integrations-list]">
 				<dl x-show="tab === 'payments'" class="space-y-5">
-					<div><dt class="font-bold">Razorpay</dt><dd class="text-white/60">Cards, UPI, netbanking and wallets. India.</dd></div>
-					<div><dt class="font-bold">Stripe</dt><dd class="text-white/60">Cards and wallets, worldwide.</dd></div>
-					<div><dt class="font-bold">Telr</dt><dd class="text-white/60">Cards and local methods across the GCC.</dd></div>
-					<div><dt class="font-bold">Tabby</dt><dd class="text-white/60">Buy now, pay later in four instalments. MENA.</dd></div>
-					<div><dt class="font-bold">Cash on delivery</dt><dd class="text-white/60">Its own fee, a threshold that waives it, and the account it books to.</dd></div>
+					<div><dt class="font-display text-2xl">Razorpay</dt><dd class="mt-1 text-ink/65">Cards, UPI, netbanking and wallets. India.</dd></div>
+					<div><dt class="font-display text-2xl">Stripe</dt><dd class="mt-1 text-ink/65">Cards and wallets, worldwide.</dd></div>
+					<div><dt class="font-display text-2xl">Telr</dt><dd class="mt-1 text-ink/65">Cards and local methods across the GCC.</dd></div>
+					<div><dt class="font-display text-2xl">Tabby</dt><dd class="mt-1 text-ink/65">Buy now, pay later in four instalments. MENA.</dd></div>
+					<div><dt class="font-display text-2xl">Cash on delivery</dt><dd class="mt-1 text-ink/65">Its own fee, a threshold that waives it, and the account it books to.</dd></div>
 				</dl>
 				<dl x-show="tab === 'shipping'" x-cloak class="space-y-5">
-					<div><dt class="font-bold">Shiprocket</dt><dd class="text-white/60">Courier aggregator for domestic India, with pincode serviceability.</dd></div>
-					<div><dt class="font-bold">AfterShip</dt><dd class="text-white/60">Global labels and tracking across hundreds of carriers.</dd></div>
-					<div><dt class="font-bold">Delivery options</dt><dd class="text-white/60">Each carrier quotes live rates at checkout. You choose what shoppers pick from.</dd></div>
+					<div><dt class="font-display text-2xl">Shiprocket</dt><dd class="mt-1 text-ink/65">Courier aggregator for domestic India, with pincode serviceability.</dd></div>
+					<div><dt class="font-display text-2xl">AfterShip</dt><dd class="mt-1 text-ink/65">Global labels and tracking across hundreds of carriers.</dd></div>
+					<div><dt class="font-display text-2xl">Delivery options</dt><dd class="mt-1 text-ink/65">Each carrier quotes live rates at checkout. You choose what shoppers pick from.</dd></div>
 				</dl>
 				<dl x-show="tab === 'analytics'" x-cloak class="space-y-5">
-					<div><dt class="font-bold">Storefront tracking</dt><dd class="text-white/60">First-party. Powers the Storefront report, and nothing leaves your site.</dd></div>
-					<div><dt class="font-bold">Google Analytics 4</dt><dd class="text-white/60">Standard eCommerce events, read back into the dashboard.</dd></div>
-					<div><dt class="font-bold">Meta</dt><dd class="text-white/60">Pixel events, with counts read back next to your revenue.</dd></div>
+					<div><dt class="font-display text-2xl">Storefront tracking</dt><dd class="mt-1 text-ink/65">First-party. Powers the Storefront report, and nothing leaves your site.</dd></div>
+					<div><dt class="font-display text-2xl">Google Analytics 4</dt><dd class="mt-1 text-ink/65">Standard eCommerce events, read back into the dashboard.</dd></div>
+					<div><dt class="font-display text-2xl">Meta</dt><dd class="mt-1 text-ink/65">Pixel events, with counts read back next to your revenue.</dd></div>
 				</dl>
+				</div>
 
-				<div class="overflow-hidden rounded-xl">
-					<img x-show="tab === 'payments'" src="assets/payments.webp" alt="Payment provider settings in the Commera dashboard" width="1400" height="1101" loading="lazy" class="w-full" />
-					<img x-show="tab === 'shipping'" x-cloak src="assets/shipping.webp" alt="Shipping carrier settings in the Commera dashboard" width="1400" height="1101" loading="lazy" class="w-full" />
-					<img x-show="tab === 'analytics'" x-cloak src="assets/analytics.webp" alt="Analytics connection settings in the Commera dashboard" width="1400" height="1101" loading="lazy" class="w-full" />
+				<div x-ref="shot" class="order-first rounded-2xl bg-[#1f1f1f] p-2 shadow-[0_24px_60px_-30px_rgba(11,15,31,0.5)] sm:p-3 lg:order-none [view-transition-name:integrations-shot]">
+						<img x-show="tab === 'payments'" src="assets/payments.webp" alt="Payment provider settings in the Commera dashboard" width="1400" height="1101" loading="lazy" class="w-full rounded-lg" />
+						<img x-show="tab === 'shipping'" x-cloak src="assets/shipping.webp" alt="Shipping carrier settings in the Commera dashboard" width="1400" height="1101" loading="lazy" class="w-full rounded-lg" />
+						<img x-show="tab === 'analytics'" x-cloak src="assets/analytics.webp" alt="Analytics connection settings in the Commera dashboard" width="1400" height="1101" loading="lazy" class="w-full rounded-lg" />
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="onboarding" class="mx-auto max-w-6xl px-4 pt-14 sm:px-6 sm:pt-24" x-data="{ outcome: new URLSearchParams(location.search).get('onboarding') }">
-		<div class="grid gap-10 rounded-2xl border border-line bg-white p-6 sm:p-10 lg:grid-cols-2">
+	<section id="features" class="relative scroll-mt-20 overflow-hidden bg-white">
+		<div id="features-heading" class="mx-auto flex max-w-7xl items-end justify-between gap-6 px-4 pt-16 sm:px-8 sm:pt-24">
 			<div>
-				<p class="text-sm font-semibold tracking-wide text-brand-deep uppercase">Onboarding</p>
-				<h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Schedule an onboarding call.</h2>
-				<p class="mt-4 text-lg text-ink-soft">Leave your email and we'll set up a call to get your store running on Commera.</p>
+				<h2 class="font-display text-4xl sm:text-5xl">Everything in the box</h2>
+				<p class="mt-3 max-w-lg text-lg text-ink/70">Real screens from a Commera store, from the storefront to the ERPNext record behind every order.</p>
+			</div>
+			<p id="features-count" class="font-display hidden text-2xl text-ink/40 sm:block">01 / 08</p>
+		</div>
+		<div id="features-deck" class="flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pt-8 pb-12 max-sm:[scrollbar-width:none] sm:gap-5 sm:px-8 sm:py-14">
+			<article class="feature-card flex w-[82vw] shrink-0 snap-start flex-col gap-4 sm:snap-center overflow-hidden rounded-[var(--radius-panel)] bg-brand-soft p-5 shadow-[0_30px_80px_-40px_rgba(11,15,31,0.5)] sm:h-[66svh] sm:w-[38rem] sm:flex-row sm:items-center sm:gap-8 sm:p-8">
+				<div class="grid grid-cols-[auto_1fr] items-baseline gap-x-3 sm:block sm:flex-1"><p class="font-display text-3xl text-ink/20 sm:text-7xl">01</p><h3 class="font-display text-3xl sm:mt-4 sm:text-4xl">Storefront</h3><p class="col-span-2 mt-2 text-ink/70 sm:text-lg">Server-rendered pages your shoppers can find, in English and Arabic.</p></div>
+				<div class="mt-auto aspect-[390/844] w-full overflow-hidden rounded-2xl bg-cream p-2 shadow-[0_16px_40px_-20px_rgba(11,15,31,0.45)] ring-1 ring-ink/5 sm:mt-0 sm:h-full sm:w-auto sm:flex-none"><img src="assets/feature-storefront-home-phone.webp" alt="A Commera storefront home page" width="600" height="1298" loading="lazy" class="size-full rounded-lg object-cover object-top" /></div>
+			</article>
+			<article class="feature-card flex w-[82vw] shrink-0 snap-start flex-col gap-4 sm:snap-center overflow-hidden rounded-[var(--radius-panel)] bg-mint p-5 shadow-[0_30px_80px_-40px_rgba(11,15,31,0.5)] sm:h-[66svh] sm:w-[38rem] sm:flex-row sm:items-center sm:gap-8 sm:p-8">
+				<div class="grid grid-cols-[auto_1fr] items-baseline gap-x-3 sm:block sm:flex-1"><p class="font-display text-3xl text-ink/20 sm:text-7xl">02</p><h3 class="font-display text-3xl sm:mt-4 sm:text-4xl">Themes</h3><p class="col-span-2 mt-2 text-ink/70 sm:text-lg">Switch themes and edit their content from the dashboard.</p></div>
+				<div class="mt-auto aspect-[390/844] w-full overflow-hidden rounded-2xl bg-white p-2 shadow-[0_16px_40px_-20px_rgba(11,15,31,0.45)] ring-1 ring-ink/5 sm:mt-0 sm:h-full sm:w-auto sm:flex-none"><img src="assets/feature-theme-editor-phone.webp" alt="Theme settings in the Commera dashboard" width="600" height="1298" loading="lazy" class="size-full rounded-lg object-cover object-top" /></div>
+			</article>
+			<article class="feature-card flex w-[82vw] shrink-0 snap-start flex-col gap-4 sm:snap-center overflow-hidden rounded-[var(--radius-panel)] bg-lavender p-5 shadow-[0_30px_80px_-40px_rgba(11,15,31,0.5)] sm:h-[66svh] sm:w-[38rem] sm:flex-row sm:items-center sm:gap-8 sm:p-8">
+				<div class="grid grid-cols-[auto_1fr] items-baseline gap-x-3 sm:block sm:flex-1"><p class="font-display text-3xl text-ink/20 sm:text-7xl">03</p><h3 class="font-display text-3xl sm:mt-4 sm:text-4xl">Orders</h3><p class="col-span-2 mt-2 text-ink/70 sm:text-lg">Every step from confirmation to delivery, with payment and fulfilment on each order.</p></div>
+				<div class="mt-auto aspect-[390/844] w-full overflow-hidden rounded-2xl bg-white p-2 shadow-[0_16px_40px_-20px_rgba(11,15,31,0.45)] ring-1 ring-ink/5 sm:mt-0 sm:h-full sm:w-auto sm:flex-none"><img src="assets/feature-order-detail-phone.webp" alt="An order in the Commera dashboard with its delivery steps" width="600" height="1298" loading="lazy" class="size-full rounded-lg object-cover object-top" /></div>
+			</article>
+			<article class="feature-card flex w-[82vw] shrink-0 snap-start flex-col gap-4 sm:snap-center overflow-hidden rounded-[var(--radius-panel)] bg-butter p-5 shadow-[0_30px_80px_-40px_rgba(11,15,31,0.5)] sm:h-[66svh] sm:w-[38rem] sm:flex-row sm:items-center sm:gap-8 sm:p-8">
+				<div class="grid grid-cols-[auto_1fr] items-baseline gap-x-3 sm:block sm:flex-1"><p class="font-display text-3xl text-ink/20 sm:text-7xl">04</p><h3 class="font-display text-3xl sm:mt-4 sm:text-4xl">Products</h3><p class="col-span-2 mt-2 text-ink/70 sm:text-lg">Variants, pricing, photos and stock on one screen.</p></div>
+				<div class="mt-auto aspect-[390/844] w-full overflow-hidden rounded-2xl bg-white p-2 shadow-[0_16px_40px_-20px_rgba(11,15,31,0.45)] ring-1 ring-ink/5 sm:mt-0 sm:h-full sm:w-auto sm:flex-none"><img src="assets/feature-product-detail-phone.webp" alt="A product with its variants in the Commera dashboard" width="600" height="1298" loading="lazy" class="size-full rounded-lg object-cover object-top" /></div>
+			</article>
+			<article class="feature-card flex w-[82vw] shrink-0 snap-start flex-col gap-4 sm:snap-center overflow-hidden rounded-[var(--radius-panel)] bg-brand-soft p-5 shadow-[0_30px_80px_-40px_rgba(11,15,31,0.5)] sm:h-[66svh] sm:w-[38rem] sm:flex-row sm:items-center sm:gap-8 sm:p-8">
+				<div class="grid grid-cols-[auto_1fr] items-baseline gap-x-3 sm:block sm:flex-1"><p class="font-display text-3xl text-ink/20 sm:text-7xl">05</p><h3 class="font-display text-3xl sm:mt-4 sm:text-4xl">Inventory</h3><p class="col-span-2 mt-2 text-ink/70 sm:text-lg">On hand, committed and available for every variant, with stock you can receive.</p></div>
+				<div class="mt-auto aspect-[390/844] w-full overflow-hidden rounded-2xl bg-white p-2 shadow-[0_16px_40px_-20px_rgba(11,15,31,0.45)] ring-1 ring-ink/5 sm:mt-0 sm:h-full sm:w-auto sm:flex-none"><img src="assets/feature-inventory-phone.webp" alt="The stock list in the Commera dashboard" width="600" height="1298" loading="lazy" class="size-full rounded-lg object-cover object-top" /></div>
+			</article>
+			<article class="feature-card flex w-[82vw] shrink-0 snap-start flex-col gap-4 sm:snap-center overflow-hidden rounded-[var(--radius-panel)] bg-mint p-5 shadow-[0_30px_80px_-40px_rgba(11,15,31,0.5)] sm:h-[66svh] sm:w-[38rem] sm:flex-row sm:items-center sm:gap-8 sm:p-8">
+				<div class="grid grid-cols-[auto_1fr] items-baseline gap-x-3 sm:block sm:flex-1"><p class="font-display text-3xl text-ink/20 sm:text-7xl">06</p><h3 class="font-display text-3xl sm:mt-4 sm:text-4xl">Customers</h3><p class="col-span-2 mt-2 text-ink/70 sm:text-lg">Lifetime spend, how often they order and where they came from.</p></div>
+				<div class="mt-auto aspect-[390/844] w-full overflow-hidden rounded-2xl bg-white p-2 shadow-[0_16px_40px_-20px_rgba(11,15,31,0.45)] ring-1 ring-ink/5 sm:mt-0 sm:h-full sm:w-auto sm:flex-none"><img src="assets/feature-customer-detail-phone.webp" alt="A customer's spend and orders in the Commera dashboard" width="600" height="1298" loading="lazy" class="size-full rounded-lg object-cover object-top" /></div>
+			</article>
+			<article class="feature-card flex w-[82vw] shrink-0 snap-start flex-col gap-4 sm:snap-center overflow-hidden rounded-[var(--radius-panel)] bg-lavender p-5 shadow-[0_30px_80px_-40px_rgba(11,15,31,0.5)] sm:h-[66svh] sm:w-[38rem] sm:flex-row sm:items-center sm:gap-8 sm:p-8">
+				<div class="grid grid-cols-[auto_1fr] items-baseline gap-x-3 sm:block sm:flex-1"><p class="font-display text-3xl text-ink/20 sm:text-7xl">07</p><h3 class="font-display text-3xl sm:mt-4 sm:text-4xl">Analytics</h3><p class="col-span-2 mt-2 text-ink/70 sm:text-lg">Sessions, conversion and a first-party checkout funnel.</p></div>
+				<div class="mt-auto aspect-[390/844] w-full overflow-hidden rounded-2xl bg-white p-2 shadow-[0_16px_40px_-20px_rgba(11,15,31,0.45)] ring-1 ring-ink/5 sm:mt-0 sm:h-full sm:w-auto sm:flex-none"><img src="assets/feature-analytics-storefront-phone.webp" alt="Storefront analytics with a checkout funnel" width="600" height="1298" loading="lazy" class="size-full rounded-lg object-cover object-top" /></div>
+			</article>
+			<article class="feature-card flex w-[82vw] shrink-0 snap-start flex-col gap-4 sm:snap-center overflow-hidden rounded-[var(--radius-panel)] bg-butter p-5 shadow-[0_30px_80px_-40px_rgba(11,15,31,0.5)] sm:h-[66svh] sm:w-[38rem] sm:flex-row sm:items-center sm:gap-8 sm:p-8">
+				<div class="grid grid-cols-[auto_1fr] items-baseline gap-x-3 sm:block sm:flex-1"><p class="font-display text-3xl text-ink/20 sm:text-7xl">08</p><h3 class="font-display text-3xl sm:mt-4 sm:text-4xl">ERPNext underneath</h3><p class="col-span-2 mt-2 text-ink/70 sm:text-lg">Every order is a real Sales Order in ERPNext Desk.</p></div>
+				<div class="mt-auto aspect-[390/844] w-full overflow-hidden rounded-2xl bg-white p-2 shadow-[0_16px_40px_-20px_rgba(11,15,31,0.45)] ring-1 ring-ink/5 sm:mt-0 sm:h-full sm:w-auto sm:flex-none"><img src="assets/feature-desk-sales-order-phone.webp" alt="The same order as a Sales Order in ERPNext Desk" width="600" height="1298" loading="lazy" class="size-full rounded-lg object-cover object-top" /></div>
+			</article>
+		</div>
+	</section>
+
+	<section class="mx-auto max-w-7xl px-4 py-16 sm:px-8 sm:py-24">
+		<h2 class="font-display max-w-xl text-4xl sm:text-5xl">Yours to run, end to end</h2>
+		<div class="mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4">
+			<div class="grid grid-cols-[auto_1fr] gap-x-4 sm:block">
+				<svg viewBox="0 0 100 100" class="row-span-2 size-10 text-violet sm:size-14" aria-hidden="true"><use href="#b-receipt" /></svg>
+				<h3 class="font-display text-2xl tracking-normal sm:mt-6">Open source</h3>
+				<p class="mt-2 text-ink/65">The code is on GitHub. Read it, fork it, send a pull request.</p>
+			</div>
+			<div class="grid grid-cols-[auto_1fr] gap-x-4 sm:block">
+				<svg viewBox="0 0 100 100" class="row-span-2 size-10 text-teal sm:size-14" aria-hidden="true"><use href="#b-awning" /></svg>
+				<h3 class="font-display text-2xl tracking-normal sm:mt-6">Self-hosted on Frappe Bench</h3>
+				<p class="mt-2 text-ink/65">Install it like any other Frappe app, on your own server.</p>
+			</div>
+			<div class="grid grid-cols-[auto_1fr] gap-x-4 sm:block">
+				<svg viewBox="0 0 100 100" class="row-span-2 size-10 text-sun sm:size-14" aria-hidden="true"><use href="#b-parcel" /></svg>
+				<h3 class="font-display text-2xl tracking-normal sm:mt-6">ERPNext is the record</h3>
+				<p class="mt-2 text-ink/65">Stock, pricing, tax and accounts live in ERPNext. Nothing to sync.</p>
+			</div>
+			<div class="grid grid-cols-[auto_1fr] gap-x-4 sm:block">
+				<svg viewBox="0 0 100 100" class="row-span-2 size-10 text-brand sm:size-14" aria-hidden="true"><use href="#b-tag" /></svg>
+				<h3 class="font-display text-2xl tracking-normal sm:mt-6">Bilingual, RTL-ready</h3>
+				<p class="mt-2 text-ink/65">English and Arabic from the URL, with right-to-left layout throughout.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="onboarding" class="mx-auto max-w-7xl scroll-mt-20 px-4 sm:px-8" x-data="{ outcome: new URLSearchParams(location.search).get('onboarding') }">
+		<div class="relative grid items-center gap-10 overflow-hidden rounded-[var(--radius-panel)] bg-mint p-6 sm:p-12 lg:grid-cols-2">
+			<svg class="absolute inset-y-0 right-0 hidden h-full w-1/2 text-violet/40 lg:block" viewBox="0 0 600 400" fill="none" preserveAspectRatio="none" aria-hidden="true">
+				<path d="M40 0c20 120-30 260 40 400M260 0c-40 140 30 250-10 400M480 0c30 120-40 280 20 400M0 120c200 40 380-60 600 20M0 300c180-40 400 50 600-10" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 7" />
+			</svg>
+			<div class="relative">
+				<h2 class="font-display text-4xl sm:text-5xl">Schedule an onboarding call</h2>
+				<p class="mt-4 max-w-md text-lg text-ink/70">Leave your email and we'll set up a call to get your store running on Commera.</p>
 			</div>
 
-			<div>
-				<div x-show="outcome === 'thanks'" x-cloak class="rounded-md border border-line bg-cream p-5" role="status">
-					<p class="font-bold">Thanks, we've got your request.</p>
-					<p class="mt-1 text-ink-soft">We'll email you to find a time for the call.</p>
+			<div id="onboarding-card" class="relative rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+				<svg id="onboarding-parcel" viewBox="0 0 100 100" class="pointer-events-none absolute top-0 left-0 z-10 size-11 text-brand opacity-0" aria-hidden="true"><use href="#b-parcel" /></svg>
+				<div x-show="outcome === 'thanks'" x-cloak role="status">
+					<svg viewBox="0 0 48 48" class="mb-3 size-12 text-teal" fill="none" aria-hidden="true">
+						<circle id="onboarding-check-ring" cx="24" cy="24" r="21" stroke="currentColor" stroke-width="3" />
+						<path id="onboarding-check-mark" d="m15 25 6 6 12-13" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<p class="font-display text-2xl">Thanks, we've got your request.</p>
+					<p class="mt-2 text-ink-soft">We'll email you to find a time for the call.</p>
 				</div>
 
-				<form x-show="outcome !== 'thanks'" action="https://projects.bwh.tech/api/method/commera_onboarding_request" method="post" class="space-y-4">
-					<p x-show="outcome === 'invalid'" x-cloak class="rounded-md bg-cream px-4 py-3 text-sm font-semibold" role="alert">That email doesn't look right. Please check it and try again.</p>
+				<form id="onboarding-form" x-show="outcome !== 'thanks'" action="https://projects.bwh.tech/api/method/commera_onboarding_request" method="post" class="space-y-4">
+					<p x-show="outcome === 'invalid'" x-cloak class="rounded-md bg-brand-soft px-4 py-3 text-sm font-semibold text-brand-deep" role="alert">That email doesn't look right. Please check it and try again.</p>
 					<label class="block">
 						<span class="text-sm font-semibold">Work email</span>
-						<input type="email" name="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-ink" />
+						<input type="email" name="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-brand" />
 					</label>
 					<div class="grid gap-4 sm:grid-cols-2">
 						<label class="block">
 							<span class="text-sm font-semibold">Name</span>
-							<input type="text" name="full_name" autocomplete="name" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-ink" />
+							<input type="text" name="full_name" autocomplete="name" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-brand" />
 						</label>
 						<label class="block">
 							<span class="text-sm font-semibold">Company</span>
-							<input type="text" name="company" autocomplete="organization" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-ink" />
+							<input type="text" name="company" autocomplete="organization" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-brand" />
 						</label>
 					</div>
 					<label class="hidden" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
-					<button type="submit" class="w-full rounded-md border border-ink bg-ink px-5 py-2.5 font-semibold text-white hover:bg-black sm:w-auto">Book my call</button>
+					<button type="submit" id="onboarding-submit" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-deep sm:w-auto">
+						<svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true"><path d="M3 5.5v13l9-6.5zM12 5.5v13l9-6.5z" /></svg>
+						Book my call
+					</button>
 				</form>
 			</div>
 		</div>
 	</section>
 
-	<section class="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-24">
-		<h2 class="text-2xl font-extrabold tracking-tight sm:text-3xl">Questions</h2>
-		<div class="mt-8 divide-y divide-line border-y border-line">
-			<details class="group py-5">
-				<summary class="flex cursor-pointer list-none items-center justify-between font-semibold">Do I need ERPNext?<span class="text-ink-soft group-open:rotate-45">+</span></summary>
-				<p class="mt-3 text-ink-soft">Yes. Commera is a Frappe app that runs on top of ERPNext, which stays the system of record for stock, pricing, tax and accounts.</p>
-			</details>
-			<details class="group py-5">
-				<summary class="flex cursor-pointer list-none items-center justify-between font-semibold">Is it free?<span class="text-ink-soft group-open:rotate-45">+</span></summary>
-				<p class="mt-3 text-ink-soft">The code is open on GitHub and you host it yourself, like any other Frappe app. Payment and shipping providers charge their own fees.</p>
-			</details>
-			<details class="group py-5">
-				<summary class="flex cursor-pointer list-none items-center justify-between font-semibold">Can I use my own design?<span class="text-ink-soft group-open:rotate-45">+</span></summary>
-				<p class="mt-3 text-ink-soft">Yes. Themes are data plus a template folder, and a theme can override any page the app ships, so you restyle without forking.</p>
-			</details>
-			<details class="group py-5">
-				<summary class="flex cursor-pointer list-none items-center justify-between font-semibold">Which countries does it support?<span class="text-ink-soft group-open:rotate-45">+</span></summary>
-				<p class="mt-3 text-ink-soft">Payments cover India (Razorpay), the GCC and MENA (Telr, Tabby) and worldwide cards (Stripe). Shipping covers India (Shiprocket) and global carriers (AfterShip).</p>
-			</details>
+	<section id="questions" class="mx-auto max-w-7xl scroll-mt-20 px-4 py-16 sm:px-8 sm:py-24">
+		<div class="rounded-[var(--radius-panel)] bg-mist px-5 py-12 sm:px-12 sm:py-16">
+			<h2 class="font-display text-4xl sm:text-center sm:text-5xl">Questions</h2>
+			<div class="mx-auto mt-10 max-w-3xl space-y-3">
+				<details class="group rounded-2xl bg-white px-6 py-5">
+					<summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">Do I need ERPNext?<span class="grid size-7 shrink-0 place-items-center rounded-full bg-brand-soft text-brand-deep transition-transform duration-300 group-open:rotate-45">+</span></summary>
+					<p class="faq-answer overflow-hidden pt-3 text-ink/70">Yes. Commera is a Frappe app that runs on top of ERPNext, which stays the system of record for stock, pricing, tax and accounts.</p>
+				</details>
+				<details class="group rounded-2xl bg-white px-6 py-5">
+					<summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">Is it free?<span class="grid size-7 shrink-0 place-items-center rounded-full bg-brand-soft text-brand-deep transition-transform duration-300 group-open:rotate-45">+</span></summary>
+					<p class="faq-answer overflow-hidden pt-3 text-ink/70">The code is open on GitHub and you host it yourself, like any other Frappe app. Payment and shipping providers charge their own fees.</p>
+				</details>
+				<details class="group rounded-2xl bg-white px-6 py-5">
+					<summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">Can I use my own design?<span class="grid size-7 shrink-0 place-items-center rounded-full bg-brand-soft text-brand-deep transition-transform duration-300 group-open:rotate-45">+</span></summary>
+					<p class="faq-answer overflow-hidden pt-3 text-ink/70">Yes. Themes are data plus a template folder, and a theme can override any page the app ships, so you restyle without forking.</p>
+				</details>
+				<details class="group rounded-2xl bg-white px-6 py-5">
+					<summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">Which countries does it support?<span class="grid size-7 shrink-0 place-items-center rounded-full bg-brand-soft text-brand-deep transition-transform duration-300 group-open:rotate-45">+</span></summary>
+					<p class="faq-answer overflow-hidden pt-3 text-ink/70">Payments cover India (Razorpay), the GCC and MENA (Telr, Tabby) and worldwide cards (Stripe). Shipping covers India (Shiprocket) and global carriers (AfterShip).</p>
+				</details>
+			</div>
 		</div>
 	</section>
 
-	<footer class="border-t border-line">
-		<div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-ink-soft sm:flex-row sm:items-center sm:justify-between sm:px-6">
-			<div class="flex items-center gap-2.5">
-				<img src="assets/commera.svg" alt="" class="size-6" />
-				<span>Commera, by <a href="https://bwh.tech" class="font-semibold text-ink hover:underline">BWH Tech</a></span>
-			</div>
-			<div class="flex gap-6">
-				<a href="https://github.com/bwhtech/commera" class="hover:text-ink">GitHub</a>
-				<a href="https://uat.commera.app" class="hover:text-ink">Live demo</a>
-			</div>
+	<section class="bg-gradient-to-b from-white via-brand-soft/60 to-brand-soft px-4 pt-10 pb-20 text-center sm:px-8 sm:pb-28">
+		<h2 class="font-display mx-auto max-w-2xl text-4xl text-balance sm:text-6xl">Launch your store on ERPNext</h2>
+		<p class="mx-auto mt-5 max-w-lg text-lg text-ink/70">A storefront, a merchant dashboard, payments and shipping, in one open-source app.</p>
+		<div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+			<a href="https://uat.commera.app" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand px-6 py-3 text-lg font-semibold text-white hover:bg-brand-deep sm:w-auto">
+				<svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true"><path d="M3 5.5v13l9-6.5zM12 5.5v13l9-6.5z" /></svg>
+				Try the live demo
+			</a>
+			<a href="#onboarding" class="inline-flex w-full items-center justify-center rounded-md border border-brand/40 bg-white px-6 py-3 text-lg font-semibold text-brand-deep hover:border-brand sm:w-auto">Book a call</a>
 		</div>
+	</section>
+
+	<footer class="overflow-hidden bg-gradient-to-b from-ink to-[#2a160a] text-white" x-data>
+		<div class="mx-auto grid max-w-7xl gap-10 px-4 pt-16 pb-12 sm:px-8 sm:pt-20 md:grid-cols-[1fr_auto]">
+			<div>
+				<a href="#" class="flex items-center gap-3">
+					<img src="assets/commera.svg" alt="" class="size-10" />
+					<span class="font-display text-4xl">Commera</span>
+				</a>
+				<p class="mt-5 max-w-sm text-lg text-white/70">An open-source eCommerce platform with built-in ERP, by <a href="https://bwh.tech" class="font-semibold text-white hover:underline">BWH Tech</a>.</p>
+			</div>
+			<nav class="grid grid-cols-2 gap-x-16 gap-y-3 text-white/80">
+				<a href="#storefront" class="hover:text-white">Storefront</a>
+				<a href="https://github.com/bwhtech/commera" class="hover:text-white">GitHub</a>
+				<a href="#dashboard" class="hover:text-white">Dashboard</a>
+				<a href="https://uat.commera.app" class="hover:text-white">Live demo</a>
+				<a href="#integrations" class="hover:text-white">Integrations</a>
+				<a href="https://docs.bwh.tech/commera" class="hover:text-white">Docs</a>
+			</nav>
+		</div>
+		<div id="footer-ticker" class="relative overflow-hidden border-y border-dashed border-white/20 py-6">
+			<div id="footer-ticker-track" class="flex w-max items-center gap-10" aria-hidden="true">
+				<div id="footer-ticker-copy" class="flex items-center gap-10">
+						<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-cart" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Orders</span>
+						<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-coin" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Payments</span>
+						<svg viewBox="0 0 100 100" class="size-12 text-sun sm:size-14"><use href="#a-parcel" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Shipping</span>
+						<svg viewBox="0 0 100 100" class="size-12 text-violet sm:size-14"><use href="#a-tag" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Products</span>
+						<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-receipt" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Invoices</span>
+						<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-awning" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Storefront</span>
+				</div>
+				<div class="flex items-center gap-10">
+						<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-cart" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Orders</span>
+						<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-coin" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Payments</span>
+						<svg viewBox="0 0 100 100" class="size-12 text-sun sm:size-14"><use href="#a-parcel" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Shipping</span>
+						<svg viewBox="0 0 100 100" class="size-12 text-violet sm:size-14"><use href="#a-tag" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Products</span>
+						<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-receipt" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Invoices</span>
+						<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-awning" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Storefront</span>
+				</div>
+			</div>
+			<button type="button" id="footer-ticker-pause" aria-pressed="false" class="absolute top-1/2 right-3 hidden -translate-y-1/2 opacity-0 focus-visible:opacity-100 rounded-md bg-ink/80 px-3 py-1.5 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur hover:bg-ink focus-visible:outline-2 focus-visible:outline-brand">Pause</button>
+		</div>
+		<p class="py-6 text-center text-sm text-white/55">Commera, by BWH Tech</p>
 	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/MotionPathPlugin.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/Physics2DPlugin.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/DrawSVGPlugin.min.js"></script>
+	<script>
+		gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, Physics2DPlugin, DrawSVGPlugin);
+
+		document.addEventListener('alpine:init', () => {
+			Alpine.data('integrationTabs', () => ({
+				tab: 'payments',
+				init() {
+					this.$nextTick(() => this.refresh_indicator());
+					window.addEventListener('resize', () => this.refresh_indicator());
+				},
+				refresh_indicator() {
+					const button = this.$refs[this.tab];
+					gsap.set(this.$refs.indicator, { x: button.offsetLeft, width: button.offsetWidth });
+				},
+				async select(name) {
+					if (name === this.tab) return;
+					const update = async () => {
+						this.tab = name;
+						await this.$nextTick();
+						this.refresh_indicator();
+					};
+					if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return update();
+					if (document.startViewTransition) return document.startViewTransition(update);
+					const previous = { x: gsap.getProperty(this.$refs.indicator, 'x'), width: this.$refs.indicator.offsetWidth };
+					await update();
+					gsap.from(this.$refs.indicator, { ...previous, duration: 0.5, ease: 'power3.inOut' });
+					gsap.from(this.$refs.list, { opacity: 0, y: 18, duration: 0.45, ease: 'power3.out' });
+					gsap.from(this.$refs.shot, { opacity: 0, xPercent: 8, scale: 0.96, duration: 0.5, ease: 'power3.inOut' });
+				},
+			}));
+		});
+
+
+		const journeyStages = [
+			{ label: 'Order placed', glyph: 'b-cart', text: 'text-brand' },
+			{ label: 'Paid', glyph: 'b-coin', text: 'text-teal' },
+			{ label: 'Booked in ERPNext', glyph: 'b-receipt', text: 'text-violet' },
+			{ label: 'Packed', glyph: 'b-parcel', text: 'text-sun' },
+			{ label: 'Shipped', glyph: 'b-truck', text: 'text-brand' },
+			{ label: 'Delivered', glyph: 'b-home', text: 'text-teal' },
+		];
+		const journeyStops = journeyStages.map((stage, index) => index / (journeyStages.length - 1));
+
+		function add_journey_pins() {
+			const road = document.getElementById('journey-road');
+			const length = road.getTotalLength();
+			document.getElementById('journey-pins').innerHTML = journeyStages.map((stage, index) => {
+				const point = road.getPointAtLength(length * journeyStops[index]);
+				const above = index % 2 === 0;
+				const offset = above ? -130 : 130;
+				return `
+					<g transform="translate(${point.x} ${point.y})">
+						<line class="journey-stem" data-grows="${above ? 'up' : 'down'}" x2="0" y2="${offset * 0.6}" stroke="var(--color-ink)" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="3 6" />
+						<g class="journey-pin" transform="translate(0 ${offset})">
+							<circle r="44" fill="white" stroke="currentColor" stroke-width="4" class="${stage.text}" />
+							<use href="#${stage.glyph}" x="-24" y="-24" width="48" height="48" class="${stage.text}" />
+							<text y="${above ? -62 : 88}" text-anchor="middle" class="font-display" font-size="34" fill="var(--color-ink)">${stage.label}</text>
+						</g>
+					</g>`;
+			}).join('');
+		}
+
+		function add_journey_motion() {
+			const section = document.getElementById('journey');
+			const world = document.getElementById('journey-world');
+			const road = document.getElementById('journey-road');
+			const van = document.getElementById('journey-van');
+			const pins = gsap.utils.toArray('.journey-pin');
+			const stems = gsap.utils.toArray('.journey-stem');
+
+			gsap.set(section, { overflow: 'hidden' });
+			gsap.set(road, { drawSVG: '0%' });
+			gsap.set(pins, { scale: 0, transformOrigin: '50% 50%' });
+			gsap.set(stems, { scaleY: 0, transformOrigin: (index, stem) => (stem.dataset.grows === 'up' ? '50% 100%' : '50% 0%') });
+
+			const distance = () => world.scrollWidth - window.innerWidth;
+			const timeline = gsap.timeline({
+				defaults: { ease: 'none' },
+				scrollTrigger: { trigger: section, pin: true, scrub: 1, end: () => `+=${window.innerHeight * 4}`, invalidateOnRefresh: true, refreshPriority: 1 },
+			});
+			timeline.to(world, { x: () => -distance(), duration: 6 }, 0);
+			timeline.to(road, { drawSVG: '100%', duration: 6 }, 0);
+			timeline.to(van, { motionPath: { path: road, align: road, alignOrigin: [0.5, 0.5] }, duration: 6 }, 0);
+			journeyStops.forEach((stop, index) => {
+				timeline.to(stems[index], { scaleY: 1, duration: 0.15, ease: 'power2.out' }, Math.max(0, stop * 6 - 0.15));
+				timeline.to(pins[index], { scale: 1, duration: 0.35, ease: 'back.out(2.5)' }, Math.max(0, stop * 6));
+			});
+			timeline.to({}, { duration: 0.6 });
+		}
+
+		function add_feature_deck_motion() {
+			const section = document.getElementById('features');
+			const heading = document.getElementById('features-heading');
+			const deck = document.getElementById('features-deck');
+			const count = document.getElementById('features-count');
+			const cards = gsap.utils.toArray('.feature-card');
+			let current = 0;
+
+			gsap.set(section, { height: '100svh' });
+			gsap.set(deck, { display: 'block', position: 'relative', overflow: 'visible', padding: 0, height: () => window.innerHeight - heading.offsetHeight });
+			gsap.set(cards, { position: 'absolute', top: '50%', left: '50%', xPercent: -50, yPercent: -50 });
+			gsap.set(cards.slice(1), { x: '110vw', rotationY: -45, rotation: 10, transformPerspective: 1400 });
+
+			const timeline = gsap.timeline({
+				scrollTrigger: {
+					trigger: section,
+					pin: true,
+					scrub: 1,
+					end: () => `+=${window.innerHeight * cards.length * 0.6}`,
+					invalidateOnRefresh: true,
+					onUpdate: (self) => {
+						const index = Math.min(cards.length - 1, Math.floor(self.progress * cards.length));
+						if (index === current) return;
+						current = index;
+						count.textContent = `${String(index + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
+					},
+				},
+			});
+			cards.forEach((card, index) => {
+				if (index === 0) return;
+				const at = index - 0.2;
+				timeline.to(cards[index - 1], { x: '-38vw', scale: 0.7, rotation: -8 + (index % 3) * 4, opacity: 0.9, duration: 1, ease: 'power2.inOut' }, at);
+				timeline.to(card, { x: 0, rotationY: 0, rotation: 0, duration: 1, ease: 'power3.out' }, at);
+			});
+			timeline.to({}, { duration: 0.5 });
+		}
+
+		function add_faq_motion() {
+			document.querySelectorAll('#questions details').forEach((item) => {
+				const answer = item.querySelector('.faq-answer');
+				item.querySelector('summary').addEventListener('click', (event) => {
+					event.preventDefault();
+					if (item.open) {
+						gsap.to(answer, { height: 0, opacity: 0, duration: 0.3, ease: 'power2.inOut', onComplete: () => { item.open = false; gsap.set(answer, { clearProps: 'height,opacity' }); } });
+						return;
+					}
+					item.open = true;
+					gsap.fromTo(answer, { height: 0, opacity: 0 }, { height: 'auto', opacity: 1, duration: 0.4, ease: 'power3.out', clearProps: 'height' });
+				});
+			});
+		}
+
+		function add_onboarding_motion() {
+			const card = document.getElementById('onboarding-card');
+			const form = document.getElementById('onboarding-form');
+			const submit = document.getElementById('onboarding-submit');
+			const parcel = document.getElementById('onboarding-parcel');
+			let sending = false;
+
+			if (new URLSearchParams(location.search).get('onboarding') === 'thanks') {
+				gsap.timeline({ delay: 0.3 })
+					.fromTo('#onboarding-check-ring', { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.6, ease: 'power2.inOut' })
+					.fromTo('#onboarding-check-mark', { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.4, ease: 'power2.out' }, '-=0.1');
+			}
+
+			const on_submit = (event) => {
+				event.preventDefault();
+				if (sending) return;
+				sending = true;
+				const card_box = card.getBoundingClientRect();
+				const button_box = submit.getBoundingClientRect();
+				gsap.set(parcel, {
+					x: button_box.left - card_box.left + button_box.width / 2 - 22,
+					y: button_box.top - card_box.top + button_box.height / 2 - 22,
+					rotation: 0,
+					scale: 0,
+					opacity: 1,
+				});
+				gsap.timeline({ onComplete: () => form.submit() })
+					.to(submit, { scaleX: 0.2, scaleY: 0.85, opacity: 0, duration: 0.3, ease: 'power2.in' })
+					.to(parcel, { scale: 1, duration: 0.3, ease: 'back.out(3)' }, 0.15)
+					.to(parcel, { physics2D: { velocity: card_box.width * 1.6, angle: -62, gravity: 1500 }, rotation: 620, duration: 0.9 }, 0.5);
+			};
+			form.addEventListener('submit', on_submit);
+			return () => form.removeEventListener('submit', on_submit);
+		}
+
+		function add_footer_ticker_motion() {
+			const ticker = document.getElementById('footer-ticker');
+			const track = document.getElementById('footer-ticker-track');
+			const copy = document.getElementById('footer-ticker-copy');
+			const pause = document.getElementById('footer-ticker-pause');
+			const state = { hovered: false, focused: false, held: false };
+			const loop = gsap.to(track, {
+				x: () => -(copy.offsetWidth + parseFloat(getComputedStyle(track).columnGap)),
+				duration: 40,
+				ease: 'none',
+				repeat: -1,
+			});
+			const refresh_speed = () => {
+				const stopped = state.hovered || state.focused || state.held;
+				gsap.to(loop, { timeScale: stopped ? 0 : 1, duration: stopped ? 0.9 : 1.2, ease: 'power2.out', overwrite: true });
+			};
+			const on_enter = () => { state.hovered = true; refresh_speed(); };
+			const on_leave = () => { state.hovered = false; refresh_speed(); };
+			const on_focus_in = () => { state.focused = true; refresh_speed(); };
+			const on_focus_out = () => { state.focused = false; refresh_speed(); };
+			const on_pause = () => {
+				state.held = !state.held;
+				pause.setAttribute('aria-pressed', String(state.held));
+				pause.textContent = state.held ? 'Play' : 'Pause';
+				refresh_speed();
+			};
+			pause.classList.remove('hidden');
+			ticker.addEventListener('mouseenter', on_enter);
+			ticker.addEventListener('mouseleave', on_leave);
+			ticker.addEventListener('focusin', on_focus_in);
+			ticker.addEventListener('focusout', on_focus_out);
+			pause.addEventListener('click', on_pause);
+			return () => {
+				pause.classList.add('hidden');
+				ticker.removeEventListener('mouseenter', on_enter);
+				ticker.removeEventListener('mouseleave', on_leave);
+				ticker.removeEventListener('focusin', on_focus_in);
+				ticker.removeEventListener('focusout', on_focus_out);
+				pause.removeEventListener('click', on_pause);
+			};
+		}
+
+		add_journey_pins();
+		gsap.matchMedia().add('(prefers-reduced-motion: no-preference) and (min-width: 640px)', add_feature_deck_motion);
+		gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+			add_journey_motion();
+			add_faq_motion();
+			const remove_onboarding_motion = add_onboarding_motion();
+			const remove_footer_ticker_motion = add_footer_ticker_motion();
+			return () => {
+				remove_onboarding_motion();
+				remove_footer_ticker_motion();
+			};
+		});
+		document.fonts.ready.then(() => ScrollTrigger.refresh());
+	</script>
 </body>
 </html>

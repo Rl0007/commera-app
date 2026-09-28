@@ -2,26 +2,103 @@
 
 @source "../*.html";
 @source "../hero/*.html";
+@source "../motion/*.html";
 
 @theme {
 	--font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+	--font-serif: "Gambetta", ui-serif, Georgia, serif;
 	--font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-	--color-cream: #f7efe6;
-	--color-cream-deep: #efdcc8;
 	--color-brand: #f57519;
 	--color-brand-deep: #d9600c;
-	--color-ink: #141210;
-	--color-ink-soft: #57514b;
-	--color-line: #e4d6c6;
+	--color-brand-soft: #fde3cf;
+	--color-ink: #0b0f1f;
+	--color-ink-soft: #52555f;
+	--color-line: #e6e3de;
+
+	--color-butter: #ffe9b8;
+	--color-butter-soft: #fff4dd;
+	--color-cream: #fffaf2;
+	--color-mist: #f1f0ee;
+	--color-mint: #c7f5ec;
+	--color-teal: #14c3b1;
+	--color-lavender: #e3dbf6;
+	--color-violet: #6b3cf0;
+	--color-sun: #ffb020;
+
+	--radius-panel: 2rem;
+	--tracking-display: -0.045em;
 }
 
 @layer base {
 	html {
 		-webkit-font-smoothing: antialiased;
+		scroll-behavior: smooth;
 	}
+}
+
+@utility font-display {
+	font-family: var(--font-serif);
+	font-weight: 500;
+	letter-spacing: var(--tracking-display);
+	line-height: 1.02;
 }
 
 [x-cloak] {
 	display: none !important;
+}
+
+@keyframes ticker {
+	to {
+		transform: translateX(calc(-50% - 1.25rem));
+	}
+}
+
+::view-transition-group(integrations-indicator) {
+	animation-duration: 0.5s;
+	animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+::view-transition-old(integrations-list) {
+	animation: integrations-fade-out 0.18s ease both;
+}
+
+::view-transition-new(integrations-list) {
+	animation: integrations-rise-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) 0.14s both;
+}
+
+::view-transition-old(integrations-shot) {
+	animation: integrations-slide-out 0.5s cubic-bezier(0.6, 0, 0.3, 1) both;
+}
+
+::view-transition-new(integrations-shot) {
+	animation: integrations-slide-in 0.5s cubic-bezier(0.6, 0, 0.3, 1) both;
+}
+
+@keyframes integrations-fade-out {
+	to {
+		opacity: 0;
+		transform: translateY(-12px);
+	}
+}
+
+@keyframes integrations-rise-in {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+}
+
+@keyframes integrations-slide-out {
+	to {
+		opacity: 0;
+		transform: translateX(-8%) scale(0.96);
+	}
+}
+
+@keyframes integrations-slide-in {
+	from {
+		opacity: 0;
+		transform: translateX(8%) scale(0.96);
+	}
 }
