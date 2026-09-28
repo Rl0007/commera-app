@@ -350,9 +350,9 @@
 
 			<div class="relative mt-10 flex w-full gap-1 overflow-x-auto rounded-xl bg-white/70 p-1.5 sm:mx-auto sm:w-fit sm:max-w-full" role="tablist">
 				<span x-ref="indicator" class="absolute top-1.5 bottom-1.5 left-0 w-0 rounded-md bg-sun [view-transition-name:integrations-indicator]" aria-hidden="true"></span>
-				<button role="tab" x-ref="payments" :aria-selected="tab === 'payments'" @click="select('payments')" :class="tab === 'payments' ? 'text-ink' : 'text-ink-soft hover:text-ink'" class="relative flex-1 shrink-0 [view-transition-name:integrations-tab-payments] rounded-md px-5 py-2.5 text-base font-medium sm:flex-none sm:px-8">Payments</button>
-				<button role="tab" x-ref="shipping" :aria-selected="tab === 'shipping'" @click="select('shipping')" :class="tab === 'shipping' ? 'text-ink' : 'text-ink-soft hover:text-ink'" class="relative flex-1 shrink-0 [view-transition-name:integrations-tab-shipping] rounded-md px-5 py-2.5 text-base font-medium sm:flex-none sm:px-8">Shipping</button>
-				<button role="tab" x-ref="analytics" :aria-selected="tab === 'analytics'" @click="select('analytics')" :class="tab === 'analytics' ? 'text-ink' : 'text-ink-soft hover:text-ink'" class="relative flex-1 shrink-0 [view-transition-name:integrations-tab-analytics] rounded-md px-5 py-2.5 text-base font-medium sm:flex-none sm:px-8">Analytics</button>
+				<button role="tab" x-ref="payments" :aria-selected="tab === 'payments'" @click="select('payments')" :class="tab === 'payments' ? 'text-ink' : 'text-ink-soft hover:text-ink'" class="relative flex-1 shrink-0 [view-transition-name:integrations-tab-payments] rounded-md px-3 py-2.5 text-base font-medium sm:flex-none sm:px-8">Payments</button>
+				<button role="tab" x-ref="shipping" :aria-selected="tab === 'shipping'" @click="select('shipping')" :class="tab === 'shipping' ? 'text-ink' : 'text-ink-soft hover:text-ink'" class="relative flex-1 shrink-0 [view-transition-name:integrations-tab-shipping] rounded-md px-3 py-2.5 text-base font-medium sm:flex-none sm:px-8">Shipping</button>
+				<button role="tab" x-ref="analytics" :aria-selected="tab === 'analytics'" @click="select('analytics')" :class="tab === 'analytics' ? 'text-ink' : 'text-ink-soft hover:text-ink'" class="relative flex-1 shrink-0 [view-transition-name:integrations-tab-analytics] rounded-md px-3 py-2.5 text-base font-medium sm:flex-none sm:px-8">Analytics</button>
 			</div>
 
 			<div class="mt-12 grid items-center gap-10 lg:grid-cols-[5fr_7fr]">
