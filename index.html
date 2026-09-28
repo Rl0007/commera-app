@@ -462,49 +462,23 @@
 		</div>
 	</section>
 
-	<section id="onboarding" class="mx-auto max-w-7xl scroll-mt-20 px-4 sm:px-8" x-data="{ outcome: new URLSearchParams(location.search).get('onboarding') }">
+	<section id="onboarding" class="mx-auto max-w-7xl scroll-mt-20 px-4 sm:px-8">
 		<div class="relative grid items-center gap-10 overflow-hidden rounded-[var(--radius-panel)] bg-mint p-6 sm:p-12 lg:grid-cols-2">
 			<svg class="absolute inset-y-0 right-0 hidden h-full w-1/2 text-violet/40 lg:block" viewBox="0 0 600 400" fill="none" preserveAspectRatio="none" aria-hidden="true">
 				<path d="M40 0c20 120-30 260 40 400M260 0c-40 140 30 250-10 400M480 0c30 120-40 280 20 400M0 120c200 40 380-60 600 20M0 300c180-40 400 50 600-10" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 7" />
 			</svg>
 			<div class="relative">
 				<h2 class="font-display text-4xl sm:text-5xl">Schedule an onboarding call</h2>
-				<p class="mt-4 max-w-md text-lg text-ink/70">Leave your email and we'll set up a call to get your store running on Commera.</p>
+				<p class="mt-4 max-w-md text-lg text-ink/70">Book a call and we'll help you get your store running on Commera.</p>
 			</div>
 
-			<div id="onboarding-card" class="relative rounded-2xl bg-white p-6 shadow-sm sm:p-8">
-				<svg id="onboarding-parcel" viewBox="0 0 100 100" class="pointer-events-none absolute top-0 left-0 z-10 size-11 text-brand opacity-0" aria-hidden="true"><use href="#b-parcel" /></svg>
-				<div x-show="outcome === 'thanks'" x-cloak role="status">
-					<svg viewBox="0 0 48 48" class="mb-3 size-12 text-teal" fill="none" aria-hidden="true">
-						<circle id="onboarding-check-ring" cx="24" cy="24" r="21" stroke="currentColor" stroke-width="3" />
-						<path id="onboarding-check-mark" d="m15 25 6 6 12-13" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<p class="font-display text-2xl">Thanks, we've got your request.</p>
-					<p class="mt-2 text-ink-soft">We'll email you to find a time for the call.</p>
-				</div>
-
-				<form id="onboarding-form" x-show="outcome !== 'thanks'" action="https://projects.bwh.tech/api/method/commera_onboarding_request" method="post" class="space-y-4">
-					<p x-show="outcome === 'invalid'" x-cloak class="rounded-md bg-brand-soft px-4 py-3 text-sm font-semibold text-brand-deep" role="alert">That email doesn't look right. Please check it and try again.</p>
-					<label class="block">
-						<span class="text-sm font-semibold">Work email</span>
-						<input type="email" name="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-brand" />
-					</label>
-					<div class="grid gap-4 sm:grid-cols-2">
-						<label class="block">
-							<span class="text-sm font-semibold">Name</span>
-							<input type="text" name="full_name" autocomplete="name" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-brand" />
-						</label>
-						<label class="block">
-							<span class="text-sm font-semibold">Company</span>
-							<input type="text" name="company" autocomplete="organization" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-brand" />
-						</label>
-					</div>
-					<label class="hidden" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
-					<button type="submit" id="onboarding-submit" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-deep sm:w-auto">
-						<svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true"><path d="M3 5.5v13l9-6.5zM12 5.5v13l9-6.5z" /></svg>
-						Book my call
-					</button>
-				</form>
+			<div class="relative rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+				<p class="font-display text-2xl">Pick a time that suits you.</p>
+				<p class="mt-2 text-ink-soft">Choose a slot on our calendar and you'll get an invite by email.</p>
+				<a href="https://cal.com/rl0007/commera-onboarding" class="mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-deep">
+					<svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true"><path d="M3 5.5v13l9-6.5zM12 5.5v13l9-6.5z" /></svg>
+					Pick a time
+				</a>
 			</div>
 		</div>
 	</section>
@@ -541,7 +515,7 @@
 				<svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true"><path d="M3 5.5v13l9-6.5zM12 5.5v13l9-6.5z" /></svg>
 				Try the live demo
 			</a>
-			<a href="#onboarding" class="inline-flex w-full items-center justify-center rounded-md border border-brand/40 bg-white px-6 py-3 text-lg font-semibold text-brand-deep hover:border-brand sm:w-auto">Book a call</a>
+			<a href="https://cal.com/rl0007/commera-onboarding" class="inline-flex w-full items-center justify-center rounded-md border border-brand/40 bg-white px-6 py-3 text-lg font-semibold text-brand-deep hover:border-brand sm:w-auto">Book a call</a>
 		</div>
 	</section>
 
@@ -589,10 +563,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/MotionPathPlugin.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/Physics2DPlugin.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/DrawSVGPlugin.min.js"></script>
 	<script>
-		gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, Physics2DPlugin, DrawSVGPlugin);
+		gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, DrawSVGPlugin);
 
 		document.addEventListener('alpine:init', () => {
 			Alpine.data('integrationTabs', () => ({
@@ -734,41 +707,6 @@
 			});
 		}
 
-		function add_onboarding_motion() {
-			const card = document.getElementById('onboarding-card');
-			const form = document.getElementById('onboarding-form');
-			const submit = document.getElementById('onboarding-submit');
-			const parcel = document.getElementById('onboarding-parcel');
-			let sending = false;
-
-			if (new URLSearchParams(location.search).get('onboarding') === 'thanks') {
-				gsap.timeline({ delay: 0.3 })
-					.fromTo('#onboarding-check-ring', { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.6, ease: 'power2.inOut' })
-					.fromTo('#onboarding-check-mark', { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.4, ease: 'power2.out' }, '-=0.1');
-			}
-
-			const on_submit = (event) => {
-				event.preventDefault();
-				if (sending) return;
-				sending = true;
-				const card_box = card.getBoundingClientRect();
-				const button_box = submit.getBoundingClientRect();
-				gsap.set(parcel, {
-					x: button_box.left - card_box.left + button_box.width / 2 - 22,
-					y: button_box.top - card_box.top + button_box.height / 2 - 22,
-					rotation: 0,
-					scale: 0,
-					opacity: 1,
-				});
-				gsap.timeline({ onComplete: () => form.submit() })
-					.to(submit, { scaleX: 0.2, scaleY: 0.85, opacity: 0, duration: 0.3, ease: 'power2.in' })
-					.to(parcel, { scale: 1, duration: 0.3, ease: 'back.out(3)' }, 0.15)
-					.to(parcel, { physics2D: { velocity: card_box.width * 1.6, angle: -62, gravity: 1500 }, rotation: 620, duration: 0.9 }, 0.5);
-			};
-			form.addEventListener('submit', on_submit);
-			return () => form.removeEventListener('submit', on_submit);
-		}
-
 		function add_footer_ticker_motion() {
 			const ticker = document.getElementById('footer-ticker');
 			const track = document.getElementById('footer-ticker-track');
@@ -816,12 +754,7 @@
 		gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
 			add_journey_motion();
 			add_faq_motion();
-			const remove_onboarding_motion = add_onboarding_motion();
-			const remove_footer_ticker_motion = add_footer_ticker_motion();
-			return () => {
-				remove_onboarding_motion();
-				remove_footer_ticker_motion();
-			};
+			return add_footer_ticker_motion();
 		});
 		document.fonts.ready.then(() => ScrollTrigger.refresh());
 	</script>
