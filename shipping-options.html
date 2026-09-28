@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Commera shipping options</title>
+	<meta name="robots" content="noindex" />
+	<link rel="icon" href="assets/commera.svg" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" />
+	<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,600&display=swap" />
+	<link rel="stylesheet" href="dist/site.css" />
+</head>
+<body class="bg-white font-sans text-ink">
+	<svg class="hidden" aria-hidden="true">
+		<symbol id="b-cart" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14h14l12 48h50l10-34H26" /><circle cx="40" cy="82" r="7" /><circle cx="76" cy="82" r="7" /></symbol>
+		<symbol id="b-coin" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="24" rx="38" ry="14" /><path d="M12 24v50c0 7.7 17 14 38 14s38-6.3 38-14V24M12 49c0 7.7 17 14 38 14s38-6.3 38-14" /></symbol>
+		<symbol id="b-receipt" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8h60v84l-10-7-10 7-10-7-10 7-10-7-10 7Z" /><path d="M34 30h32M34 48h32M34 66h18" /></symbol>
+		<symbol id="b-parcel" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M50 8 88 28v44L50 92 12 72V28Z" /><path d="m12 28 38 20 38-20M50 48v44" /></symbol>
+		<symbol id="b-truck" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22h52v46H6ZM58 40h20l16 18v10H58Z" /><circle cx="24" cy="78" r="8" /><circle cx="76" cy="78" r="8" /></symbol>
+		<symbol id="b-home" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 46 50 12l40 34M20 38v52h60V38" /><path d="M42 90V66h16v24" /></symbol>
+		<symbol id="b-return" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M38 16 18 36l20 20" /><path d="M18 36h46a22 22 0 0 1 0 44H36" /></symbol>
+	</svg>
+
+	<main class="mx-auto max-w-7xl px-4 py-12 sm:px-8">
+		<h1 class="font-display text-5xl">Shipping cycle options</h1>
+		<p class="mt-3 max-w-2xl text-lg text-ink/70">Four scroll choreographies for one order's journey. Each pins in place and plays left to right as you scroll down. The eight stages are the ones Commera ships today.</p>
+		<nav class="mt-6 flex flex-wrap gap-2">
+			<a href="#o1-intro" class="rounded-md border border-line px-3 py-1.5 font-medium hover:border-ink">S1 · Parcel on a rail</a>
+			<a href="#o2-intro" class="rounded-md border border-line px-3 py-1.5 font-medium hover:border-ink">S2 · The order card</a>
+			<a href="#o3-intro" class="rounded-md border border-line px-3 py-1.5 font-medium hover:border-ink">S3 · Route map</a>
+			<a href="#o4-intro" class="rounded-md border border-line px-3 py-1.5 font-medium hover:border-ink">S4 · Card deck</a>
+		</nav>
+	</main>
+
+	<div id="o1-intro" class="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-8">
+		<p class="font-semibold">S1 · Parcel on a rail</p>
+		<p class="max-w-2xl text-ink/65">Stage cards slide past from the right. A parcel rides the rail below, changing to each stage's icon as its card reaches the middle, and tilting with your scroll speed. At the return, the rail turns violet and the parcel turns round.</p>
+	</div>
+	<section id="o1" class="relative h-svh overflow-hidden bg-mist">
+		<div class="absolute inset-x-0 top-6 z-10 px-4 sm:px-8">
+			<div class="mx-auto flex max-w-7xl items-center gap-4">
+				<div class="relative h-1.5 flex-1 overflow-hidden rounded-full bg-ink/10"><div id="o1-fill" class="absolute inset-y-0 left-0 w-0 rounded-full bg-brand"></div></div>
+				<p id="o1-count" class="font-mono text-sm text-ink/60">01 / 08</p>
+			</div>
+		</div>
+		<div id="o1-track" class="flex h-full w-max items-center gap-[5vw] pr-[35vw] pl-[50vw]"></div>
+		<div class="pointer-events-none absolute inset-x-0 bottom-[7svh]">
+			<div id="o1-rail" class="border-t-2 border-dashed border-ink/25"></div>
+			<div id="o1-token" class="absolute -top-12 left-1/2 grid size-24 -translate-x-1/2 place-items-center rounded-3xl border-2 border-ink bg-white shadow-lg">
+				<svg viewBox="0 0 100 100" class="size-12 text-brand" id="o1-token-icon" aria-hidden="true"><use href="#b-cart" /></svg>
+			</div>
+		</div>
+	</section>
+
+	<div id="o2-intro" class="mx-auto max-w-7xl px-4 pt-24 pb-8 sm:px-8">
+		<p class="font-semibold">S2 · The order card</p>
+		<p class="max-w-2xl text-ink/65">The merchant's view. One order card stays put while its stepper fills and events stack into its feed, older ones pushed off the top. The big status word rolls over at each stage and the background shifts colour.</p>
+	</div>
+	<section id="o2" class="relative h-svh overflow-hidden bg-brand-soft">
+		<div class="mx-auto grid h-full max-w-7xl content-center items-center gap-8 px-4 sm:px-8 lg:grid-cols-2 lg:gap-16">
+			<div>
+				<p class="text-sm font-semibold tracking-wide text-ink/50 uppercase">Order #SO-01042</p>
+				<div class="font-display mt-2 h-[1.15em] overflow-hidden text-5xl sm:text-7xl lg:text-8xl"><p id="o2-status">Order placed</p></div>
+				<p id="o2-note" class="mt-4 max-w-md text-lg text-ink/70 sm:text-xl"></p>
+			</div>
+			<div class="rounded-[var(--radius-panel)] bg-white p-5 shadow-[0_30px_80px_-40px_rgba(11,15,31,0.45)] sm:p-7">
+				<div class="flex items-center justify-between">
+					<p class="font-display text-2xl">#SO-01042</p>
+					<p id="o2-pill" class="rounded-md bg-brand-soft px-2.5 py-1 text-sm font-semibold text-brand-deep">Order placed</p>
+				</div>
+				<div class="relative mt-6">
+					<div class="h-1.5 rounded-full bg-line"></div>
+					<div id="o2-fill" class="absolute inset-y-0 left-0 w-0 rounded-full bg-brand"></div>
+					<div id="o2-dots" class="absolute inset-x-0 -top-[5px] flex justify-between"></div>
+				</div>
+				<div class="mt-6 flex items-center gap-3 border-y border-line py-4">
+					<span class="size-11 rounded-lg bg-butter"></span>
+					<div class="min-w-0 flex-1"><p class="font-semibold">Linen shirt</p><p class="text-sm text-ink-soft">Sand · M · 1</p></div>
+					<p class="font-semibold">₹2,499</p>
+				</div>
+				<div id="o2-feed" class="mt-4 flex h-56 flex-col justify-end gap-2 overflow-hidden sm:h-64"></div>
+			</div>
+		</div>
+	</section>
+
+	<div id="o3-intro" class="mx-auto max-w-7xl px-4 pt-24 pb-8 sm:px-8">
+		<p class="font-semibold">S3 · Route map</p>
+		<p class="max-w-2xl text-ink/65">A delivery van drives a winding road that draws itself in orange as you scroll, and the camera pans with it. Stage pins pop up as the van reaches them. After delivery, the road loops back in violet for the return and refund.</p>
+	</div>
+	<section id="o3" class="relative h-svh overflow-hidden bg-butter-soft">
+		<div class="absolute inset-0 bg-[radial-gradient(var(--color-ink)_1.2px,transparent_1.2px)] bg-[length:28px_28px] opacity-15"></div>
+		<div id="o3-world" class="relative flex h-full w-max items-center pr-[6vw] pl-[8vw]">
+			<svg id="o3-map" viewBox="0 0 3200 600" class="h-[72svh] w-auto overflow-visible" aria-hidden="true">
+				<path id="o3-forward-ghost" d="M200 330C380 120 480 120 640 300S980 520 1180 330 1520 110 1720 300 2080 500 2300 320" fill="none" stroke="var(--color-ink)" stroke-opacity="0.2" stroke-width="6" stroke-dasharray="4 14" stroke-linecap="round" />
+				<path id="o3-return-ghost" d="M2300 320C2480 160 2720 170 2760 330S2620 530 2760 530 3020 430 3120 300" fill="none" stroke="var(--color-violet)" stroke-opacity="0.3" stroke-width="6" stroke-dasharray="4 14" stroke-linecap="round" />
+				<path id="o3-forward" d="M200 330C380 120 480 120 640 300S980 520 1180 330 1520 110 1720 300 2080 500 2300 320" fill="none" stroke="var(--color-brand)" stroke-width="10" stroke-linecap="round" />
+				<path id="o3-return" d="M2300 320C2480 160 2720 170 2760 330S2620 530 2760 530 3020 430 3120 300" fill="none" stroke="var(--color-violet)" stroke-width="10" stroke-linecap="round" />
+				<g id="o3-pins"></g>
+				<g id="o3-truck">
+					<circle r="40" fill="white" stroke="var(--color-ink)" stroke-width="4" />
+					<use href="#b-truck" x="-24" y="-24" width="48" height="48" class="text-ink" />
+				</g>
+			</svg>
+		</div>
+	</section>
+
+	<div id="o4-intro" class="mx-auto max-w-7xl px-4 pt-24 pb-8 sm:px-8">
+		<p class="font-semibold">S4 · Card deck</p>
+		<p class="max-w-2xl text-ink/65">Each stage is a big pastel card that swings in from the right in 3D. The one before it drops onto a pile on the left, and the new card's icon draws itself line by line.</p>
+	</div>
+	<section id="o4" class="relative h-svh overflow-hidden bg-white [perspective:1400px]">
+		<p id="o4-count" class="font-display absolute top-8 right-4 z-20 text-2xl text-ink/40 sm:right-8">01 / 08</p>
+		<div id="o4-deck" class="absolute inset-0"></div>
+	</section>
+
+	<div class="mx-auto max-w-7xl px-4 py-40 text-center text-ink/50 sm:px-8">End of options</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/MotionPathPlugin.min.js"></script>
+	<script>
+		gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+		const stages = [
+			{ label: 'Order placed', note: 'A shopper checks out on your storefront.', glyph: 'b-cart', text: 'text-brand', soft: 'bg-brand-soft', hex: '#fde3cf', event: 'Order placed on the storefront' },
+			{ label: 'Paid', note: 'Razorpay, Stripe, Telr, Tabby, or cash on delivery.', glyph: 'b-coin', text: 'text-teal', soft: 'bg-mint', hex: '#c7f5ec', event: '₹2,499 captured by Razorpay · UPI' },
+			{ label: 'Booked in ERPNext', note: 'Sales Order, invoice and payment entry, created for you.', glyph: 'b-receipt', text: 'text-violet', soft: 'bg-lavender', hex: '#e3dbf6', event: 'Sales Invoice and Payment Entry submitted' },
+			{ label: 'Packed', note: 'A packing slip is made and the order shows as Packed.', glyph: 'b-parcel', text: 'text-sun', soft: 'bg-butter', hex: '#ffe9b8', event: 'Packing slip created' },
+			{ label: 'Shipped', note: 'Label, AWB and courier pickup through Shiprocket or AfterShip.', glyph: 'b-truck', text: 'text-brand', soft: 'bg-brand-soft', hex: '#fde3cf', event: 'AWB generated · Shiprocket pickup scheduled' },
+			{ label: 'Delivered', note: 'Carrier updates move the order along on their own.', glyph: 'b-home', text: 'text-teal', soft: 'bg-mint', hex: '#c7f5ec', event: 'Delivered · update from the carrier' },
+			{ label: 'Return requested', note: 'Shoppers ask from their account, inside your return window.', glyph: 'b-return', text: 'text-violet', soft: 'bg-lavender', hex: '#e3dbf6', event: 'Return requested · size too small' },
+			{ label: 'Refunded', note: 'The money goes back to the original payment method.', glyph: 'b-coin', text: 'text-violet', soft: 'bg-lavender', hex: '#e3dbf6', event: 'Refund of ₹2,499 sent to Razorpay' },
+		];
+		const textClasses = ['text-brand', 'text-teal', 'text-violet', 'text-sun'];
+		const lastIndex = stages.length - 1;
+		const glyph = (id, classes) => `<svg viewBox="0 0 100 100" class="${classes}" aria-hidden="true"><use href="#${id}" /></svg>`;
+		const counter = (index) => `${String(index + 1).padStart(2, '0')} / ${String(stages.length).padStart(2, '0')}`;
+		const stageAt = (progress) => Math.min(lastIndex, Math.floor(progress * stages.length));
+		const setTextColour = (element, colour) => {
+			element.classList.remove(...textClasses);
+			element.classList.add(colour);
+		};
+
+		function add_rail_option() {
+			const track = document.getElementById('o1-track');
+			track.innerHTML = stages.map((stage, index) => `
+				<article class="o1-card flex h-[56svh] w-[78vw] shrink-0 flex-col rounded-[var(--radius-panel)] bg-white p-7 sm:w-[30rem] sm:p-10">
+					<div class="flex items-center justify-between">
+						<span class="font-mono text-sm text-ink/40">${String(index + 1).padStart(2, '0')}</span>
+						<span class="rounded-md px-2.5 py-1 text-xs font-semibold ${stage.soft}">${index > 5 ? 'Return' : 'Order'}</span>
+					</div>
+					${glyph(stage.glyph, `mt-auto size-16 sm:size-20 ${stage.text}`)}
+					<h3 class="font-display mt-5 text-4xl sm:text-5xl">${stage.label}</h3>
+					<p class="mt-3 text-ink/65 sm:text-lg">${stage.note}</p>
+				</article>`).join('');
+
+			const token = document.getElementById('o1-token');
+			const tokenIcon = document.getElementById('o1-token-icon');
+			const rail = document.getElementById('o1-rail');
+			const fill = document.getElementById('o1-fill');
+			const count = document.getElementById('o1-count');
+			const tilt = gsap.quickTo(token, 'rotation', { duration: 0.5, ease: 'power3' });
+			let current = 0;
+
+			const distance = () => track.scrollWidth - window.innerWidth;
+			const slide = gsap.to(track, {
+				x: () => -distance(),
+				ease: 'none',
+				scrollTrigger: {
+					trigger: '#o1',
+					pin: true,
+					scrub: 1,
+					end: () => `+=${distance()}`,
+					invalidateOnRefresh: true,
+					onUpdate: (self) => {
+						fill.style.width = `${self.progress * 100}%`;
+						tilt(gsap.utils.clamp(-16, 16, self.getVelocity() / -120));
+						const index = stageAt(self.progress);
+						if (index === current) return;
+						current = index;
+						count.textContent = counter(index);
+						tokenIcon.querySelector('use').setAttribute('href', `#${stages[index].glyph}`);
+						setTextColour(tokenIcon, stages[index].text);
+						gsap.fromTo(token, { scale: 0.7 }, { scale: 1, duration: 0.5, ease: 'back.out(3)' });
+						gsap.to(token, { scaleX: index > 5 ? -1 : 1, duration: 0.4 });
+						rail.classList.toggle('border-violet', index > 5);
+						rail.classList.toggle('border-ink/25', index <= 5);
+					},
+				},
+			});
+
+			gsap.utils.toArray('.o1-card').forEach((card) => {
+				gsap.fromTo(card, { scale: 0.84, opacity: 0.35, rotation: 3 }, {
+					scale: 1,
+					opacity: 1,
+					rotation: 0,
+					ease: 'none',
+					scrollTrigger: { trigger: card, containerAnimation: slide, start: 'left 90%', end: 'center 55%', scrub: true },
+				});
+			});
+			return slide.scrollTrigger;
+		}
+
+		function add_order_card_option() {
+			const section = document.getElementById('o2');
+			const status = document.getElementById('o2-status');
+			const note = document.getElementById('o2-note');
+			const pill = document.getElementById('o2-pill');
+			const fill = document.getElementById('o2-fill');
+			const dots = document.getElementById('o2-dots');
+			const feed = document.getElementById('o2-feed');
+
+			dots.innerHTML = stages.map(() => '<span class="o2-dot size-4 rounded-full border-2 border-line bg-white"></span>').join('');
+			feed.innerHTML = stages.map((stage) => `
+				<div class="o2-event flex items-center gap-3 rounded-xl bg-mist px-3.5 py-3">
+					<span class="grid size-9 shrink-0 place-items-center rounded-lg bg-white">${glyph(stage.glyph, `size-5 ${stage.text}`)}</span>
+					<p class="text-sm font-medium">${stage.event}</p>
+				</div>`).join('');
+			note.textContent = stages[0].note;
+
+			const events = gsap.utils.toArray('.o2-event');
+			const dotElements = gsap.utils.toArray('.o2-dot');
+			gsap.set(events.slice(1), { autoAlpha: 0, height: 0, paddingTop: 0, paddingBottom: 0 });
+			dotElements[0].classList.replace('border-line', 'border-brand');
+			let current = 0;
+
+			const timeline = gsap.timeline({
+				defaults: { ease: 'none' },
+				scrollTrigger: {
+					trigger: section,
+					pin: true,
+					scrub: 1,
+					end: () => `+=${window.innerHeight * 4}`,
+					onUpdate: (self) => {
+						const index = stageAt(self.progress);
+						if (index === current) return;
+						const direction = index > current ? 1 : -1;
+						current = index;
+						status.textContent = stages[index].label;
+						pill.textContent = stages[index].label;
+						note.textContent = stages[index].note;
+						gsap.fromTo(status, { yPercent: 100 * direction, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.5, ease: 'power3.out' });
+						gsap.fromTo(note, { y: 12 * direction, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, delay: 0.08 });
+						gsap.fromTo(pill, { scale: 0.85 }, { scale: 1, duration: 0.4, ease: 'back.out(3)' });
+						dotElements.forEach((dot, dotIndex) => {
+							dot.classList.toggle('border-brand', dotIndex <= index);
+							dot.classList.toggle('bg-brand', dotIndex < index);
+							dot.classList.toggle('border-line', dotIndex > index);
+						});
+					},
+				},
+			});
+			stages.forEach((stage, index) => {
+				if (index === 0) return;
+				timeline.to(section, { backgroundColor: stage.hex, duration: 0.6 }, index - 0.6);
+				timeline.to(fill, { width: `${(index / lastIndex) * 100}%`, duration: 0.6 }, index - 0.6);
+				timeline.to(events[index], { autoAlpha: 1, height: 'auto', paddingTop: 12, paddingBottom: 12, duration: 0.6, ease: 'power2.out' }, index - 0.6);
+			});
+			timeline.to({}, { duration: 0.4 });
+			return timeline.scrollTrigger;
+		}
+
+		function add_route_option() {
+			const world = document.getElementById('o3-world');
+			const forward = document.getElementById('o3-forward');
+			const back = document.getElementById('o3-return');
+			const truck = document.getElementById('o3-truck');
+			const pins = document.getElementById('o3-pins');
+			const forwardStops = [0, 0.2, 0.4, 0.6, 0.8, 1];
+			const returnStops = [0.45, 1];
+
+			const pinFor = (path, fraction, stage, index) => {
+				const point = path.getPointAtLength(path.getTotalLength() * fraction);
+				const above = index % 2 === 0;
+				const offset = above ? -130 : 130;
+				const labelY = above ? -62 : 88;
+				return `
+					<g transform="translate(${point.x} ${point.y})">
+						<line x1="0" y1="0" x2="0" y2="${offset * 0.6}" stroke="var(--color-ink)" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="3 6" />
+						<g class="o3-pin" transform="translate(0 ${offset})">
+							<circle r="44" fill="white" stroke="currentColor" stroke-width="4" class="${stage.text}" />
+							<use href="#${stage.glyph}" x="-24" y="-24" width="48" height="48" class="${stage.text}" />
+							<text y="${labelY}" text-anchor="middle" class="font-display" font-size="34" fill="var(--color-ink)">${stage.label}</text>
+						</g>
+					</g>`;
+			};
+			pins.innerHTML = [
+				...forwardStops.map((fraction, index) => pinFor(forward, fraction, stages[index], index)),
+				...returnStops.map((fraction, index) => pinFor(back, fraction, stages[6 + index], 6 + index)),
+			].join('');
+
+			[forward, back].forEach((path) => {
+				path.setAttribute('pathLength', '1');
+				gsap.set(path, { strokeDasharray: 1, strokeDashoffset: 1 });
+			});
+			const pinElements = gsap.utils.toArray('.o3-pin');
+			gsap.set(pinElements, { scale: 0, transformOrigin: '50% 50%' });
+
+			const distance = () => world.scrollWidth - window.innerWidth;
+			const timeline = gsap.timeline({
+				defaults: { ease: 'none' },
+				scrollTrigger: { trigger: '#o3', pin: true, scrub: 1, end: () => `+=${window.innerHeight * 5}`, invalidateOnRefresh: true },
+			});
+			timeline.to(world, { x: () => -distance(), duration: 8 }, 0);
+			timeline.to(forward, { strokeDashoffset: 0, duration: 6 }, 0);
+			timeline.to(truck, { motionPath: { path: forward, align: forward, alignOrigin: [0.5, 0.5] }, duration: 6 }, 0);
+			timeline.to(back, { strokeDashoffset: 0, duration: 2 }, 6);
+			timeline.to(truck, { motionPath: { path: back, align: back, alignOrigin: [0.5, 0.5] }, duration: 2 }, 6);
+			forwardStops.forEach((fraction, index) => {
+				timeline.to(pinElements[index], { scale: 1, duration: 0.35, ease: 'back.out(2.5)' }, Math.max(0, fraction * 6 - 0.15));
+			});
+			returnStops.forEach((fraction, index) => {
+				timeline.to(pinElements[6 + index], { scale: 1, duration: 0.35, ease: 'back.out(2.5)' }, 6 + fraction * 2 - 0.2);
+			});
+			return timeline.scrollTrigger;
+		}
+
+		function add_deck_option() {
+			const deck = document.getElementById('o4-deck');
+			const count = document.getElementById('o4-count');
+			deck.innerHTML = stages.map((stage, index) => `
+				<article class="o4-card absolute top-1/2 left-1/2 flex h-[62svh] w-[80vw] -translate-x-1/2 -translate-y-1/2 flex-col rounded-[var(--radius-panel)] p-7 shadow-[0_30px_80px_-40px_rgba(11,15,31,0.5)] sm:w-[28rem] sm:p-10 ${stage.soft}">
+					<p class="font-display text-7xl text-ink/15 sm:text-8xl">${String(index + 1).padStart(2, '0')}</p>
+					<svg viewBox="0 0 100 100" class="o4-glyph mt-auto size-24 sm:size-28 ${stage.text}" aria-hidden="true"></svg>
+					<h3 class="font-display mt-5 text-4xl sm:text-5xl">${stage.label}</h3>
+					<p class="mt-3 text-ink/70 sm:text-lg">${stage.note}</p>
+				</article>`).join('');
+
+			const cards = gsap.utils.toArray('.o4-card');
+			const strokes = cards.map((card, index) => {
+				const symbol = document.getElementById(stages[index].glyph);
+				const svg = card.querySelector('.o4-glyph');
+				['fill', 'stroke', 'stroke-width', 'stroke-linecap', 'stroke-linejoin'].forEach((attribute) => svg.setAttribute(attribute, symbol.getAttribute(attribute)));
+				svg.innerHTML = symbol.innerHTML;
+				const shapes = [...svg.querySelectorAll('path, circle, ellipse')];
+				shapes.forEach((shape) => shape.setAttribute('pathLength', '1'));
+				gsap.set(shapes, { strokeDasharray: 1, strokeDashoffset: 1 });
+				return shapes;
+			});
+
+			gsap.set(cards, { xPercent: -50, yPercent: -50 });
+			gsap.set(cards.slice(1), { x: '75vw', rotationY: -45, rotation: 10, opacity: 0 });
+			let current = 0;
+			const timeline = gsap.timeline({
+				scrollTrigger: {
+					trigger: '#o4',
+					pin: true,
+					scrub: 1,
+					end: () => `+=${window.innerHeight * 5}`,
+					onUpdate: (self) => {
+						const index = stageAt(self.progress);
+						if (index === current) return;
+						current = index;
+						count.textContent = counter(index);
+					},
+				},
+			});
+			gsap.to(strokes[0], { strokeDashoffset: 0, duration: 1.2, stagger: 0.15, ease: 'power1.inOut', scrollTrigger: { trigger: '#o4', start: 'top 60%' } });
+			cards.forEach((card, index) => {
+				if (index === 0) return;
+				const at = index - 0.2;
+				timeline.to(cards[index - 1], { x: '-32vw', scale: 0.72, rotation: -8 + (index % 3) * 4, opacity: 0.9, duration: 1, ease: 'power2.inOut' }, at);
+				timeline.to(card, { x: 0, rotationY: 0, rotation: 0, opacity: 1, duration: 1, ease: 'power3.out' }, at);
+				timeline.to(strokes[index], { strokeDashoffset: 0, duration: 0.6, stagger: 0.1, ease: 'power1.inOut' }, at + 0.5);
+			});
+			timeline.to({}, { duration: 0.5 });
+			return timeline.scrollTrigger;
+		}
+
+		window.shippingTriggers = {
+			o1: add_rail_option(),
+			o2: add_order_card_option(),
+			o3: add_route_option(),
+			o4: add_deck_option(),
+		};
+		document.fonts.ready.then(() => ScrollTrigger.refresh());
+	</script>
+</body>
+</html>

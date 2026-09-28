@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Hero Cluster</title>
+	<meta name="description" content="Commera is an open-source eCommerce platform with built-in ERP. A storefront, a merchant dashboard, payments and shipping, all running on ERPNext." />
+	<meta property="og:title" content="Commera | Comprehensive eCommerce platform with built-in ERP" />
+	<meta property="og:description" content="An open-source eCommerce platform with built-in ERP." />
+	<meta property="og:image" content="https://commera.app/assets/commera-film-poster.jpg" />
+	<meta property="og:url" content="https://commera.app/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Commera" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<link rel="canonical" href="https://commera.app/" />
+	<link rel="icon" href="../assets/commera.svg" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://api.fontshare.com" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" />
+	<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,600&display=swap" />
+	<link rel="stylesheet" href="../dist/site.css" />
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
+</head>
+<body class="bg-white font-sans text-ink">
+	<svg class="hidden" aria-hidden="true">
+		<symbol id="b-bag" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 34h60l5 58H15Z" /><path d="M36 34v-6a14 14 0 0 1 28 0v6" /></symbol>
+		<symbol id="b-tag" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 50 50 10h40v40L50 90Z" /><circle cx="71" cy="29" r="5" /></symbol>
+		<symbol id="b-receipt" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8h60v84l-10-7-10 7-10-7-10 7-10-7-10 7Z" /><path d="M34 30h32M34 48h32M34 66h18" /></symbol>
+		<symbol id="b-coin" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="24" rx="38" ry="14" /><path d="M12 24v50c0 7.7 17 14 38 14s38-6.3 38-14V24M12 49c0 7.7 17 14 38 14s38-6.3 38-14" /></symbol>
+		<symbol id="b-truck" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22h52v46H6ZM58 40h20l16 18v10H58Z" /><circle cx="24" cy="78" r="8" /><circle cx="76" cy="78" r="8" /></symbol>
+	</svg>
+
+	<header class="sticky top-0 z-30 border-b border-line bg-white/90 backdrop-blur">
+		<div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-8">
+			<a href="#" class="flex items-center gap-2.5">
+				<img src="../assets/commera.svg" alt="" class="size-8 sm:size-9" />
+				<span class="font-display text-2xl sm:text-[1.85rem]">Commera</span>
+			</a>
+			<nav class="hidden items-center gap-9 text-[0.95rem] font-medium text-ink-soft md:flex">
+				<a href="#storefront" class="hover:text-ink">Storefront</a>
+				<a href="#dashboard" class="hover:text-ink">Dashboard</a>
+				<a href="#integrations" class="hover:text-ink">Integrations</a>
+				<a href="#questions" class="hover:text-ink">FAQ</a>
+			</nav>
+			<a href="https://github.com/bwhtech/commera" class="inline-flex items-center gap-2 rounded-md border border-brand/40 px-3.5 py-2 text-sm font-semibold text-brand-deep hover:border-brand hover:bg-brand-soft/50 sm:px-4 sm:text-base">
+				<svg viewBox="0 0 16 16" class="size-4" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+				GitHub
+			</a>
+		</div>
+	</header>
+
+	<section class="relative overflow-hidden pb-16 lg:pb-10">
+		<div class="mx-auto max-w-7xl px-4 pt-14 text-center sm:px-8 sm:pt-20">
+			<h1 class="font-display mx-auto max-w-4xl text-[2.75rem] text-balance sm:text-6xl lg:text-[4.6rem]">
+				World’s best eCommerce <br class="hidden sm:block" /><span class="text-brand">platform for ERPNext</span>
+			</h1>
+			<p class="mx-auto mt-6 max-w-xl text-lg text-ink/80 sm:text-xl">
+				A storefront and merchant dashboard built on ERPNext.
+			</p>
+			<div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+				<a href="https://uat.commera.app" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand px-6 py-3 text-lg font-semibold text-white hover:bg-brand-deep sm:w-auto">
+					<svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true"><path d="M3 5.5v13l9-6.5zM12 5.5v13l9-6.5z" /></svg>
+					Try the live demo
+				</a>
+				<a href="https://docs.bwh.tech/commera" class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-brand/40 bg-white px-6 py-3 text-lg font-semibold text-brand-deep hover:border-brand sm:w-auto">
+					<svg viewBox="0 0 100 100" class="size-5" aria-hidden="true"><use href="#b-receipt" /></svg>
+					Read the docs
+				</a>
+			</div>
+		</div>
+
+		<div class="relative mt-12 px-4 sm:px-8 lg:mt-6 lg:h-[460px] lg:px-0 lg:max-xl:h-[345px] xl:max-[1440px]:h-[410px]" aria-hidden="true" data-cluster>
+			<div class="relative mx-auto max-w-md lg:absolute lg:top-0 lg:left-1/2 lg:h-[460px] lg:w-[1440px] lg:max-w-none lg:-translate-x-1/2 lg:origin-top lg:max-xl:scale-75 xl:max-[1440px]:scale-[0.89]">
+				<div class="absolute top-6 left-1/2 h-72 w-[80%] -translate-x-1/2 rounded-full bg-mint/40 blur-3xl lg:top-[170px] lg:h-[300px] lg:w-[620px]"></div>
+				<div class="absolute top-[110px] left-0 hidden h-[260px] w-[380px] rounded-full bg-brand-soft/50 blur-3xl lg:block"></div>
+				<div class="absolute top-[70px] right-0 hidden h-[260px] w-[380px] rounded-full bg-lavender/60 blur-3xl lg:block"></div>
+
+				<svg class="absolute inset-0 hidden size-full text-ink/25 lg:block" viewBox="0 0 1440 460" fill="none">
+					<path d="M0 132C70 52 140 8 222 8s168 50 222 116 62 118 56 118" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 7" />
+					<path d="M940 236c40-70 110-196 262-204s218 76 238 116" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 7" />
+				</svg>
+
+				<div class="absolute top-[22px] left-[222px] hidden w-64 rounded-2xl border border-brand/60 bg-white p-4 text-left shadow-sm lg:block">
+					<div class="flex gap-3">
+						<span class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-brand-soft text-brand">
+							<svg viewBox="0 0 100 100" class="size-4"><use href="#b-receipt" /></svg>
+						</span>
+						<div>
+							<p class="text-[0.8rem] font-semibold">Booked in ERPNext</p>
+							<p class="mt-0.5 text-[0.7rem] leading-snug text-ink-soft">Sales Order, invoice and payment entry, the moment the shopper pays.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="absolute top-[132px] left-[48px] hidden w-[17.5rem] gap-1.5 rounded-2xl bg-brand p-1.5 shadow-lg lg:flex">
+					<div class="flex-1 rounded-xl bg-white p-4 text-left">
+						<div class="flex items-center justify-between">
+							<p class="text-[0.72rem] text-ink-soft">New order</p>
+							<span class="rounded-md bg-emerald-50 px-1.5 py-0.5 text-[0.65rem] font-semibold text-emerald-700">Paid</span>
+						</div>
+						<p class="font-display mt-1 text-2xl">#SO-01042</p>
+						<div class="mt-3 flex items-center gap-2.5 border-t border-line pt-3">
+							<img src="../assets/product-checkered-shirt.webp" alt="" width="160" height="160" class="size-10 rounded-md object-cover" />
+							<div class="min-w-0 flex-1">
+								<p class="truncate text-[0.78rem] font-semibold">Checkered slim shirt</p>
+								<p class="text-[0.68rem] text-ink-soft">Navy · M · 1</p>
+							</div>
+							<p class="text-[0.85rem] font-semibold">₹2,599</p>
+						</div>
+						<p class="mt-3 text-[0.68rem] text-ink-soft">via Razorpay · UPI</p>
+					</div>
+				</div>
+
+				<div class="relative flex gap-2 rounded-3xl bg-teal p-2 shadow-xl lg:absolute lg:top-[146px] lg:left-[500px] lg:w-[440px]">
+					<div class="relative aspect-[350/412] w-1/2 overflow-hidden rounded-2xl bg-lavender">
+						<img src="../assets/feature-storefront-home-phone.webp" alt="" class="absolute top-[-127.4%] left-[-14.29%] w-[171.4%] max-w-none" />
+					</div>
+					<div class="flex w-1/2 flex-col rounded-2xl bg-white p-4 text-left sm:p-5">
+						<svg viewBox="0 0 100 100" class="size-7 text-ink"><use href="#b-coin" /></svg>
+						<p class="mt-3 text-[0.75rem] text-ink-soft">Revenue today</p>
+						<p class="font-display text-3xl">₹48,210</p>
+						<p class="mt-1 text-[0.7rem] font-semibold text-emerald-700">+18% on yesterday</p>
+						<svg viewBox="0 0 120 40" class="mt-auto w-full" fill="none">
+							<path d="M0 32c12-2 18-12 30-12s16 10 28 8 16-20 30-22 20 6 32 2" class="stroke-teal" stroke-width="2.5" stroke-linecap="round" />
+							<path d="M0 36c14 0 20-6 34-6s18 4 30 2 20-10 32-10 16 4 24 2" class="stroke-sun" stroke-width="1.5" stroke-linecap="round" />
+						</svg>
+					</div>
+				</div>
+
+				<div class="relative mt-5 flex flex-wrap items-center justify-between gap-3 lg:contents">
+					<p class="flex items-center gap-2 text-left text-[0.75rem] lg:absolute lg:top-[330px] lg:left-[346px]">
+						<span class="size-2 shrink-0 rounded-full bg-ink"></span>
+						<span><span class="font-semibold">12 orders today</span><br /><span class="text-ink-soft">4 waiting to ship</span></span>
+					</p>
+					<p class="flex items-center gap-2 rounded-md border border-line bg-white px-3 py-1.5 text-[0.75rem] font-semibold shadow-sm lg:absolute lg:top-[62px] lg:left-[1050px]">
+						<span class="size-2 rounded-full bg-ink"></span>
+						3 low-stock variants
+					</p>
+				</div>
+
+				<div class="absolute top-[104px] right-[80px] hidden w-60 rounded-2xl bg-violet p-1.5 shadow-lg lg:block">
+					<div class="rounded-xl bg-white p-4 text-left">
+						<div class="flex items-center justify-between">
+							<p class="text-[0.72rem] text-ink-soft">Shipment</p>
+							<svg viewBox="0 0 100 100" class="size-5 text-violet"><use href="#b-truck" /></svg>
+						</div>
+						<p class="font-display text-xl leading-tight">Out for delivery</p>
+						<div class="mt-3 flex items-center gap-1.5">
+							<span class="h-1.5 flex-1 rounded-full bg-violet"></span>
+							<span class="h-1.5 flex-1 rounded-full bg-violet"></span>
+							<span class="h-1.5 flex-1 rounded-full bg-violet"></span>
+							<span class="h-1.5 flex-1 rounded-full bg-lavender"></span>
+						</div>
+						<p class="mt-2.5 text-[0.68rem] text-ink-soft">Shiprocket · live tracking</p>
+					</div>
+				</div>
+
+				<div class="absolute top-[282px] left-[990px] hidden w-64 rounded-2xl border border-brand/60 bg-white p-4 text-left shadow-sm lg:block">
+					<div class="flex gap-3">
+						<span class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-lavender text-[0.7rem] font-bold text-violet">NM</span>
+						<div>
+							<p class="text-[0.8rem] font-semibold">Review to publish</p>
+							<p class="mt-0.5 text-[0.7rem] leading-snug text-ink-soft">★★★★★ “Fits perfectly, fast delivery to Dubai.”</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

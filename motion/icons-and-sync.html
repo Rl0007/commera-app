@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Motion samples: icons and ERPNext sync | Commera</title>
+	<meta name="robots" content="noindex" />
+	<link rel="icon" href="../assets/commera.svg" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://api.fontshare.com" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" />
+	<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,600&display=swap" />
+	<link rel="stylesheet" href="../dist/site.css" />
+</head>
+<body class="overflow-x-hidden bg-white font-sans text-ink">
+	<svg class="hidden" aria-hidden="true">
+		<symbol id="b-cart" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14h14l12 48h50l10-34H26" /><circle cx="40" cy="82" r="7" /><circle cx="76" cy="82" r="7" /></symbol>
+		<symbol id="b-bag" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 34h60l5 58H15Z" /><path d="M36 34v-6a14 14 0 0 1 28 0v6" /></symbol>
+		<symbol id="b-tag" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 50 50 10h40v40L50 90Z" /><circle cx="71" cy="29" r="5" /></symbol>
+		<symbol id="b-parcel" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M50 8 88 28v44L50 92 12 72V28Z" /><path d="m12 28 38 20 38-20M50 48v44" /></symbol>
+		<symbol id="b-receipt" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8h60v84l-10-7-10 7-10-7-10 7-10-7-10 7Z" /><path d="M34 30h32M34 48h32M34 66h18" /></symbol>
+		<symbol id="b-coin" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="24" rx="38" ry="14" /><path d="M12 24v50c0 7.7 17 14 38 14s38-6.3 38-14V24M12 49c0 7.7 17 14 38 14s38-6.3 38-14" /></symbol>
+		<symbol id="b-truck" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22h52v46H6ZM58 40h20l16 18v10H58Z" /><circle cx="24" cy="78" r="8" /><circle cx="76" cy="78" r="8" /></symbol>
+	</svg>
+
+	<header class="border-b border-line">
+		<div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-8">
+			<a href="../index.html" class="flex items-center gap-2.5 font-semibold">
+				<img src="../assets/commera.svg" alt="" class="size-8" />
+				Commera
+			</a>
+			<span class="rounded-full bg-butter-soft px-3 py-1 font-mono text-xs text-ink-soft">Design options</span>
+		</div>
+	</header>
+
+	<main class="mx-auto max-w-6xl px-4 pb-40 sm:px-8">
+		<section class="pt-16 pb-8 sm:pt-24">
+			<h1 class="font-display text-5xl sm:text-7xl">Motion samples: icons and ERPNext sync</h1>
+			<p class="mt-5 max-w-2xl text-lg text-ink-soft">Two ideas, a few variants each. Scroll slowly; every sample starts when it enters the screen. With reduced motion on, each one shows its final frame.</p>
+		</section>
+
+		<h2 class="mt-16 border-t border-line pt-10 font-mono text-sm uppercase tracking-widest text-ink-soft">Idea 1 · Self-drawing icons</h2>
+
+		<section class="mt-12" data-variant="icons-a">
+			<p class="font-mono text-xs uppercase tracking-widest text-brand">Variant 1a</p>
+			<h3 class="mt-1 text-2xl font-semibold">Feature row, staggered draw</h3>
+			<p class="mt-1 text-ink-soft">Four outline icons draw stroke by stroke, left to right, as the row scrolls in.</p>
+			<div class="mt-6 grid grid-cols-2 gap-4 rounded-[var(--radius-panel)] bg-mist p-5 sm:p-10 lg:grid-cols-4" data-draw-row>
+				<article class="rounded-3xl bg-white p-5 sm:p-7" data-draw-tile>
+					<svg data-icon="b-cart" class="size-12 text-ink sm:size-14"></svg>
+					<h4 class="mt-5 font-semibold">Storefront</h4>
+					<p class="mt-1 text-sm text-ink-soft">Cart and checkout, ready to sell.</p>
+				</article>
+				<article class="rounded-3xl bg-white p-5 sm:p-7" data-draw-tile>
+					<svg data-icon="b-receipt" class="size-12 text-ink sm:size-14"></svg>
+					<h4 class="mt-5 font-semibold">ERPNext books</h4>
+					<p class="mt-1 text-sm text-ink-soft">Sales Orders and invoices, made for you.</p>
+				</article>
+				<article class="rounded-3xl bg-white p-5 sm:p-7" data-draw-tile>
+					<svg data-icon="b-coin" class="size-12 text-ink sm:size-14"></svg>
+					<h4 class="mt-5 font-semibold">Payments</h4>
+					<p class="mt-1 text-sm text-ink-soft">Razorpay, Stripe, Telr, Tabby or cash on delivery.</p>
+				</article>
+				<article class="rounded-3xl bg-white p-5 sm:p-7" data-draw-tile>
+					<svg data-icon="b-truck" class="size-12 text-ink sm:size-14"></svg>
+					<h4 class="mt-5 font-semibold">Shipping</h4>
+					<p class="mt-1 text-sm text-ink-soft">Labels and tracking with Shiprocket or AfterShip.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="mt-24" data-variant="icons-b">
+			<p class="font-mono text-xs uppercase tracking-widest text-brand">Variant 1b</p>
+			<h3 class="mt-1 text-2xl font-semibold">Draw, then a colour pop</h3>
+			<p class="mt-1 text-ink-soft">Each icon draws in ink, then a soft disc pops behind it and the stroke warms to its accent with a small bounce.</p>
+			<div class="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 rounded-[var(--radius-panel)] bg-butter-soft px-5 py-10 sm:p-12 lg:grid-cols-4" data-pop-row>
+				<div class="flex flex-col items-center text-center" data-pop-item>
+					<span class="relative grid size-24 place-items-center sm:size-28">
+						<span class="absolute inset-0 rounded-full bg-brand-soft" data-pop-disc></span>
+						<svg data-icon="b-bag" class="relative size-12 text-brand sm:size-14" data-pop-icon></svg>
+					</span>
+					<p class="mt-4 font-semibold">Products</p>
+				</div>
+				<div class="flex flex-col items-center text-center" data-pop-item>
+					<span class="relative grid size-24 place-items-center sm:size-28">
+						<span class="absolute inset-0 rounded-full bg-mint" data-pop-disc></span>
+						<svg data-icon="b-coin" class="relative size-12 text-teal sm:size-14" data-pop-icon></svg>
+					</span>
+					<p class="mt-4 font-semibold">Payments</p>
+				</div>
+				<div class="flex flex-col items-center text-center" data-pop-item>
+					<span class="relative grid size-24 place-items-center sm:size-28">
+						<span class="absolute inset-0 rounded-full bg-lavender" data-pop-disc></span>
+						<svg data-icon="b-receipt" class="relative size-12 text-violet sm:size-14" data-pop-icon></svg>
+					</span>
+					<p class="mt-4 font-semibold">Invoices</p>
+				</div>
+				<div class="flex flex-col items-center text-center" data-pop-item>
+					<span class="relative grid size-24 place-items-center sm:size-28">
+						<span class="absolute inset-0 rounded-full bg-butter" data-pop-disc></span>
+						<svg data-icon="b-parcel" class="relative size-12 text-sun sm:size-14" data-pop-icon></svg>
+					</span>
+					<p class="mt-4 font-semibold">Fulfilment</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="mt-24" data-variant="icons-c">
+			<p class="font-mono text-xs uppercase tracking-widest text-brand">Variant 1c</p>
+			<h3 class="mt-1 text-2xl font-semibold">Icon draws while its label types in</h3>
+			<p class="mt-1 text-ink-soft">The heading types letter by letter beside the drawing icon, then the description rises line by line.</p>
+			<div class="mt-6 grid gap-4 rounded-[var(--radius-panel)] bg-ink p-5 sm:p-10 lg:grid-cols-3">
+				<article class="flex gap-5 rounded-3xl bg-white p-6" data-type-item>
+					<svg data-icon="b-cart" class="size-11 shrink-0 text-brand"></svg>
+					<div>
+						<h4 class="font-display text-2xl sm:text-3xl lg:text-[1.7rem]" data-type-label>Sell online</h4>
+						<p class="mt-2 text-ink-soft" data-type-note>A storefront and checkout that write straight into ERPNext.</p>
+					</div>
+				</article>
+				<article class="flex gap-5 rounded-3xl bg-white p-6" data-type-item>
+					<svg data-icon="b-receipt" class="size-11 shrink-0 text-violet"></svg>
+					<div>
+						<h4 class="font-display text-2xl sm:text-3xl lg:text-[1.7rem]" data-type-label>Books that balance</h4>
+						<p class="mt-2 text-ink-soft" data-type-note>Prepaid orders get a Sales Invoice and a Payment Entry.</p>
+					</div>
+				</article>
+				<article class="flex gap-5 rounded-3xl bg-white p-6" data-type-item>
+					<svg data-icon="b-truck" class="size-11 shrink-0 text-teal"></svg>
+					<div>
+						<h4 class="font-display text-2xl sm:text-3xl lg:text-[1.7rem]" data-type-label>Ship the same day</h4>
+						<p class="mt-2 text-ink-soft" data-type-note>Book couriers and track parcels through Shiprocket or AfterShip.</p>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<h2 class="mt-32 border-t border-line pt-10 font-mono text-sm uppercase tracking-widest text-ink-soft">Idea 2 · Order flows into ERPNext</h2>
+
+		<section class="mt-12" data-variant="sync-a">
+			<p class="font-mono text-xs uppercase tracking-widest text-brand">Variant 2a</p>
+			<h3 class="mt-1 text-2xl font-semibold">Scrubbed with scroll</h3>
+			<p class="mt-1 text-ink-soft">Scroll drives it: the order is placed, the connector draws, the chip travels and the ledger rows tick in. Scroll back to rewind.</p>
+			<div class="mt-6 rounded-[var(--radius-panel)] bg-mist p-5 sm:p-10" data-sync-scene="scrub" data-scene-id="sync-a"></div>
+		</section>
+
+		<section class="mt-24" data-variant="sync-b">
+			<p class="font-mono text-xs uppercase tracking-widest text-brand">Variant 2b</p>
+			<h3 class="mt-1 text-2xl font-semibold">Plays on enter, then loops gently</h3>
+			<p class="mt-1 text-ink-soft">Runs once when it scrolls in, then repeats every few seconds with the next prepaid order.</p>
+			<div class="mt-6 rounded-[var(--radius-panel)] bg-lavender p-5 sm:p-10" data-sync-scene="loop" data-scene-id="sync-b"></div>
+		</section>
+
+		<section class="mt-24" data-variant="sync-c">
+			<p class="font-mono text-xs uppercase tracking-widest text-brand">Variant 2c</p>
+			<h3 class="mt-1 text-2xl font-semibold">Orders streaming in</h3>
+			<p class="mt-1 text-ink-soft">A steady stream of chips; every arrival counts a Sales Order, and prepaid ones also count an invoice and a payment.</p>
+			<div class="mt-6 rounded-[var(--radius-panel)] bg-mint p-5 sm:p-10" data-sync-scene="stream" data-scene-id="sync-c"></div>
+		</section>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/DrawSVGPlugin.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/MotionPathPlugin.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+	<script>
+		gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin, SplitText);
+
+		const orders = [
+			{ number: 'SO-01042', total: '₹2,499', item: 'Linen overshirt · M', method: 'Razorpay · UPI', prepaid: true, invoice: 'ACC-SINV-2026-00318', payment: 'ACC-PAY-2026-00211' },
+			{ number: 'SO-01043', total: '₹1,299', item: 'Canvas tote · Sand', method: 'Stripe · Card', prepaid: true, invoice: 'ACC-SINV-2026-00319', payment: 'ACC-PAY-2026-00212' },
+			{ number: 'SO-01044', total: '₹3,850', item: 'Wool throw · Rust', method: 'Cash on delivery', prepaid: false },
+			{ number: 'SO-01045', total: '₹899', item: 'Ceramic mug · Pair', method: 'Razorpay · Card', prepaid: true, invoice: 'ACC-SINV-2026-00320', payment: 'ACC-PAY-2026-00213' },
+		];
+		const prepaid_orders = orders.filter((order) => order.prepaid);
+		const reveal_selector = { wide: '[data-reveal="wide"]', tall: '[data-reveal="tall"]' };
+		const route_selector = { wide: '[data-route="wide"]', tall: '[data-route="tall"]' };
+		const wide_path = 'M6 84 C 70 84, 122 28, 186 28';
+		const tall_path = 'M40 6 C 40 64, 72 64, 72 122';
+
+		function format_order_card(order) {
+			return `
+				<article class="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-line sm:p-6" data-order-card>
+					<div class="flex items-center justify-between gap-3">
+						<span class="rounded-full bg-brand-soft px-2.5 py-1 text-xs font-semibold text-brand-deep">Storefront</span>
+						<span class="font-mono text-xs text-ink-soft" data-field="number">#${order.number}</span>
+					</div>
+					<div class="mt-5 flex items-center gap-4">
+						<span class="grid size-12 shrink-0 place-items-center rounded-2xl bg-butter"><svg data-icon="b-bag" class="size-6 text-ink"></svg></span>
+						<div class="min-w-0">
+							<p class="truncate font-semibold" data-field="item">${order.item}</p>
+							<p class="text-sm text-ink-soft" data-field="method">${order.method}</p>
+						</div>
+						<p class="ml-auto font-semibold" data-field="total">${order.total}</p>
+					</div>
+					<div class="mt-5 rounded-full bg-ink py-2.5 text-center text-sm font-semibold text-white" data-place-order>Place order</div>
+				</article>`;
+		}
+
+		function format_connector(scene_id, chip_count) {
+			const chips = Array.from({ length: chip_count }, () => `
+				<span class="invisible absolute left-0 top-0 z-10 flex items-center gap-1.5 whitespace-nowrap rounded-full bg-ink px-3 py-1.5 font-mono text-xs text-white shadow-lg" data-chip>
+					<span class="size-1.5 rounded-full bg-teal" data-chip-dot></span><span data-chip-text>#SO-01042 ₹2,499</span>
+				</span>`).join('');
+			return `
+				<div class="relative mx-auto h-32 w-28 lg:h-28 lg:w-48">
+					<svg viewBox="0 0 192 112" class="absolute inset-0 hidden size-full overflow-visible lg:block" aria-hidden="true">
+						<defs><mask id="${scene_id}-wide" maskUnits="userSpaceOnUse" x="-10" y="-10" width="212" height="132"><path d="${wide_path}" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" data-reveal="wide" /></mask></defs>
+						<path d="${wide_path}" fill="none" class="stroke-ink/40" stroke-width="3.5" stroke-dasharray="0.1 9" stroke-linecap="round" mask="url(#${scene_id}-wide)" />
+						<path d="${wide_path}" fill="none" stroke="none" data-route="wide" />
+						<circle cx="6" cy="84" r="5" class="fill-brand" /><circle cx="186" cy="28" r="5" class="fill-violet" />
+					</svg>
+					<svg viewBox="0 0 112 128" class="absolute inset-0 size-full overflow-visible lg:hidden" aria-hidden="true">
+						<defs><mask id="${scene_id}-tall" maskUnits="userSpaceOnUse" x="-10" y="-10" width="132" height="148"><path d="${tall_path}" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" data-reveal="tall" /></mask></defs>
+						<path d="${tall_path}" fill="none" class="stroke-ink/40" stroke-width="3.5" stroke-dasharray="0.1 9" stroke-linecap="round" mask="url(#${scene_id}-tall)" />
+						<path d="${tall_path}" fill="none" stroke="none" data-route="tall" />
+						<circle cx="40" cy="6" r="5" class="fill-brand" /><circle cx="72" cy="122" r="5" class="fill-violet" />
+					</svg>
+					${chips}
+				</div>`;
+		}
+
+		function format_ledger_row(icon, doctype, field, value, status) {
+			return `
+				<li class="flex items-center gap-3 rounded-2xl bg-mist px-3 py-2.5" data-ledger-row>
+					<span class="grid size-9 shrink-0 place-items-center rounded-xl bg-white"><svg data-icon="${icon}" class="size-5 text-violet"></svg></span>
+					<div class="min-w-0">
+						<p class="text-sm font-semibold">${doctype}</p>
+						<p class="truncate font-mono text-xs text-ink-soft" data-field="${field}">${value}</p>
+					</div>
+					<span class="ml-auto shrink-0 rounded-full bg-mint px-2 py-0.5 text-xs font-semibold text-ink" data-ledger-badge>${status}</span>
+				</li>`;
+		}
+
+		function format_ledger(order) {
+			return `
+				<article class="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-line sm:p-6">
+					<div class="flex items-center justify-between gap-3">
+						<span class="rounded-full bg-lavender px-2.5 py-1 text-xs font-semibold text-violet">ERPNext</span>
+						<span class="text-xs text-ink-soft">Booked for you</span>
+					</div>
+					<ul class="mt-4 space-y-2">
+						${format_ledger_row('b-bag', 'Sales Order', 'number', order.number, 'To Deliver')}
+						${format_ledger_row('b-receipt', 'Sales Invoice', 'invoice', order.invoice, 'Paid')}
+						${format_ledger_row('b-coin', 'Payment Entry', 'payment', order.payment, 'Submitted')}
+					</ul>
+				</article>`;
+		}
+
+		function format_counter_row(icon, doctype, counter, value) {
+			return `
+				<li class="flex items-center gap-3 rounded-2xl bg-mist px-3 py-2.5">
+					<span class="grid size-9 shrink-0 place-items-center rounded-xl bg-white"><svg data-icon="${icon}" class="size-5 text-violet"></svg></span>
+					<p class="text-sm font-semibold">${doctype}</p>
+					<span class="ml-auto font-mono text-lg tabular-nums" data-counter="${counter}">${value.toLocaleString('en-IN')}</span>
+				</li>`;
+		}
+
+		function format_counter_ledger() {
+			return `
+				<article class="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-line sm:p-6">
+					<div class="flex items-center justify-between gap-3">
+						<span class="rounded-full bg-lavender px-2.5 py-1 text-xs font-semibold text-violet">ERPNext</span>
+						<span class="font-mono text-xs text-ink-soft" data-latest>Latest #SO-01045</span>
+					</div>
+					<ul class="mt-4 space-y-2">
+						${format_counter_row('b-bag', 'Sales Orders', 'sales_order', 1284)}
+						${format_counter_row('b-receipt', 'Sales Invoices', 'sales_invoice', 1061)}
+						${format_counter_row('b-coin', 'Payment Entries', 'payment_entry', 1061)}
+					</ul>
+					<p class="mt-3 text-xs text-ink-soft">Prepaid orders also get a Sales Invoice and a Payment Entry.</p>
+				</article>`;
+		}
+
+		// DrawSVG measures a multi-subpath path as one stroke, and WebKit paints every undrawn subpath as a round-cap dot.
+		function split_subpaths(shape) {
+			if (shape.tagName !== 'path') return [shape.cloneNode(true)];
+			return shape.getAttribute('d').split(/(?=M)/).map((segment) => {
+				const part = shape.cloneNode(false);
+				part.setAttribute('d', segment);
+				return part;
+			});
+		}
+
+		function add_inline_icons(root) {
+			root.querySelectorAll('svg[data-icon]').forEach((icon) => {
+				const symbol = document.getElementById(icon.dataset.icon);
+				['viewBox', 'fill', 'stroke', 'stroke-width', 'stroke-linecap', 'stroke-linejoin'].forEach((name) => icon.setAttribute(name, symbol.getAttribute(name)));
+				icon.setAttribute('aria-hidden', 'true');
+				icon.replaceChildren(...Array.from(symbol.children, (child) => split_subpaths(child)).flat());
+			});
+		}
+
+		function add_sync_scenes() {
+			document.querySelectorAll('[data-sync-scene]').forEach((scene) => {
+				const is_stream = scene.dataset.syncScene === 'stream';
+				const order = is_stream ? orders[3] : orders[0];
+				scene.innerHTML = `
+					<div class="grid items-center gap-2 lg:grid-cols-[1fr_12rem_1fr] lg:gap-0">
+						${format_order_card(order)}
+						${format_connector(scene.dataset.sceneId, is_stream ? 3 : 1)}
+						${is_stream ? format_counter_ledger() : format_ledger(order)}
+					</div>`;
+			});
+		}
+
+		function fill_order_fields(scene, order) {
+			Object.entries(order).forEach(([field, value]) => {
+				scene.querySelectorAll(`[data-field="${field}"]`).forEach((element) => {
+					element.textContent = field === 'number' && element.closest('[data-order-card]') ? `#${value}` : value;
+				});
+			});
+		}
+
+		function draw_strokes(strokes, duration, stagger) {
+			return gsap.timeline()
+				.from(strokes, { drawSVG: '0%', duration, stagger, ease: 'power2.inOut' }, 0)
+				.from(strokes, { autoAlpha: 0, duration: 0.05, stagger }, 0);
+		}
+
+		function add_draw_row() {
+			const row = document.querySelector('[data-draw-row]');
+			const tiles = row.querySelectorAll('[data-draw-tile]');
+			const timeline = gsap.timeline({ scrollTrigger: { trigger: row, start: 'top 75%' } });
+			tiles.forEach((tile, index) => {
+				const strokes = tile.querySelectorAll('svg path, svg circle, svg ellipse');
+				const words = tile.querySelectorAll('h4, p');
+				timeline
+					.add(draw_strokes(strokes, 0.9, 0.18), index * 0.22)
+					.from(words, { y: 12, autoAlpha: 0, duration: 0.5, stagger: 0.08, ease: 'power3.out' }, index * 0.22 + 0.35);
+			});
+		}
+
+		function add_pop_row() {
+			const row = document.querySelector('[data-pop-row]');
+			const timeline = gsap.timeline({ scrollTrigger: { trigger: row, start: 'top 75%' } });
+			row.querySelectorAll('[data-pop-item]').forEach((item, index) => {
+				const icon = item.querySelector('[data-pop-icon]');
+				const at = index * 0.25;
+				timeline
+					.add(draw_strokes(icon.children, 0.8, 0.15), at)
+					.from(icon, { color: '#0b0f1f', duration: 0.4 }, at + 0.8)
+					.from(item.querySelector('[data-pop-disc]'), { scale: 0, duration: 0.6, ease: 'back.out(2.2)' }, at + 0.75)
+					.to(icon, { keyframes: [{ y: -10, scale: 1.08, duration: 0.18, ease: 'power2.out' }, { y: 0, scale: 1, duration: 0.5, ease: 'bounce.out' }] }, at + 0.8)
+					.from(item.querySelector('p'), { y: 10, autoAlpha: 0, duration: 0.4 }, at + 0.9);
+			});
+		}
+
+		function add_type_items() {
+			document.querySelectorAll('[data-type-item]').forEach((item, index) => {
+				const label = SplitText.create(item.querySelector('[data-type-label]'), { type: 'words,chars' });
+				const note = SplitText.create(item.querySelector('[data-type-note]'), { type: 'lines', mask: 'lines' });
+				const strokes = item.querySelector('svg').children;
+				gsap.timeline({ scrollTrigger: { trigger: item, start: 'top 80%' }, delay: index * 0.2 })
+					.add(draw_strokes(strokes, 1.1, 0.2))
+					.from(label.chars, { autoAlpha: 0, duration: 0.01, stagger: 0.045 }, 0.1)
+					.from(note.lines, { yPercent: 100, duration: 0.6, stagger: 0.1, ease: 'power3.out' }, '>-0.1');
+			});
+		}
+
+		function build_order_timeline(scene, route, reveal) {
+			const chip = scene.querySelector('[data-chip]');
+			return gsap.timeline()
+				.to(scene.querySelector('[data-place-order]'), { scale: 0.94, duration: 0.12, yoyo: true, repeat: 1 })
+				.fromTo(reveal, { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.9, ease: 'power1.inOut' }, '<')
+				.fromTo(chip, { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.25 }, '-=0.45')
+				.to(chip, { motionPath: { path: route, align: route, alignOrigin: [0.5, 0.5] }, duration: 1.3, ease: 'power2.inOut' }, '<')
+				.to(chip, { autoAlpha: 0, scale: 0.6, duration: 0.25 }, '-=0.2')
+				.from(scene.querySelectorAll('[data-ledger-row]'), { x: 12, opacity: 0.15, duration: 0.45, stagger: 0.35, ease: 'power3.out' })
+				.from(scene.querySelectorAll('[data-ledger-badge]'), { scale: 0, duration: 0.4, stagger: 0.35, ease: 'back.out(3)' }, '<0.2');
+		}
+
+		function add_scrub_scene(scene, route, reveal) {
+			gsap.timeline({ scrollTrigger: { trigger: scene, start: 'top 85%', end: 'bottom 60%', scrub: 0.8 } })
+				.from(scene.querySelector('[data-order-card]'), { y: 24, autoAlpha: 0, duration: 0.5 })
+				.add(build_order_timeline(scene, route, reveal));
+		}
+
+		function add_loop_scene(scene, route, reveal) {
+			let order_index = 0;
+			const loop = build_order_timeline(scene, route, reveal)
+				.to(scene.querySelectorAll('[data-ledger-row]'), { opacity: 0.15, duration: 0.4, stagger: 0.08 }, '+=2.4')
+				.to(reveal, { drawSVG: '100% 100%', duration: 0.5 }, '<');
+			loop.repeat(-1).eventCallback('onRepeat', () => {
+				order_index = (order_index + 1) % prepaid_orders.length;
+				fill_order_fields(scene, prepaid_orders[order_index]);
+				scene.querySelector('[data-chip-text]').textContent = `#${prepaid_orders[order_index].number} ${prepaid_orders[order_index].total}`;
+			});
+			gsap.timeline({ scrollTrigger: { trigger: scene, start: 'top 75%' } })
+				.from(scene.querySelector('[data-order-card]'), { y: 24, autoAlpha: 0, duration: 0.6, ease: 'power3.out' })
+				.add(loop);
+		}
+
+		function add_stream_scene(scene, route, reveal) {
+			const chips = scene.querySelectorAll('[data-chip]');
+			const counters = {};
+			scene.querySelectorAll('[data-counter]').forEach((element) => {
+				counters[element.dataset.counter] = { element, value: Number(element.textContent.replace(/,/g, '')) };
+			});
+			let sequence = 1045;
+
+			const bump = (name) => {
+				const counter = counters[name];
+				counter.value += 1;
+				counter.element.textContent = counter.value.toLocaleString('en-IN');
+				gsap.fromTo(counter.element, { scale: 1.25, color: '#6b3cf0' }, { scale: 1, color: '#0b0f1f', duration: 0.5, ease: 'power2.out' });
+			};
+			const launch = (chip) => {
+				sequence += 1;
+				const order = { ...orders[sequence % orders.length], number: `SO-0${sequence}` };
+				chip.dataset.prepaid = order.prepaid ? 'yes' : 'no';
+				chip.querySelector('[data-chip-text]').textContent = order.total;
+				chip.querySelector('[data-chip-dot]').classList.toggle('bg-sun', !order.prepaid);
+				chip.querySelector('[data-chip-dot]').classList.toggle('bg-teal', order.prepaid);
+				fill_order_fields(scene, { number: order.number, item: order.item, method: order.method, total: order.total });
+				chip.dataset.number = order.number;
+			};
+			const land = (chip) => {
+				bump('sales_order');
+				if (chip.dataset.prepaid === 'yes') {
+					bump('sales_invoice');
+					bump('payment_entry');
+				}
+				scene.querySelector('[data-latest]').textContent = `Latest #${chip.dataset.number}`;
+			};
+
+			const stream = gsap.timeline({ repeat: -1 });
+			chips.forEach((chip, index) => {
+				const at = index * 1.2;
+				stream
+					.fromTo(chip, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3, onStart: () => launch(chip) }, at)
+					.to(chip, { motionPath: { path: route, align: route, alignOrigin: [0.5, 0.5] }, duration: 2.4, ease: 'none', onComplete: () => land(chip) }, at)
+					.to(chip, { autoAlpha: 0, duration: 0.3 }, at + 2.1);
+			});
+
+			const master = gsap.timeline({ paused: true })
+				.from(scene.querySelector('[data-order-card]'), { y: 24, autoAlpha: 0, duration: 0.6, ease: 'power3.out' })
+				.fromTo(reveal, { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.9, ease: 'power1.inOut' }, '-=0.2')
+				.add(stream);
+			ScrollTrigger.create({ trigger: scene, start: 'top 75%', end: 'bottom top', animation: master, toggleActions: 'play pause resume pause' });
+		}
+
+		add_sync_scenes();
+		add_inline_icons(document);
+
+		gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', (context) => {
+			add_draw_row();
+			add_pop_row();
+			document.fonts.ready.then(context.add(() => add_type_items()));
+		});
+
+		gsap.matchMedia().add({ motion: '(prefers-reduced-motion: no-preference)', wide: '(min-width: 1024px)' }, (context) => {
+			if (!context.conditions.motion) return;
+			const shape = context.conditions.wide ? 'wide' : 'tall';
+			document.querySelectorAll('[data-sync-scene]').forEach((scene) => {
+				const route = scene.querySelector(route_selector[shape]);
+				const reveal = scene.querySelector(reveal_selector[shape]);
+				if (scene.dataset.syncScene === 'scrub') add_scrub_scene(scene, route, reveal);
+				if (scene.dataset.syncScene === 'loop') add_loop_scene(scene, route, reveal);
+				if (scene.dataset.syncScene === 'stream') add_stream_scene(scene, route, reveal);
+			});
+		});
+	</script>
+</body>
+</html>

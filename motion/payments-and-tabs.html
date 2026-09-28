@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Motion samples: payments and integration tabs</title>
+	<meta name="robots" content="noindex" />
+	<link rel="icon" href="../assets/commera.svg" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://api.fontshare.com" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" />
+	<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,600&display=swap" />
+	<link rel="stylesheet" href="../dist/site.css" />
+	<style>
+		.vt-list { view-transition-name: tabs-vt-list; }
+		.vt-shot { view-transition-name: tabs-vt-shot; }
+		::view-transition-old(tabs-vt-list),
+		::view-transition-new(tabs-vt-list) { animation-duration: 0.45s; animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); }
+		::view-transition-old(tabs-vt-list) { animation-name: vt-fade-out; animation-duration: 0.18s; animation-fill-mode: both; }
+		::view-transition-new(tabs-vt-list) { animation-name: vt-rise-in; animation-delay: 0.14s; animation-fill-mode: both; }
+		::view-transition-old(tabs-vt-shot) { animation: vt-slide-out 0.5s cubic-bezier(0.6, 0, 0.3, 1) both; }
+		::view-transition-new(tabs-vt-shot) { animation: vt-slide-in 0.5s cubic-bezier(0.6, 0, 0.3, 1) both; }
+		@keyframes vt-fade-out { to { opacity: 0; transform: translateY(-12px); } }
+		@keyframes vt-rise-in { from { opacity: 0; transform: translateY(18px); } }
+		@keyframes vt-slide-out { to { opacity: 0; transform: translateX(-8%) scale(0.96); } }
+		@keyframes vt-slide-in { from { opacity: 0; transform: translateX(8%) scale(0.96); } }
+		@media (prefers-reduced-motion: reduce) {
+			::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+		}
+	</style>
+</head>
+<body class="bg-white font-sans text-ink">
+	<svg class="hidden" aria-hidden="true">
+		<symbol id="a-coin" viewBox="0 0 100 100" fill="currentColor"><ellipse cx="50" cy="24" rx="40" ry="15" /><path d="M10 34v12c0 8.3 17.9 15 40 15s40-6.7 40-15V34c0 8.3-17.9 15-40 15S10 42.3 10 34Z" /><path d="M10 58v12c0 8.3 17.9 15 40 15s40-6.7 40-15V58c0 8.3-17.9 15-40 15S10 66.3 10 58Z" /></symbol>
+		<symbol id="a-coin-disc" viewBox="0 0 100 50" fill="currentColor"><ellipse cx="50" cy="15" rx="40" ry="15" /><path d="M10 25v12c0 8.3 17.9 15 40 15s40-6.7 40-15V25c0 8.3-17.9 15-40 15S10 33.3 10 25Z" /></symbol>
+		<symbol id="b-coin" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="24" rx="38" ry="14" /><path d="M12 24v50c0 7.7 17 14 38 14s38-6.3 38-14V24M12 49c0 7.7 17 14 38 14s38-6.3 38-14" /></symbol>
+		<symbol id="b-receipt" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8h60v84l-10-7-10 7-10-7-10 7-10-7-10 7Z" /><path d="M34 30h32M34 48h32M34 66h18" /></symbol>
+	</svg>
+
+	<header class="mx-auto max-w-6xl px-4 pt-14 pb-6 sm:px-8 sm:pt-20">
+		<p class="font-mono text-xs tracking-widest text-ink-soft uppercase">Commera landing · motion</p>
+		<h1 class="font-display mt-3 text-4xl text-balance sm:text-6xl">Motion samples: payments and integration tabs</h1>
+		<p class="mt-4 max-w-2xl text-lg text-ink/70">Each variant plays once when it scrolls into view. Use Replay to watch it again. With reduced motion turned on, every sample shows its finished state.</p>
+	</header>
+
+	<main class="mx-auto max-w-6xl space-y-24 px-4 pb-32 sm:px-8">
+		<section>
+			<h2 class="font-display text-3xl sm:text-4xl">1. Payment settles</h2>
+			<p class="mt-2 text-ink/70">Recommended. A prepaid order is paid, and ERPNext books it.</p>
+
+			<article class="mt-10" data-variant="pay-toast">
+				<div class="flex flex-wrap items-end justify-between gap-3">
+					<div>
+						<h3 class="text-lg font-semibold">1a · Toast and status</h3>
+						<p class="text-ink/65">The notification slides in, the order flips from Pending to Paid, and the Payment Entry line ticks in.</p>
+					</div>
+					<button type="button" data-replay class="rounded-md border border-line px-4 py-2 text-sm font-medium hover:bg-mist">Replay</button>
+				</div>
+				<div data-stage class="mt-5 overflow-hidden rounded-[var(--radius-panel)] bg-mist p-5 sm:p-10">
+					<div class="mx-auto max-w-md space-y-4">
+						<div data-toast class="flex items-center gap-3 rounded-2xl bg-ink p-4 text-white shadow-[0_20px_40px_-24px_rgba(11,15,31,0.6)]">
+							<span class="grid size-10 shrink-0 place-items-center rounded-xl bg-sun text-ink"><svg class="size-6"><use href="#a-coin" /></svg></span>
+							<div class="min-w-0">
+								<p class="font-semibold">Payment received</p>
+								<p class="text-sm text-white/70">Razorpay · UPI · ₹2,499</p>
+							</div>
+						</div>
+						<div class="rounded-2xl bg-white p-5">
+							<div class="flex items-start justify-between gap-3">
+								<div>
+									<p class="font-mono text-sm text-ink-soft">#SO-01042</p>
+									<p class="mt-1 font-semibold">Aarav Mehta · 2 items</p>
+								</div>
+								<div class="grid overflow-hidden rounded-md text-sm font-medium">
+									<span data-pending class="col-start-1 row-start-1 bg-butter px-2.5 py-1 text-center">Pending</span>
+									<span data-paid class="col-start-1 row-start-1 bg-mint px-2.5 py-1 text-center">Paid</span>
+								</div>
+							</div>
+							<p class="font-display mt-4 text-3xl">₹2,499</p>
+						</div>
+						<div data-entry class="flex items-center gap-3 rounded-2xl bg-white/70 px-4 py-3">
+							<svg viewBox="0 0 24 24" class="size-6 shrink-0 text-teal" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle data-check-ring cx="12" cy="12" r="10" /><path data-check-path d="m7.5 12.5 3 3 6-6.5" /></svg>
+							<p class="text-sm"><span class="font-semibold">Payment Entry created in ERPNext</span> <span class="font-mono text-ink-soft">ACC-PAY-2026-00318</span></p>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<article class="mt-16" data-variant="pay-coin">
+				<div class="flex flex-wrap items-end justify-between gap-3">
+					<div>
+						<h3 class="text-lg font-semibold">1b · Coin drop</h3>
+						<p class="text-ink/65">A coin falls onto the stack with a small bounce, then the invoice and payment lines tick in.</p>
+					</div>
+					<button type="button" data-replay class="rounded-md border border-line px-4 py-2 text-sm font-medium hover:bg-mist">Replay</button>
+				</div>
+				<div data-stage class="mt-5 overflow-hidden rounded-[var(--radius-panel)] bg-ink p-5 text-white sm:p-10">
+					<div class="grid items-center gap-8 md:grid-cols-[1fr_auto_1fr]">
+						<div class="space-y-4">
+							<div data-toast class="flex items-center gap-3 rounded-2xl bg-white p-4 text-ink">
+								<span class="grid size-10 shrink-0 place-items-center rounded-xl bg-butter"><svg class="size-6"><use href="#b-coin" /></svg></span>
+								<div class="min-w-0">
+									<p class="font-semibold">Payment received</p>
+									<p class="text-sm text-ink-soft">Razorpay · UPI · ₹2,499</p>
+								</div>
+							</div>
+							<div class="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-4">
+								<p class="font-mono text-sm text-white/80">#SO-01042</p>
+								<div class="grid overflow-hidden rounded-md text-sm font-medium text-ink">
+									<span data-pending class="col-start-1 row-start-1 bg-butter px-2.5 py-1 text-center">Pending</span>
+									<span data-paid class="col-start-1 row-start-1 bg-mint px-2.5 py-1 text-center">Paid</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="relative mx-auto mt-4 h-44 w-32 md:mt-0">
+							<svg class="absolute top-12 left-0 size-32 text-sun"><use href="#a-coin" /></svg>
+							<svg data-coin class="absolute top-7 left-0 h-16 w-32 text-sun"><use href="#a-coin-disc" /></svg>
+							<p data-plus class="font-display absolute -top-5 inset-x-0 text-center text-2xl whitespace-nowrap text-sun">+₹2,499</p>
+						</div>
+
+						<div class="space-y-3">
+							<div data-line class="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3">
+								<svg viewBox="0 0 24 24" class="size-6 shrink-0 text-teal" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle data-check-ring cx="12" cy="12" r="10" /><path data-check-path d="m7.5 12.5 3 3 6-6.5" /></svg>
+								<p class="text-sm"><span class="font-semibold">Sales Invoice submitted</span><br /><span class="font-mono text-white/60">ACC-SINV-2026-00412</span></p>
+							</div>
+							<div data-line class="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3">
+								<svg viewBox="0 0 24 24" class="size-6 shrink-0 text-teal" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle data-check-ring cx="12" cy="12" r="10" /><path data-check-path d="m7.5 12.5 3 3 6-6.5" /></svg>
+								<p class="text-sm"><span class="font-semibold">Payment Entry created in ERPNext</span><br /><span class="font-mono text-white/60">ACC-PAY-2026-00318</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<article class="mt-16" data-variant="pay-sequence">
+				<div class="flex flex-wrap items-end justify-between gap-3">
+					<div>
+						<h3 class="text-lg font-semibold">1c · Every gateway, in turn</h3>
+						<p class="text-ink/65">Four orders settle one after another. Prepaid ones get a Payment Entry; cash on delivery waits for the courier.</p>
+					</div>
+					<button type="button" data-replay class="rounded-md border border-line px-4 py-2 text-sm font-medium hover:bg-mist">Replay</button>
+				</div>
+				<div data-stage class="mt-5 overflow-hidden rounded-[var(--radius-panel)] bg-butter-soft p-5 sm:p-10">
+					<div class="grid gap-6 lg:grid-cols-[1fr_16rem]">
+						<ul class="divide-y divide-line overflow-hidden rounded-2xl bg-white">
+							<li data-row class="flex items-center gap-3 px-4 py-4 sm:gap-4 sm:px-5">
+								<div class="min-w-0 flex-1"><p class="font-semibold">Razorpay</p><p class="text-sm text-ink-soft">UPI · #SO-01042</p></div>
+								<div class="flex shrink-0 flex-col items-end gap-1.5 sm:flex-row sm:items-center sm:gap-4"><p class="font-mono text-sm sm:text-base">₹2,499</p><div class="grid w-32 overflow-hidden rounded-md text-center text-sm font-medium"><span data-pending class="col-start-1 row-start-1 bg-butter px-2 py-1">Pending</span><span data-paid class="col-start-1 row-start-1 bg-mint px-2 py-1">Paid</span></div></div>
+							</li>
+							<li data-row class="flex items-center gap-3 px-4 py-4 sm:gap-4 sm:px-5">
+								<div class="min-w-0 flex-1"><p class="font-semibold">Stripe</p><p class="text-sm text-ink-soft">Card · #SO-01043</p></div>
+								<div class="flex shrink-0 flex-col items-end gap-1.5 sm:flex-row sm:items-center sm:gap-4"><p class="font-mono text-sm sm:text-base">$64.00</p><div class="grid w-32 overflow-hidden rounded-md text-center text-sm font-medium"><span data-pending class="col-start-1 row-start-1 bg-butter px-2 py-1">Pending</span><span data-paid class="col-start-1 row-start-1 bg-mint px-2 py-1">Paid</span></div></div>
+							</li>
+							<li data-row class="flex items-center gap-3 px-4 py-4 sm:gap-4 sm:px-5">
+								<div class="min-w-0 flex-1"><p class="font-semibold">Tabby</p><p class="text-sm text-ink-soft">4 instalments · #SO-01044</p></div>
+								<div class="flex shrink-0 flex-col items-end gap-1.5 sm:flex-row sm:items-center sm:gap-4"><p class="font-mono text-sm sm:text-base">AED 420</p><div class="grid w-32 overflow-hidden rounded-md text-center text-sm font-medium"><span data-pending class="col-start-1 row-start-1 bg-butter px-2 py-1">Pending</span><span data-paid class="col-start-1 row-start-1 bg-mint px-2 py-1">Paid</span></div></div>
+							</li>
+							<li data-row class="flex items-center gap-3 px-4 py-4 sm:gap-4 sm:px-5">
+								<div class="min-w-0 flex-1"><p class="font-semibold">Cash on delivery</p><p class="text-sm text-ink-soft">Fee waived over ₹999 · #SO-01045</p></div>
+								<div class="flex shrink-0 flex-col items-end gap-1.5 sm:flex-row sm:items-center sm:gap-4"><p class="font-mono text-sm sm:text-base">₹1,299</p><div class="grid w-32 overflow-hidden rounded-md text-center text-sm font-medium"><span data-pending class="col-start-1 row-start-1 bg-butter px-2 py-1">Pending</span><span data-paid class="col-start-1 row-start-1 bg-lavender px-2 py-1">Due on delivery</span></div></div>
+							</li>
+						</ul>
+						<div class="grid grid-cols-2 gap-4 lg:grid-cols-1">
+							<div class="rounded-2xl bg-white p-5">
+								<p class="text-sm text-ink-soft">Orders confirmed</p>
+								<p data-count-orders data-target="4" class="font-display mt-1 text-5xl">4</p>
+							</div>
+							<div class="rounded-2xl bg-ink p-5 text-white">
+								<p class="text-sm text-white/70">Payment Entries in ERPNext</p>
+								<p data-count-entries data-target="3" class="font-display mt-1 text-5xl text-sun">3</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
+
+		<section>
+			<h2 class="font-display text-3xl sm:text-4xl">2. Integration tabs animate</h2>
+			<p class="mt-2 text-ink/70">Nice to have. Payments, Shipping and Analytics change with motion instead of an instant swap.</p>
+
+			<article class="mt-10" data-variant="tabs-flip">
+				<h3 class="text-lg font-semibold">2a · Flip re-flow</h3>
+				<p class="text-ink/65">The highlight glides to the new tab, leaving providers shrink away and the rest re-flow into place.</p>
+				<div class="mt-5 rounded-[var(--radius-panel)] bg-butter-soft p-5 sm:p-10">
+					<div data-tablist class="mx-auto flex w-fit max-w-full gap-1 overflow-x-auto rounded-xl bg-white/70 p-1.5" role="tablist">
+						<button type="button" role="tab" data-tab="payments" aria-selected="true" class="relative shrink-0 rounded-md px-5 py-2.5 text-base font-medium sm:px-8"><span data-highlight class="absolute inset-0 rounded-md bg-sun"></span><span class="relative">Payments</span></button>
+						<button type="button" role="tab" data-tab="shipping" aria-selected="false" class="relative shrink-0 rounded-md px-5 py-2.5 text-base font-medium text-ink-soft sm:px-8"><span class="relative">Shipping</span></button>
+						<button type="button" role="tab" data-tab="analytics" aria-selected="false" class="relative shrink-0 rounded-md px-5 py-2.5 text-base font-medium text-ink-soft sm:px-8"><span class="relative">Analytics</span></button>
+					</div>
+					<div class="mt-10 grid items-start gap-8 lg:grid-cols-[5fr_7fr]">
+						<ul data-flip-list class="relative grid gap-3 sm:grid-cols-2"></ul>
+						<div class="rounded-[var(--radius-panel)] bg-butter p-4 sm:p-6">
+							<div class="grid overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(120,70,0,0.45)]" data-shots></div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<article class="mt-16" data-variant="tabs-view-transition">
+				<h3 class="text-lg font-semibold">2b · View Transitions slide</h3>
+				<p class="text-ink/65">The browser cross-fades the list and slides the screenshot. Falls back to a GSAP fade where the API is missing.</p>
+				<div class="mt-5 rounded-[var(--radius-panel)] bg-butter-soft p-5 sm:p-10">
+					<div data-tablist class="mx-auto flex w-fit max-w-full gap-1 overflow-x-auto rounded-xl bg-white/70 p-1.5" role="tablist">
+						<button type="button" role="tab" data-tab="payments" aria-selected="true" class="shrink-0 rounded-md bg-sun px-5 py-2.5 text-base font-medium sm:px-8">Payments</button>
+						<button type="button" role="tab" data-tab="shipping" aria-selected="false" class="shrink-0 rounded-md px-5 py-2.5 text-base font-medium text-ink-soft sm:px-8">Shipping</button>
+						<button type="button" role="tab" data-tab="analytics" aria-selected="false" class="shrink-0 rounded-md px-5 py-2.5 text-base font-medium text-ink-soft sm:px-8">Analytics</button>
+					</div>
+					<div class="mt-10 grid items-center gap-8 lg:grid-cols-[5fr_7fr]">
+						<dl data-list class="vt-list space-y-5"></dl>
+						<div class="rounded-[var(--radius-panel)] bg-butter p-4 sm:p-6">
+							<div class="vt-shot grid overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(120,70,0,0.45)]" data-shots></div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<article class="mt-16" data-variant="tabs-indicator">
+				<h3 class="text-lg font-semibold">2c · Sliding indicator and staggered rise</h3>
+				<p class="text-ink/65">One indicator slides under the tabs, providers rise in one by one and the screenshot wipes in.</p>
+				<div class="mt-5 rounded-[var(--radius-panel)] bg-butter-soft p-5 sm:p-10">
+					<div data-tablist class="relative mx-auto flex w-fit max-w-full gap-1 overflow-x-auto rounded-xl bg-white/70 p-1.5" role="tablist">
+						<span data-indicator class="absolute top-1.5 bottom-1.5 left-0 w-0 rounded-md bg-sun"></span>
+						<button type="button" role="tab" data-tab="payments" aria-selected="true" class="relative shrink-0 rounded-md px-5 py-2.5 text-base font-medium sm:px-8">Payments</button>
+						<button type="button" role="tab" data-tab="shipping" aria-selected="false" class="relative shrink-0 rounded-md px-5 py-2.5 text-base font-medium text-ink-soft sm:px-8">Shipping</button>
+						<button type="button" role="tab" data-tab="analytics" aria-selected="false" class="relative shrink-0 rounded-md px-5 py-2.5 text-base font-medium text-ink-soft sm:px-8">Analytics</button>
+					</div>
+					<div class="mt-10 grid items-center gap-8 lg:grid-cols-[5fr_7fr]">
+						<dl data-list class="space-y-5"></dl>
+						<div class="rounded-[var(--radius-panel)] bg-butter p-4 sm:p-6">
+							<div class="grid overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(120,70,0,0.45)]" data-shots></div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/Flip.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/DrawSVGPlugin.min.js"></script>
+	<script>
+		gsap.registerPlugin(ScrollTrigger, Flip, DrawSVGPlugin);
+
+		const providers = {
+			payments: [
+				['Razorpay', 'Cards, UPI, netbanking and wallets. India.'],
+				['Stripe', 'Cards and wallets, worldwide.'],
+				['Telr', 'Cards and local methods across the GCC.'],
+				['Tabby', 'Buy now, pay later in four instalments. MENA.'],
+				['Cash on delivery', 'Its own fee, a threshold that waives it, and the account it books to.'],
+			],
+			shipping: [
+				['Shiprocket', 'Courier aggregator for domestic India, with pincode serviceability.'],
+				['AfterShip', 'Global labels and tracking across hundreds of carriers.'],
+				['Delivery options', 'Each carrier quotes live rates at checkout. You choose what shoppers pick from.'],
+			],
+			analytics: [
+				['Storefront tracking', 'First-party. Powers the Storefront report, and nothing leaves your site.'],
+				['Google Analytics 4', 'Standard eCommerce events, read back into the dashboard.'],
+				['Meta', 'Pixel events, with counts read back next to your revenue.'],
+			],
+		};
+		const screenshots = {
+			payments: ['../assets/payments.webp', 'Payment provider settings in the Commera dashboard'],
+			shipping: ['../assets/shipping.webp', 'Shipping carrier settings in the Commera dashboard'],
+			analytics: ['../assets/analytics.webp', 'Analytics connection settings in the Commera dashboard'],
+		};
+		const tab_names = Object.keys(providers);
+		let allow_motion = false;
+
+		function escape_html(text) {
+			const holder = document.createElement('div');
+			holder.textContent = text;
+			return holder.innerHTML;
+		}
+
+		function format_provider_list(tab) {
+			return providers[tab]
+				.map(([name, note]) => `<div data-item><dt class="font-display text-2xl">${escape_html(name)}</dt><dd class="mt-1 text-ink/65">${escape_html(note)}</dd></div>`)
+				.join('');
+		}
+
+		function format_provider_cards() {
+			return tab_names
+				.flatMap((tab) => providers[tab].map(([name, note]) => `<li data-group="${tab}" class="rounded-2xl bg-white p-4"><p class="font-display text-xl">${escape_html(name)}</p><p class="mt-1 text-sm text-ink/65">${escape_html(note)}</p></li>`))
+				.join('');
+		}
+
+		function format_screenshots() {
+			return tab_names
+				.map((tab) => `<img data-shot="${tab}" src="${screenshots[tab][0]}" alt="${escape_html(screenshots[tab][1])}" width="1400" height="1101" loading="lazy" class="col-start-1 row-start-1 w-full" />`)
+				.join('');
+		}
+
+		function refresh_tab_buttons(variant, tab) {
+			variant.querySelectorAll('[data-tab]').forEach((button) => {
+				const active = button.dataset.tab === tab;
+				button.setAttribute('aria-selected', String(active));
+				button.classList.toggle('text-ink-soft', !active);
+				button.classList.toggle('bg-sun', active && !button.querySelector('[data-highlight]') && !variant.querySelector('[data-indicator]'));
+			});
+		}
+
+		function refresh_shots(variant, tab) {
+			variant.querySelectorAll('[data-shot]').forEach((image) => image.classList.toggle('invisible', image.dataset.shot !== tab));
+		}
+
+		function add_tab_clicks(variant, on_switch) {
+			let current = 'payments';
+			variant.querySelectorAll('[data-tab]').forEach((button) => {
+				button.addEventListener('click', () => {
+					const next = button.dataset.tab;
+					if (next === current) return;
+					const previous = current;
+					current = next;
+					on_switch(next, previous);
+				});
+			});
+		}
+
+		function add_flip_tabs(variant) {
+			const list = variant.querySelector('[data-flip-list]');
+			list.innerHTML = format_provider_cards();
+			variant.querySelector('[data-shots]').innerHTML = format_screenshots();
+			const highlight = variant.querySelector('[data-highlight]');
+			const refresh = (tab) => {
+				list.querySelectorAll('[data-group]').forEach((item) => item.classList.toggle('hidden', item.dataset.group !== tab));
+				refresh_shots(variant, tab);
+				refresh_tab_buttons(variant, tab);
+				variant.querySelector(`[data-tab="${tab}"]`).prepend(highlight);
+			};
+			refresh('payments');
+			add_tab_clicks(variant, (tab) => {
+				if (!allow_motion) return refresh(tab);
+				const state = Flip.getState([...list.children, highlight]);
+				refresh(tab);
+				Flip.from(state, {
+					duration: 0.6,
+					ease: 'power3.inOut',
+					absolute: true,
+					stagger: 0.03,
+					onEnter: (elements) => gsap.fromTo(elements, { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.45, delay: 0.2, stagger: 0.05 }),
+					onLeave: (elements) => gsap.to(elements, { opacity: 0, scale: 0.85, duration: 0.3 }),
+				});
+				gsap.fromTo(variant.querySelector(`[data-shot="${tab}"]`), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out' });
+			});
+		}
+
+		function add_view_transition_tabs(variant) {
+			const list = variant.querySelector('[data-list]');
+			variant.querySelector('[data-shots]').innerHTML = format_screenshots();
+			const refresh = (tab) => {
+				list.innerHTML = format_provider_list(tab);
+				refresh_shots(variant, tab);
+				refresh_tab_buttons(variant, tab);
+			};
+			refresh('payments');
+			add_tab_clicks(variant, (tab) => {
+				if (!allow_motion) return refresh(tab);
+				if (document.startViewTransition) return document.startViewTransition(() => refresh(tab));
+				refresh(tab);
+				gsap.fromTo(list.children, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.05 });
+				gsap.fromTo(variant.querySelector(`[data-shot="${tab}"]`), { opacity: 0 }, { opacity: 1, duration: 0.45 });
+			});
+		}
+
+		function add_indicator_tabs(variant) {
+			const list = variant.querySelector('[data-list]');
+			const indicator = variant.querySelector('[data-indicator]');
+			variant.querySelector('[data-shots]').innerHTML = format_screenshots();
+			let current = 'payments';
+			const indicator_target = () => {
+				const button = variant.querySelector(`[data-tab="${current}"]`);
+				return { x: button.offsetLeft, width: button.offsetWidth };
+			};
+			const refresh = (tab) => {
+				current = tab;
+				list.innerHTML = format_provider_list(tab);
+				refresh_shots(variant, tab);
+				refresh_tab_buttons(variant, tab);
+			};
+			refresh('payments');
+			gsap.set(indicator, indicator_target());
+			window.addEventListener('resize', () => gsap.set(indicator, indicator_target()));
+			add_tab_clicks(variant, (tab, previous) => {
+				refresh(tab);
+				if (!allow_motion) return gsap.set(indicator, indicator_target());
+				const forward = tab_names.indexOf(tab) > tab_names.indexOf(previous);
+				gsap.to(indicator, { ...indicator_target(), duration: 0.5, ease: 'power3.inOut' });
+				gsap.from(list.children, { opacity: 0, y: 28, duration: 0.55, ease: 'power3.out', stagger: 0.07, delay: 0.1 });
+				gsap.fromTo(
+					variant.querySelector(`[data-shot="${tab}"]`),
+					{ clipPath: forward ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0)' },
+					{ clipPath: 'inset(0 0% 0 0%)', duration: 0.7, ease: 'power3.inOut', clearProps: 'clipPath' },
+				);
+			});
+		}
+
+		function add_status_swap(timeline, holder, position) {
+			timeline
+				.fromTo(holder.querySelector('[data-pending]'), { yPercent: 0 }, { yPercent: -100, duration: 0.4, ease: 'power2.in' }, position)
+				.fromTo(holder.querySelector('[data-paid]'), { yPercent: 100 }, { yPercent: 0, duration: 0.45, ease: 'back.out(2)' }, '<0.15');
+		}
+
+		function add_tick(timeline, line, position) {
+			timeline
+				.fromTo(line, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, position)
+				.fromTo(line.querySelector('[data-check-ring]'), { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.45, ease: 'power1.inOut' }, '<0.1')
+				.fromTo(line.querySelector('[data-check-path]'), { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.3, ease: 'power2.out' }, '>-0.1');
+		}
+
+		function add_toast_timeline(variant) {
+			const timeline = gsap.timeline({ paused: true });
+			timeline.fromTo(variant.querySelector('[data-toast]'), { xPercent: 115, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.7, ease: 'expo.out' });
+			add_status_swap(timeline, variant, '+=0.25');
+			add_tick(timeline, variant.querySelector('[data-entry]'), '+=0.3');
+			return timeline;
+		}
+
+		function add_coin_timeline(variant) {
+			const timeline = gsap.timeline({ paused: true });
+			const coin = variant.querySelector('[data-coin]');
+			timeline
+				.fromTo(variant.querySelector('[data-toast]'), { y: -24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' })
+				.fromTo(coin, { y: -170, rotation: -14, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 1.05, ease: 'bounce.out' }, '+=0.1')
+				.fromTo(variant.querySelector('[data-plus]'), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }, '-=0.45');
+			add_status_swap(timeline, variant, '-=0.2');
+			variant.querySelectorAll('[data-line]').forEach((line, index) => add_tick(timeline, line, index ? '+=0.1' : '+=0.25'));
+			return timeline;
+		}
+
+		function add_counter_step(timeline, element, value, position) {
+			const counter = { value: value - 1 };
+			timeline.to(counter, { value, duration: 0.35, ease: 'none', onUpdate: () => (element.textContent = Math.round(counter.value)) }, position);
+			timeline.fromTo(element, { scale: 1.25 }, { scale: 1, duration: 0.4, ease: 'back.out(3)' }, '<');
+		}
+
+		function add_sequence_timeline(variant) {
+			const timeline = gsap.timeline({ paused: true });
+			const orders = variant.querySelector('[data-count-orders]');
+			const entries = variant.querySelector('[data-count-entries]');
+			timeline.call(() => {
+				orders.textContent = '0';
+				entries.textContent = '0';
+			});
+			const rows = variant.querySelectorAll('[data-row]');
+			rows.forEach((row, index) => {
+				const position = index * 0.9 + 0.2;
+				timeline.fromTo(row, { backgroundColor: '#fff4dd' }, { backgroundColor: '#ffffff', duration: 0.9, ease: 'power1.out' }, position);
+				add_status_swap(timeline, row, position);
+				add_counter_step(timeline, orders, index + 1, position + 0.2);
+				if (index < rows.length - 1) add_counter_step(timeline, entries, index + 1, position + 0.35);
+			});
+			orders.textContent = '0';
+			entries.textContent = '0';
+			return timeline;
+		}
+
+		function add_payment_samples() {
+			const builders = { 'pay-toast': add_toast_timeline, 'pay-coin': add_coin_timeline, 'pay-sequence': add_sequence_timeline };
+			Object.entries(builders).forEach(([name, builder]) => {
+				const variant = document.querySelector(`[data-variant="${name}"]`);
+				const timeline = builder(variant);
+				timeline.progress(0).pause();
+				ScrollTrigger.create({ trigger: variant.querySelector('[data-stage]'), start: 'top 70%', once: true, onEnter: () => timeline.restart() });
+				variant.querySelector('[data-replay]').addEventListener('click', () => timeline.restart());
+			});
+		}
+
+		add_flip_tabs(document.querySelector('[data-variant="tabs-flip"]'));
+		add_view_transition_tabs(document.querySelector('[data-variant="tabs-view-transition"]'));
+		add_indicator_tabs(document.querySelector('[data-variant="tabs-indicator"]'));
+
+		gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+			allow_motion = true;
+			add_payment_samples();
+			return () => {
+				allow_motion = false;
+			};
+		});
+	</script>
+</body>
+</html>

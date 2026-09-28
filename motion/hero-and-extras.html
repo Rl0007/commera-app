@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Motion samples: hero and extras</title>
+	<meta name="robots" content="noindex" />
+	<link rel="icon" href="../assets/commera.svg" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://api.fontshare.com" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" />
+	<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,600&display=swap" />
+	<link rel="stylesheet" href="../dist/site.css" />
+</head>
+<body class="overflow-x-clip bg-white font-sans text-ink">
+	<svg class="hidden" aria-hidden="true">
+		<symbol id="a-cart" viewBox="0 0 100 100" fill="currentColor"><path d="M4 10h19l4 14h69L84 66H33L20 18H4Z" /><circle cx="40" cy="82" r="9" /><circle cx="76" cy="82" r="9" /></symbol>
+		<symbol id="a-tag" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd"><path d="M6 50 50 6h44v44L50 94ZM74 18a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z" /></symbol>
+		<symbol id="a-parcel" viewBox="0 0 100 100" fill="currentColor"><path d="M50 6 90 26 50 46 10 26Z" /><path d="M8 33l38 19v42L8 75Z" /><path d="M92 33 54 52v42l38-19Z" /></symbol>
+		<symbol id="a-receipt" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd"><path d="M18 6h64v88l-8-6-8 6-8-6-8 6-8-6-8 6-8-6-8 6ZM30 24v9h40v-9Zm0 18v9h40v-9Zm0 18v9h24v-9Z" /></symbol>
+		<symbol id="a-coin" viewBox="0 0 100 100" fill="currentColor"><ellipse cx="50" cy="24" rx="40" ry="15" /><path d="M10 34v12c0 8.3 17.9 15 40 15s40-6.7 40-15V34c0 8.3-17.9 15-40 15S10 42.3 10 34Z" /><path d="M10 58v12c0 8.3 17.9 15 40 15s40-6.7 40-15V58c0 8.3-17.9 15-40 15S10 66.3 10 58Z" /></symbol>
+		<symbol id="a-awning" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd"><path d="M6 8h88v30a11 11 0 0 1-22 0 11 11 0 0 1-22 0 11 11 0 0 1-22 0 11 11 0 0 1-22 0Z" /><path d="M14 58h72v36H14Zm28 12v24h16V70Z" /></symbol>
+		<symbol id="b-parcel" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M50 8 88 28v44L50 92 12 72V28Z" /><path d="m12 28 38 20 38-20M50 48v44" /></symbol>
+		<symbol id="b-coin" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="24" rx="38" ry="14" /><path d="M12 24v50c0 7.7 17 14 38 14s38-6.3 38-14V24M12 49c0 7.7 17 14 38 14s38-6.3 38-14" /></symbol>
+	</svg>
+
+	<template id="order-card-template">
+		<div class="order-card rounded-2xl bg-brand p-1.5 shadow-lg [grid-area:1/1]">
+			<div class="rounded-xl bg-white p-3.5 text-left">
+				<div class="flex items-center justify-between">
+					<p class="text-[0.7rem] text-ink-soft">New order</p>
+					<span data-field="badge" class="rounded-md bg-emerald-50 px-1.5 py-0.5 text-[0.65rem] font-semibold text-emerald-700">Paid</span>
+				</div>
+				<p data-field="number" class="font-display mt-1 text-xl"></p>
+				<div class="mt-3 flex items-center gap-2.5 border-t border-line pt-3">
+					<span data-field="swatch" class="size-9 rounded-md bg-butter"></span>
+					<div class="min-w-0 flex-1">
+						<p data-field="item" class="truncate text-[0.75rem] font-semibold"></p>
+						<p data-field="variant" class="text-[0.65rem] text-ink-soft"></p>
+					</div>
+					<p data-field="amount" class="text-[0.8rem] font-semibold"></p>
+				</div>
+				<p data-field="gateway" class="mt-3 text-[0.65rem] text-ink-soft"></p>
+			</div>
+		</div>
+	</template>
+
+	<template id="cluster-template">
+		<div class="grid gap-4 rounded-3xl bg-mist p-4 sm:p-6 md:grid-cols-[1fr_1fr_auto] md:items-center">
+			<div data-role="order-slot" class="grid"></div>
+			<div class="flex gap-1.5 rounded-3xl bg-teal p-2 shadow-xl">
+				<div class="flex w-full flex-col rounded-2xl bg-white p-4 text-left">
+					<svg viewBox="0 0 100 100" class="size-6 text-ink" aria-hidden="true"><use href="#b-coin" /></svg>
+					<p class="mt-2 text-[0.7rem] text-ink-soft">Revenue today</p>
+					<p data-role="revenue" class="font-display text-2xl tabular-nums">₹48,210</p>
+					<svg viewBox="-4 -2 248 44" class="mt-3 w-full" fill="none" aria-hidden="true">
+						<path data-role="spark-line" class="stroke-teal" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+						<circle data-role="spark-dot" r="3" class="fill-teal" />
+					</svg>
+				</div>
+			</div>
+			<div class="flex flex-wrap gap-3 md:flex-col">
+				<p class="flex items-center gap-2 rounded-md border border-line bg-white px-3 py-2 text-left text-[0.75rem]">
+					<span class="size-2 shrink-0 rounded-full bg-ink"></span>
+					<span><span class="inline-block overflow-hidden align-bottom font-semibold"><span data-role="orders" class="inline-block tabular-nums">12</span> orders today</span><br /><span class="text-ink-soft"><span data-role="waiting">4</span> waiting to ship</span></span>
+				</p>
+				<p class="relative flex items-center gap-2 overflow-hidden rounded-md border border-line bg-white px-3 py-2 text-[0.75rem] font-semibold">
+					<span data-role="stock-flash" class="absolute inset-0 bg-brand-soft opacity-0"></span>
+					<span class="relative size-2 shrink-0 rounded-full bg-ink"></span>
+					<span class="relative"><span data-role="low-stock" class="inline-block tabular-nums">3</span> low-stock variants</span>
+				</p>
+			</div>
+		</div>
+	</template>
+
+	<main class="mx-auto max-w-6xl px-4 py-12 sm:px-8 sm:py-16">
+		<p class="text-sm font-semibold text-brand-deep">Commera landing page</p>
+		<h1 class="font-display mt-2 text-4xl sm:text-5xl">Motion samples: hero and extras</h1>
+		<p class="mt-4 max-w-2xl text-lg text-ink/75">Five ideas, two or three variants each. Everything respects reduced motion by showing the end state, and every loop pauses on hover, focus or its pause button.</p>
+
+		<section class="mt-16" aria-labelledby="idea-order">
+			<h2 id="idea-order" class="font-display text-3xl sm:text-4xl">1. Hero: a live order ticks in</h2>
+			<div class="mt-6 space-y-6">
+				<article id="variant-1a" class="rounded-[var(--radius-panel)] border border-line p-5 sm:p-8">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<div>
+							<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">1a · Plays once on load</p>
+							<p class="mt-1 text-ink/75">Order #SO-01042 lands, revenue counts to ₹50,709, the sparkline grows a point.</p>
+						</div>
+						<button type="button" data-action="replay" class="rounded-md border border-line px-3 py-1.5 text-sm font-semibold hover:border-ink/40">Replay</button>
+					</div>
+					<div data-cluster="once" class="mt-6"></div>
+				</article>
+
+				<article id="variant-1b" class="rounded-[var(--radius-panel)] border border-line p-5 sm:p-8">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<div>
+							<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">1b · Loops with new sample orders</p>
+							<p class="mt-1 text-ink/75">A fresh order every few seconds. Hover or focus pauses it, and so does the button.</p>
+						</div>
+						<button type="button" data-action="pause" aria-pressed="false" class="rounded-md border border-line px-3 py-1.5 text-sm font-semibold hover:border-ink/40">Pause</button>
+					</div>
+					<div data-cluster="loop" tabindex="0" aria-label="Sample order feed, pauses while focused" class="mt-6 rounded-3xl outline-offset-4 focus-visible:outline-2 focus-visible:outline-brand"></div>
+				</article>
+
+				<article id="variant-1c" class="rounded-[var(--radius-panel)] border border-line p-5 sm:p-8">
+					<div>
+						<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">1c · Ticks when you hover</p>
+						<p class="mt-1 text-ink/75">Point at the cluster, or tab to it, and the next order comes in.</p>
+					</div>
+					<div data-cluster="hover" tabindex="0" aria-label="Sample order feed, a new order arrives on hover or focus" class="mt-6 rounded-3xl outline-offset-4 focus-visible:outline-2 focus-visible:outline-brand"></div>
+				</article>
+			</div>
+		</section>
+
+		<section class="mt-20" aria-labelledby="idea-headline">
+			<h2 id="idea-headline" class="font-display text-3xl sm:text-4xl">2. Hero headline reveal</h2>
+			<div class="mt-6 space-y-6">
+				<article id="variant-2a" class="rounded-[var(--radius-panel)] border border-line p-5 sm:p-8">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<div>
+							<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">2a · By line</p>
+							<p class="mt-1 text-ink/75">Each line rises out of its own mask, once.</p>
+						</div>
+						<button type="button" data-action="replay" class="rounded-md border border-line px-3 py-1.5 text-sm font-semibold hover:border-ink/40">Replay</button>
+					</div>
+					<p data-headline="lines" class="font-display mx-auto mt-10 mb-6 max-w-4xl text-center text-[2.75rem] text-balance sm:text-6xl lg:text-[4.6rem]">
+						World’s best eCommerce <br class="hidden sm:block" /><span class="text-brand">platform for ERPNext</span>
+					</p>
+				</article>
+
+				<article id="variant-2b" class="rounded-[var(--radius-panel)] border border-line p-5 sm:p-8">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<div>
+							<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">2b · By word, orange line last</p>
+							<p class="mt-1 text-ink/75">Words step up one by one; the orange line waits a beat, then lands.</p>
+						</div>
+						<button type="button" data-action="replay" class="rounded-md border border-line px-3 py-1.5 text-sm font-semibold hover:border-ink/40">Replay</button>
+					</div>
+					<p data-headline="words" class="font-display mx-auto mt-10 mb-6 max-w-4xl text-center text-[2.75rem] text-balance sm:text-6xl lg:text-[4.6rem]">
+						World’s best eCommerce <br class="hidden sm:block" /><span class="text-brand">platform for ERPNext</span>
+					</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="mt-20" aria-labelledby="idea-morph">
+			<h2 id="idea-morph" class="font-display text-3xl sm:text-4xl">3. Cart, receipt, parcel</h2>
+			<p class="mt-2 text-ink/75">Scroll through each card. The icons morph with the scroll, nothing is pinned.</p>
+			<div class="mt-6 space-y-6">
+				<article id="variant-3a" class="rounded-[var(--radius-panel)] border border-line p-5 sm:p-8">
+					<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">3a · One big icon</p>
+					<p class="mt-1 text-ink/75">A single outline icon changes shape as the order moves on.</p>
+					<p class="sr-only">Order placed, then booked in ERPNext, then packed.</p>
+					<div class="flex flex-col items-center py-16 sm:py-24" aria-hidden="true">
+						<div class="relative grid size-52 place-items-center sm:size-64">
+							<span data-disc="0" class="absolute inset-0 rounded-full bg-brand-soft"></span>
+							<span data-disc="1" class="absolute inset-0 rounded-full bg-lavender opacity-0"></span>
+							<span data-disc="2" class="absolute inset-0 rounded-full bg-butter opacity-0"></span>
+							<svg viewBox="0 0 100 100" class="relative size-28 text-ink sm:size-36" fill="none">
+								<path data-morph="big" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M6 14h14l12 48h50l10-34H26M33 82a7 7 0 1 0 14 0a7 7 0 1 0-14 0M69 82a7 7 0 1 0 14 0a7 7 0 1 0-14 0" />
+							</svg>
+						</div>
+						<div class="mt-8 grid text-center">
+							<p data-caption="0" class="font-display text-3xl [grid-area:1/1] sm:text-4xl">Order placed</p>
+							<p data-caption="1" class="font-display text-3xl opacity-0 [grid-area:1/1] sm:text-4xl">Booked in ERPNext</p>
+							<p data-caption="2" class="font-display text-3xl opacity-0 [grid-area:1/1] sm:text-4xl">Packed</p>
+						</div>
+					</div>
+				</article>
+
+				<article id="variant-3b" class="rounded-[var(--radius-panel)] border border-line p-5 sm:p-8">
+					<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">3b · A row that hands off</p>
+					<p class="mt-1 text-ink/75">Each icon slides into the next slot and becomes the next step.</p>
+					<ol class="grid grid-cols-3 gap-2 py-16 sm:gap-6 sm:py-24">
+						<li class="flex flex-col items-center text-center">
+							<span class="grid size-20 place-items-center rounded-full bg-brand-soft sm:size-32">
+								<svg viewBox="0 0 100 100" class="size-10 text-ink sm:size-16" fill="none" aria-hidden="true">
+									<path stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M6 14h14l12 48h50l10-34H26M33 82a7 7 0 1 0 14 0a7 7 0 1 0-14 0M69 82a7 7 0 1 0 14 0a7 7 0 1 0-14 0" />
+								</svg>
+							</span>
+							<span class="mt-4 text-sm font-semibold sm:text-lg">Order placed</span>
+						</li>
+						<li class="flex flex-col items-center text-center">
+							<span data-slot="1" class="grid size-20 place-items-center rounded-full bg-lavender sm:size-32">
+								<svg data-travel="1" viewBox="0 0 100 100" class="size-10 text-ink sm:size-16" fill="none" aria-hidden="true">
+									<path data-morph="row-1" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M20 8h60v84l-10-7-10 7-10-7-10 7-10-7-10 7ZM34 30h32M34 48h32M34 66h18" />
+								</svg>
+							</span>
+							<span data-row-caption="1" class="mt-4 text-sm font-semibold sm:text-lg">Booked in ERPNext</span>
+						</li>
+						<li class="flex flex-col items-center text-center">
+							<span data-slot="2" class="grid size-20 place-items-center rounded-full bg-butter sm:size-32">
+								<svg data-travel="2" viewBox="0 0 100 100" class="size-10 text-ink sm:size-16" fill="none" aria-hidden="true">
+									<path data-morph="row-2" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M50 8 88 28v44L50 92 12 72V28ZM12 28 50 48 88 28M50 48v44" />
+								</svg>
+							</span>
+							<span data-row-caption="2" class="mt-4 text-sm font-semibold sm:text-lg">Packed</span>
+						</li>
+					</ol>
+				</article>
+			</div>
+		</section>
+
+		<section class="mt-20" aria-labelledby="idea-submit">
+			<h2 id="idea-submit" class="font-display text-3xl sm:text-4xl">4. Onboarding submit</h2>
+			<div class="mt-6 grid gap-6 lg:grid-cols-2">
+				<article id="variant-4a" data-submit="arc" class="rounded-[var(--radius-panel)] border border-line p-5 sm:p-8">
+					<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">4a · Arc flight</p>
+					<p class="mt-1 text-ink/75">The button folds into a parcel that flies off on a curve.</p>
+					<div data-role="stage" class="relative mt-6 grid overflow-hidden rounded-2xl bg-butter-soft p-6">
+						<form data-role="form" class="space-y-4 [grid-area:1/1]">
+							<label class="block">
+								<span class="text-sm font-semibold">Work email</span>
+								<input type="email" name="email" autocomplete="email" placeholder="you@yourshop.com" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-brand" />
+							</label>
+							<button type="submit" data-role="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-deep sm:w-auto">
+								<svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true"><path d="M3 5.5v13l9-6.5zM12 5.5v13l9-6.5z" /></svg>
+								Book my call
+							</button>
+						</form>
+						<div data-role="success" class="pointer-events-none flex flex-col items-start justify-center opacity-0 [grid-area:1/1]">
+							<svg viewBox="0 0 48 48" class="size-12 text-teal" fill="none" aria-hidden="true">
+								<circle data-role="check-ring" cx="24" cy="24" r="21" stroke="currentColor" stroke-width="3" />
+								<path data-role="check-mark" d="m15 25 6 6 12-13" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+							<div role="status">
+								<p data-role="status-title" class="font-display mt-3 text-2xl"></p>
+								<p data-role="status-body" class="mt-1 text-ink-soft"></p>
+							</div>
+							<button type="button" data-role="reset" class="mt-4 rounded-md border border-line bg-white px-3 py-1.5 text-sm font-semibold hover:border-ink/40">Send another</button>
+						</div>
+						<svg data-role="parcel" viewBox="0 0 100 100" class="pointer-events-none absolute top-0 left-0 size-11 text-brand opacity-0" aria-hidden="true"><use href="#b-parcel" /></svg>
+					</div>
+				</article>
+
+				<article id="variant-4b" data-submit="toss" class="rounded-[var(--radius-panel)] border border-line p-5 sm:p-8">
+					<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">4b · Physics toss</p>
+					<p class="mt-1 text-ink/75">The parcel gets thrown with a spin and falls out of frame.</p>
+					<div data-role="stage" class="relative mt-6 grid overflow-hidden rounded-2xl bg-mint/50 p-6">
+						<form data-role="form" class="space-y-4 [grid-area:1/1]">
+							<label class="block">
+								<span class="text-sm font-semibold">Work email</span>
+								<input type="email" name="email" autocomplete="email" placeholder="you@yourshop.com" class="mt-1.5 w-full rounded-md border border-line bg-white px-3.5 py-2.5 outline-none focus:border-brand" />
+							</label>
+							<button type="submit" data-role="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-deep sm:w-auto">
+								<svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true"><path d="M3 5.5v13l9-6.5zM12 5.5v13l9-6.5z" /></svg>
+								Book my call
+							</button>
+						</form>
+						<div data-role="success" class="pointer-events-none flex flex-col items-start justify-center opacity-0 [grid-area:1/1]">
+							<svg viewBox="0 0 48 48" class="size-12 text-teal" fill="none" aria-hidden="true">
+								<circle data-role="check-ring" cx="24" cy="24" r="21" stroke="currentColor" stroke-width="3" />
+								<path data-role="check-mark" d="m15 25 6 6 12-13" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+							<div role="status">
+								<p data-role="status-title" class="font-display mt-3 text-2xl"></p>
+								<p data-role="status-body" class="mt-1 text-ink-soft"></p>
+							</div>
+							<button type="button" data-role="reset" class="mt-4 rounded-md border border-line bg-white px-3 py-1.5 text-sm font-semibold hover:border-ink/40">Send another</button>
+						</div>
+						<svg data-role="parcel" viewBox="0 0 100 100" class="pointer-events-none absolute top-0 left-0 size-11 text-brand opacity-0" aria-hidden="true"><use href="#b-parcel" /></svg>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="mt-20" aria-labelledby="idea-ticker">
+			<h2 id="idea-ticker" class="font-display text-3xl sm:text-4xl">5. Footer ticker</h2>
+			<div class="mt-6 space-y-6">
+				<article id="variant-5a">
+					<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">5a · CSS marquee</p>
+					<p class="mt-1 text-ink/75">Pure CSS animation. Hover or focus freezes it on the spot; the button holds it.</p>
+					<div data-ticker="css" data-paused="false" class="group relative mt-4 overflow-hidden rounded-[var(--radius-panel)] bg-gradient-to-b from-ink to-[#2a160a] py-6 text-white">
+						<div class="flex w-max animate-[ticker_40s_linear_infinite] items-center gap-10 group-hover:[animation-play-state:paused] group-focus-within:[animation-play-state:paused] group-data-[paused=true]:[animation-play-state:paused] motion-reduce:animate-none" aria-hidden="true">
+							<div class="flex items-center gap-10">
+								<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-cart" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Orders</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-coin" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Payments</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-sun sm:size-14"><use href="#a-parcel" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Shipping</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-violet sm:size-14"><use href="#a-tag" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Products</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-receipt" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Invoices</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-awning" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Storefront</span>
+							</div>
+							<div class="flex items-center gap-10">
+								<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-cart" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Orders</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-coin" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Payments</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-sun sm:size-14"><use href="#a-parcel" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Shipping</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-violet sm:size-14"><use href="#a-tag" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Products</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-receipt" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Invoices</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-awning" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Storefront</span>
+							</div>
+						</div>
+						<button type="button" data-action="pause" aria-pressed="false" class="absolute top-1/2 right-3 -translate-y-1/2 rounded-md bg-ink/80 px-3 py-1.5 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur hover:bg-ink focus-visible:outline-2 focus-visible:outline-brand">Pause</button>
+					</div>
+				</article>
+
+				<article id="variant-5b">
+					<p class="text-xs font-semibold tracking-wide text-ink-soft uppercase">5b · GSAP ticker that eases to a stop</p>
+					<p class="mt-1 text-ink/75">Hover or focus slows it smoothly to rest, leaving speeds it back up.</p>
+					<div data-ticker="gsap" class="relative mt-4 overflow-hidden rounded-[var(--radius-panel)] bg-gradient-to-b from-ink to-[#2a160a] py-6 text-white">
+						<div data-role="track" class="flex w-max items-center gap-10" aria-hidden="true">
+							<div data-role="copy" class="flex items-center gap-10">
+								<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-cart" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Orders</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-coin" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Payments</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-sun sm:size-14"><use href="#a-parcel" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Shipping</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-violet sm:size-14"><use href="#a-tag" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Products</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-receipt" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Invoices</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-awning" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Storefront</span>
+							</div>
+							<div class="flex items-center gap-10">
+								<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-cart" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Orders</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-coin" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Payments</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-sun sm:size-14"><use href="#a-parcel" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Shipping</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-violet sm:size-14"><use href="#a-tag" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Products</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-brand sm:size-14"><use href="#a-receipt" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Invoices</span>
+								<svg viewBox="0 0 100 100" class="size-12 text-teal sm:size-14"><use href="#a-awning" /></svg><span class="font-display text-3xl whitespace-nowrap sm:text-4xl">Storefront</span>
+							</div>
+						</div>
+						<button type="button" data-action="pause" aria-pressed="false" class="absolute top-1/2 right-3 -translate-y-1/2 rounded-md bg-ink/80 px-3 py-1.5 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur hover:bg-ink focus-visible:outline-2 focus-visible:outline-brand">Pause</button>
+					</div>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/MorphSVGPlugin.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/DrawSVGPlugin.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/MotionPathPlugin.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/Physics2DPlugin.min.js"></script>
+	<script>
+		gsap.registerPlugin(ScrollTrigger, SplitText, MorphSVGPlugin, DrawSVGPlugin, MotionPathPlugin, Physics2DPlugin);
+
+		const motion_queries = { animate: '(prefers-reduced-motion: no-preference)', reduce: '(prefers-reduced-motion: reduce)' };
+
+		const sample_orders = [
+			{ number: '#SO-01042', item: 'Linen shirt', variant: 'Sand · M · 1', amount: 2499, gateway: 'via Razorpay · UPI', swatch: 'size-9 rounded-md bg-butter', stock_change: 1 },
+			{ number: '#SO-01043', item: 'Canvas tote', variant: 'Olive · 1', amount: 1150, gateway: 'via Stripe · Card', swatch: 'size-9 rounded-md bg-mint', stock_change: 0 },
+			{ number: '#SO-01044', item: 'Leather sandals', variant: 'Tan · 42 · 1', amount: 3200, gateway: 'Cash on delivery', swatch: 'size-9 rounded-md bg-brand-soft', stock_change: 1, badge: 'COD' },
+			{ number: '#SO-01045', item: 'Cotton kurta', variant: 'Indigo · L · 2', amount: 4380, gateway: 'via Razorpay · Card', swatch: 'size-9 rounded-md bg-lavender', stock_change: -1 },
+		];
+		const first_order = { number: '#SO-01041', item: 'Block print scarf', variant: 'Rust · 1', amount: 899, gateway: 'via Razorpay · UPI', swatch: 'size-9 rounded-md bg-lavender' };
+		const spark_start = [28, 22, 25, 14, 18, 10, 12];
+
+		function format_inr(value) {
+			return '₹' + Math.round(value).toLocaleString('en-IN');
+		}
+
+		function format_order_card(order) {
+			const card = document.getElementById('order-card-template').content.firstElementChild.cloneNode(true);
+			for (const field of ['number', 'item', 'variant', 'gateway']) card.querySelector(`[data-field="${field}"]`).textContent = order[field];
+			card.querySelector('[data-field="amount"]').textContent = format_inr(order.amount);
+			card.querySelector('[data-field="swatch"]').className = order.swatch;
+			if (order.badge) card.querySelector('[data-field="badge"]').textContent = order.badge;
+			return card;
+		}
+
+		function refresh_sparkline(cluster, progress) {
+			const step = 240 / (spark_start.length - 1);
+			const points = cluster.spark_points;
+			const to_y = (value) => 4 + value;
+			const coords = points.map((value, index) => {
+				const is_new = index === points.length - 1 && points.length > spark_start.length;
+				const y = is_new ? gsap.utils.interpolate(points[index - 1], value, progress) : value;
+				return [(index - (points.length > spark_start.length ? progress : 0)) * step, to_y(y)];
+			});
+			const visible_end = coords[coords.length - 1];
+			const line = coords.map(([x, y], index) => `${index ? 'L' : 'M'}${x.toFixed(2)} ${y.toFixed(2)}`).join('');
+			cluster.spark_line.setAttribute('d', line);
+			cluster.spark_dot.setAttribute('cx', visible_end[0].toFixed(2));
+			cluster.spark_dot.setAttribute('cy', visible_end[1].toFixed(2));
+		}
+
+		function add_cluster(mount) {
+			mount.append(document.getElementById('cluster-template').content.firstElementChild.cloneNode(true));
+			const cluster = {
+				mount,
+				slot: mount.querySelector('[data-role="order-slot"]'),
+				revenue: mount.querySelector('[data-role="revenue"]'),
+				orders: mount.querySelector('[data-role="orders"]'),
+				waiting: mount.querySelector('[data-role="waiting"]'),
+				low_stock: mount.querySelector('[data-role="low-stock"]'),
+				stock_flash: mount.querySelector('[data-role="stock-flash"]'),
+				spark_line: mount.querySelector('[data-role="spark-line"]'),
+				spark_dot: mount.querySelector('[data-role="spark-dot"]'),
+				next_index: 0,
+				playing: null,
+			};
+			reset_cluster(cluster);
+			return cluster;
+		}
+
+		function reset_cluster(cluster) {
+			cluster.playing?.kill();
+			cluster.playing = null;
+			gsap.set([cluster.orders, cluster.low_stock, cluster.stock_flash], { clearProps: 'transform,opacity' });
+			cluster.next_index = 0;
+			cluster.state = { revenue: 48210, orders: 12, waiting: 4, low_stock: 3 };
+			cluster.spark_points = [...spark_start];
+			cluster.slot.replaceChildren(format_order_card(first_order));
+			refresh_cluster_numbers(cluster);
+			refresh_sparkline(cluster, 0);
+		}
+
+		function refresh_cluster_numbers(cluster) {
+			cluster.revenue.textContent = format_inr(cluster.state.revenue);
+			cluster.orders.textContent = cluster.state.orders;
+			cluster.waiting.textContent = cluster.state.waiting;
+			cluster.low_stock.textContent = cluster.state.low_stock;
+		}
+
+		function add_next_order(cluster, animate) {
+			if (cluster.playing?.isActive()) return cluster.playing;
+			const order = sample_orders[cluster.next_index % sample_orders.length];
+			cluster.next_index += 1;
+			const previous_card = cluster.slot.lastElementChild;
+			const new_card = format_order_card(order);
+			cluster.slot.append(new_card);
+			const target = {
+				revenue: cluster.state.revenue + order.amount,
+				orders: cluster.state.orders + 1,
+				waiting: cluster.state.waiting + 1,
+				low_stock: Math.max(1, cluster.state.low_stock + order.stock_change),
+			};
+			const next_spark = gsap.utils.clamp(2, 32, cluster.spark_points.at(-1) - 3 - (order.amount % 7));
+			cluster.spark_points.push(next_spark);
+
+			const settle = () => {
+				previous_card?.remove();
+				cluster.state = target;
+				cluster.spark_points.shift();
+				refresh_cluster_numbers(cluster);
+				refresh_sparkline(cluster, 0);
+			};
+
+			if (!animate) {
+				settle();
+				return null;
+			}
+
+			const counter = { revenue: cluster.state.revenue, spark: 0 };
+			const timeline = gsap.timeline({ onComplete: settle });
+			timeline
+				.from(new_card, { xPercent: -18, y: 14, rotation: -3, autoAlpha: 0, duration: 0.7, ease: 'back.out(1.6)' })
+				.to(previous_card, { scale: 0.92, y: 10, autoAlpha: 0, duration: 0.45, ease: 'power2.in' }, 0)
+				.from(new_card.querySelector('[data-field="badge"]'), { scale: 0, duration: 0.4, ease: 'back.out(3)' }, 0.45)
+				.to(counter, {
+					revenue: target.revenue,
+					spark: 1,
+					duration: 1.2,
+					ease: 'power2.out',
+					onUpdate: () => {
+						cluster.revenue.textContent = format_inr(counter.revenue);
+						refresh_sparkline(cluster, counter.spark);
+					},
+				}, 0.35)
+				.to(cluster.orders, { yPercent: -110, duration: 0.2, ease: 'power2.in' }, 0.5)
+				.add(() => {
+					cluster.orders.textContent = target.orders;
+					cluster.waiting.textContent = target.waiting;
+				})
+				.fromTo(cluster.orders, { yPercent: 110 }, { yPercent: 0, duration: 0.35, ease: 'back.out(2)' });
+			if (target.low_stock !== cluster.state.low_stock) {
+				timeline
+					.to(cluster.stock_flash, { opacity: 1, duration: 0.25, yoyo: true, repeat: 1 }, 0.9)
+					.add(() => { cluster.low_stock.textContent = target.low_stock; }, 1.05)
+					.from(cluster.low_stock, { scale: 1.6, duration: 0.4, ease: 'back.out(3)' }, 1.05);
+			}
+			cluster.playing = timeline;
+			return timeline;
+		}
+
+		function add_hero_order_samples(context) {
+			const animate = context.conditions.animate;
+			const once_cluster = add_cluster(document.querySelector('[data-cluster="once"]'));
+			const loop_cluster = add_cluster(document.querySelector('[data-cluster="loop"]'));
+			const hover_cluster = add_cluster(document.querySelector('[data-cluster="hover"]'));
+
+			if (!animate) {
+				add_next_order(once_cluster, false);
+				add_next_order(loop_cluster, false);
+				add_next_order(hover_cluster, false);
+			} else {
+				ScrollTrigger.create({ trigger: once_cluster.mount, start: 'top 85%', once: true, onEnter: () => gsap.delayedCall(0.4, () => add_next_order(once_cluster, true)) });
+			}
+			document.querySelector('#variant-1a [data-action="replay"]').addEventListener('click', () => {
+				reset_cluster(once_cluster);
+				add_next_order(once_cluster, animate);
+			});
+
+			const loop_article = document.getElementById('variant-1b');
+			const pause_button = loop_article.querySelector('[data-action="pause"]');
+			const loop_state = { hovered: false, focused: false, held: false };
+			const loop_timer = animate ? gsap.delayedCall(3.2, function tick() {
+				add_next_order(loop_cluster, true);
+				loop_timer.restart(true);
+			}) : null;
+			const refresh_loop = () => {
+				const paused = loop_state.hovered || loop_state.focused || loop_state.held;
+				loop_timer?.paused(paused);
+				loop_cluster.playing?.paused(paused);
+				pause_button.textContent = loop_state.held ? 'Play' : 'Pause';
+				pause_button.setAttribute('aria-pressed', String(loop_state.held));
+			};
+			if (animate) add_next_order(loop_cluster, true);
+			loop_cluster.mount.addEventListener('mouseenter', () => { loop_state.hovered = true; refresh_loop(); });
+			loop_cluster.mount.addEventListener('mouseleave', () => { loop_state.hovered = false; refresh_loop(); });
+			loop_cluster.mount.addEventListener('focus', () => { loop_state.focused = true; refresh_loop(); });
+			loop_cluster.mount.addEventListener('blur', () => { loop_state.focused = false; refresh_loop(); });
+			pause_button.addEventListener('click', () => { loop_state.held = !loop_state.held; refresh_loop(); });
+
+			const hover_tick = () => add_next_order(hover_cluster, animate);
+			hover_cluster.mount.addEventListener('mouseenter', hover_tick);
+			hover_cluster.mount.addEventListener('focus', hover_tick);
+
+			return () => {
+				loop_timer?.kill();
+				for (const cluster of [once_cluster, loop_cluster, hover_cluster]) {
+					cluster.playing?.kill();
+					cluster.mount.replaceChildren();
+					const fresh_mount = cluster.mount.cloneNode(false);
+					cluster.mount.replaceWith(fresh_mount);
+				}
+				for (const button of document.querySelectorAll('#variant-1a [data-action], #variant-1b [data-action]')) button.replaceWith(button.cloneNode(true));
+			};
+		}
+
+		function add_headline_reveals(context) {
+			const animate = context.conditions.animate;
+			for (const headline of document.querySelectorAll('[data-headline]')) {
+				const by_words = headline.dataset.headline === 'words';
+				let reveal = null;
+				const split = SplitText.create(headline, {
+					type: by_words ? 'words,lines' : 'lines',
+					mask: by_words ? 'words' : 'lines',
+					autoSplit: true,
+					onSplit(self) {
+						if (!animate) return null;
+						if (!by_words) {
+							reveal = gsap.from(self.lines, { yPercent: 110, duration: 1, ease: 'expo.out', stagger: 0.14, paused: true });
+						} else {
+							const orange_words = self.words.filter((word) => word.closest('.text-brand'));
+							const ink_words = self.words.filter((word) => !word.closest('.text-brand'));
+							reveal = gsap.timeline({ paused: true })
+								.from(ink_words, { yPercent: 110, duration: 0.8, ease: 'power4.out', stagger: 0.09 })
+								.from(orange_words, { yPercent: 115, rotation: 4, duration: 1, ease: 'back.out(1.4)', stagger: 0.12 }, '+=0.2');
+						}
+						return reveal;
+					},
+				});
+				if (animate) ScrollTrigger.create({ trigger: headline, start: 'top 85%', once: true, onEnter: () => reveal?.play() });
+				const replay = headline.closest('article').querySelector('[data-action="replay"]');
+				const on_replay = () => reveal?.restart();
+				replay.addEventListener('click', on_replay);
+				context.add(() => () => {
+					replay.removeEventListener('click', on_replay);
+					split.revert();
+				});
+			}
+		}
+
+		function add_morph_samples(context) {
+			const shapes = {
+				cart: 'M6 14h14l12 48h50l10-34H26M33 82a7 7 0 1 0 14 0a7 7 0 1 0-14 0M69 82a7 7 0 1 0 14 0a7 7 0 1 0-14 0',
+				receipt: 'M20 8h60v84l-10-7-10 7-10-7-10 7-10-7-10 7ZM34 30h32M34 48h32M34 66h18',
+				parcel: 'M50 8 88 28v44L50 92 12 72V28ZM12 28 50 48 88 28M50 48v44',
+			};
+			if (!context.conditions.animate) {
+				gsap.set('[data-morph="big"]', { morphSVG: shapes.parcel });
+				gsap.set('#variant-3a [data-caption], #variant-3a [data-disc]', { opacity: 0 });
+				gsap.set('#variant-3a [data-caption="2"], #variant-3a [data-disc="2"]', { opacity: 1 });
+				return;
+			}
+
+			const big = gsap.timeline({ scrollTrigger: { trigger: '#variant-3a', start: 'top 70%', end: 'bottom 45%', scrub: 0.6 }, defaults: { ease: 'power1.inOut' } });
+			big
+				.to('[data-morph="big"]', { morphSVG: shapes.receipt, duration: 1 })
+				.to('#variant-3a [data-caption="0"]', { opacity: 0, yPercent: -40, duration: 0.4 }, 0.3)
+				.fromTo('#variant-3a [data-caption="1"]', { yPercent: 40 }, { opacity: 1, yPercent: 0, duration: 0.4 }, 0.6)
+				.to('#variant-3a [data-disc="1"]', { opacity: 1, duration: 0.6 }, 0.3)
+				.to('#variant-3a [data-disc="0"]', { opacity: 0, duration: 0.6 }, 0.3)
+				.to({}, { duration: 0.4 })
+				.to('[data-morph="big"]', { morphSVG: shapes.parcel, duration: 1 })
+				.to('#variant-3a [data-caption="1"]', { opacity: 0, yPercent: -40, duration: 0.4 }, '<0.3')
+				.fromTo('#variant-3a [data-caption="2"]', { yPercent: 40 }, { opacity: 1, yPercent: 0, duration: 0.4 }, '<0.3')
+				.to('#variant-3a [data-disc="2"]', { opacity: 1, duration: 0.6 }, '<-0.3')
+				.to('#variant-3a [data-disc="1"]', { opacity: 0, duration: 0.6 }, '<')
+				.to({}, { duration: 0.3 });
+
+			const slot_offset = (index) => () => {
+				const slot = document.querySelector(`#variant-3b [data-slot="${index}"]`);
+				const previous = slot.closest('li').previousElementSibling.querySelector('span');
+				return previous.getBoundingClientRect().left - slot.getBoundingClientRect().left;
+			};
+			const row = gsap.timeline({ scrollTrigger: { trigger: '#variant-3b', start: 'top 70%', end: 'bottom 45%', scrub: 0.6, invalidateOnRefresh: true }, defaults: { ease: 'power2.inOut' } });
+			row
+				.from('#variant-3b [data-travel="1"]', { x: slot_offset(1), duration: 1 }, 0)
+				.from('[data-morph="row-1"]', { morphSVG: shapes.cart, duration: 1 }, 0)
+				.from('#variant-3b [data-row-caption="1"]', { opacity: 0.2, y: 10, duration: 0.4 }, 0.6)
+				.from('#variant-3b [data-travel="2"]', { x: slot_offset(2), duration: 1 }, 1.1)
+				.from('[data-morph="row-2"]', { morphSVG: shapes.receipt, duration: 1 }, 1.1)
+				.from('#variant-3b [data-row-caption="2"]', { opacity: 0.2, y: 10, duration: 0.4 }, 1.7)
+				.to({}, { duration: 0.3 });
+		}
+
+		function add_submit_samples(context) {
+			const animate = context.conditions.animate;
+			for (const article of document.querySelectorAll('[data-submit]')) {
+				const stage = article.querySelector('[data-role="stage"]');
+				const form = article.querySelector('[data-role="form"]');
+				const submit = article.querySelector('[data-role="submit"]');
+				const success = article.querySelector('[data-role="success"]');
+				const parcel = article.querySelector('[data-role="parcel"]');
+				const ring = article.querySelector('[data-role="check-ring"]');
+				const mark = article.querySelector('[data-role="check-mark"]');
+				const title = article.querySelector('[data-role="status-title"]');
+				const body = article.querySelector('[data-role="status-body"]');
+				const reset = article.querySelector('[data-role="reset"]');
+				let running = null;
+
+				const show_success = () => {
+					form.classList.add('invisible');
+					success.classList.remove('pointer-events-none');
+					reset.focus({ preventScroll: true });
+				};
+
+				const on_submit = (event) => {
+					event.preventDefault();
+					if (running?.isActive()) return;
+					title.textContent = "Thanks, we've got your request.";
+					body.textContent = "We'll email you to find a time for the call.";
+					if (!animate) {
+						gsap.set(form, { opacity: 0 });
+						gsap.set(success, { opacity: 1 });
+						show_success();
+						return;
+					}
+					const stage_box = stage.getBoundingClientRect();
+					const button_box = submit.getBoundingClientRect();
+					const start_x = button_box.left - stage_box.left + button_box.width / 2 - 22;
+					const start_y = button_box.top - stage_box.top + button_box.height / 2 - 22;
+					gsap.set(parcel, { x: start_x, y: start_y, rotation: 0, scale: 0, opacity: 1 });
+
+					const flight = article.dataset.submit === 'arc'
+						? { motionPath: { path: [{ x: start_x + 60, y: start_y - 120 }, { x: stage_box.width * 0.75, y: -30 }, { x: stage_box.width + 60, y: -80 }], curviness: 1.4 }, rotation: 200, duration: 1.1, ease: 'power1.in' }
+						: { physics2D: { velocity: stage_box.width * 1.6, angle: -62, gravity: 1500 }, rotation: 620, duration: 1.3 };
+
+					running = gsap.timeline({ onComplete: show_success })
+						.to(submit, { scaleX: 0.2, scaleY: 0.85, opacity: 0, duration: 0.3, ease: 'power2.in' })
+						.to(parcel, { scale: 1, duration: 0.3, ease: 'back.out(3)' }, 0.15)
+						.to(parcel, flight, 0.5)
+						.to(form, { opacity: 0, y: -8, duration: 0.35 }, 0.6)
+						.set(success, { opacity: 1 }, 1)
+						.fromTo(ring, { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.6, ease: 'power2.inOut' }, 1)
+						.fromTo(mark, { drawSVG: '0%' }, { drawSVG: '100%', duration: 0.4, ease: 'power2.out' }, 1.4)
+						.from([title, body, reset], { y: 12, opacity: 0, duration: 0.5, stagger: 0.08, ease: 'power3.out' }, 1.3);
+				};
+
+				const on_reset = () => {
+					running?.kill();
+					gsap.set([form, success, submit, parcel, title, body, reset, ring, mark], { clearProps: 'all' });
+					gsap.set(success, { opacity: 0 });
+					gsap.set(parcel, { opacity: 0 });
+					form.classList.remove('invisible');
+					success.classList.add('pointer-events-none');
+					title.textContent = '';
+					body.textContent = '';
+					submit.focus({ preventScroll: true });
+				};
+
+				form.addEventListener('submit', on_submit);
+				reset.addEventListener('click', on_reset);
+				context.add(() => () => {
+					form.removeEventListener('submit', on_submit);
+					reset.removeEventListener('click', on_reset);
+				});
+			}
+		}
+
+		function add_pause_button(button, on_change) {
+			button.addEventListener('click', () => {
+				const held = button.getAttribute('aria-pressed') !== 'true';
+				button.setAttribute('aria-pressed', String(held));
+				button.textContent = held ? 'Play' : 'Pause';
+				on_change(held);
+			});
+		}
+
+		function add_css_ticker() {
+			const css_ticker = document.querySelector('[data-ticker="css"]');
+			add_pause_button(css_ticker.querySelector('[data-action="pause"]'), (held) => { css_ticker.dataset.paused = String(held); });
+		}
+
+		function add_gsap_ticker(context) {
+			const gsap_ticker = document.querySelector('[data-ticker="gsap"]');
+			const pause_button = gsap_ticker.querySelector('[data-action="pause"]');
+			if (!context.conditions.animate) {
+				pause_button.disabled = true;
+				pause_button.classList.add('hidden');
+				return;
+			}
+			const track = gsap_ticker.querySelector('[data-role="track"]');
+			const copy = gsap_ticker.querySelector('[data-role="copy"]');
+			const loop = gsap.to(track, {
+				x: () => -(copy.offsetWidth + parseFloat(getComputedStyle(track).columnGap)),
+				duration: 40,
+				ease: 'none',
+				repeat: -1,
+			});
+			const ticker_state = { hovered: false, focused: false, held: false };
+			const refresh_speed = () => {
+				const stopped = ticker_state.hovered || ticker_state.focused || ticker_state.held;
+				gsap.to(loop, { timeScale: stopped ? 0 : 1, duration: stopped ? 0.9 : 1.2, ease: 'power2.out', overwrite: true });
+			};
+			gsap_ticker.addEventListener('mouseenter', () => { ticker_state.hovered = true; refresh_speed(); });
+			gsap_ticker.addEventListener('mouseleave', () => { ticker_state.hovered = false; refresh_speed(); });
+			gsap_ticker.addEventListener('focusin', () => { ticker_state.focused = true; refresh_speed(); });
+			gsap_ticker.addEventListener('focusout', () => { ticker_state.focused = false; refresh_speed(); });
+			add_pause_button(pause_button, (held) => { ticker_state.held = held; refresh_speed(); });
+		}
+
+		function add_motion_samples() {
+			const media = gsap.matchMedia();
+			media.add(motion_queries, (context) => {
+				add_headline_reveals(context);
+				add_morph_samples(context);
+				add_submit_samples(context);
+				add_gsap_ticker(context);
+				return add_hero_order_samples(context);
+			});
+			add_css_ticker();
+			document.fonts?.ready.then(() => ScrollTrigger.refresh());
+		}
+
+		add_motion_samples();
+	</script>
+</body>
+</html>
